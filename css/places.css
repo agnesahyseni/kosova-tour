@@ -1,0 +1,408 @@
+:root {
+  --ah-primary-color: #004b8d;
+  --ah-secondary-color: #6ec1ff;
+  --ah-light-bg: #f4f6f8;
+  --ah-dark-text: #333;
+  --ah-white: #ffffff;
+
+  --ah-title-font: 'Segoe UI', sans-serif;
+  --ah-text-font: Arial, sans-serif;
+}
+
+/* ==================== RESET ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ah-text-font);
+}
+/* ==================== BACKGROUND VIDEO ==================== */
+.ah-bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.6);
+}
+
+/* ==================== NAVBAR ==================== */
+.ah-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  z-index: 9999;
+}
+
+.ah-logo {
+  color: var(--ah-white);
+  font-size: 26px;
+  font-weight: bold;
+  font-family: var(--ah-title-font);
+}
+
+.ah-nav-links {
+  align-items: center;
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.ah-nav-links li {
+  position: relative;
+}
+
+.ah-nav-links a {
+  display:flex;
+  align-items: center;
+  line-height: 1;
+  color: var(--ah-white);
+  font-size: 18px;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: color 0.3s;
+}
+
+.ah-nav-links a:hover {
+  color: var(--ah-secondary-color);
+}
+
+/* ==================== DROPDOWN ==================== */
+.ah-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  min-width: 180px;
+  border-radius: 8px;
+  padding: 10px 0;
+}
+
+.ah-dropdown-menu a {
+  padding: 10px 15px;
+  display: block;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.ah-dropdown:hover .ah-dropdown-menu {
+  display: block;
+}
+
+/* ==================== PLACES HERO ==================== */
+.ah-places-hero {
+  max-width: 1000px;
+  margin: 140px auto 250px;
+  padding: 50px;
+  text-align: center;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  color: white;
+}
+
+.ah-places-hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.ah-places-hero p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* ==================== PLACES GRID ==================== */
+.ah-places-section {
+  background: var(--ah-light-bg);
+  padding: 80px 5px;
+}
+
+.ah-places-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px,1fr));
+  gap: 50px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* ==================== PLACE CARD ==================== */
+.ah-place-item {
+  display: flex;
+  background: white;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ah-place-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+.ah-place-item img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ah-place-content {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ah-place-content h3 {
+  font-size: 25px;
+  color: var(--ah-primary-color);
+  margin-bottom: 8px;
+}
+
+.ah-place-content p {
+  font-size: 15px;
+  color: var(--ah-dark-text);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.ah-place-arrow {
+  align-self: flex-end;
+  width: 40px;
+  height: 40px;
+  background: var(--ah-primary-color);
+  color: white;
+  font-size: 22px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.ah-place-arrow:hover {
+  background: #007bff;
+  transform: translateX(5px);
+}
+/* ==================== PRISHTINA ====================== */
+/* HERO */
+.pr-hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  background: linear-gradient(120deg, #0a1f44, #0a1f44);
+  overflow: hidden;
+}
+
+.pr-hero-left {
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  z-index: 2;
+}
+
+.pr-hero-left h1 {
+  font-size: 90px;
+  letter-spacing: 5px;
+}
+
+.pr-hero-left p {
+  margin-top: 20px;
+  font-size: 20px;
+  max-width: 420px;
+}
+
+.pr-hero-right {
+  position: relative;
+}
+
+.pr-hero-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pr-hero-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to left,
+    rgba(10,31,68,0) 30%,
+    rgba(10,31,68,0.4) 55%,
+    rgba(10,31,68,0.85) 75%,
+    rgba(10,31,68,1) 100%
+  );
+}
+
+/* STORY */
+.pr-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 120px;
+  background: #f5f7fa;
+}
+
+.pr-story-text h2 {
+  font-size: 40px;
+  margin-bottom: 25px;
+  color: #0a1f44;
+}
+
+.pr-story-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.pr-story-image img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* LANDMARKS */
+.pr-landmarks {
+  padding: 120px;
+  background: white;
+}
+
+.pr-landmarks h2 {
+  font-size: 42px;
+  margin-bottom: 60px;
+  color: #0a1f44;
+}
+
+.pr-landmark-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 40px;
+}
+
+.pr-landmark-card {
+  background: #f8f9fb;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease;
+}
+
+.pr-landmark-card:hover {
+  transform: translateY(-10px);
+}
+
+.pr-landmark-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.pr-landmark-card h3 {
+  font-size: 22px;
+  margin: 20px;
+  color: #0a1f44;
+}
+
+.pr-landmark-card p {
+  margin: 0 20px 25px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* GALLERY */
+/* ==================== PR GALLERY (FIXED) ==================== */
+.pr-gallery {
+  padding: 120px;
+  background: #0a1f44;
+  color: white;
+}
+
+.pr-gallery h2 {
+  font-size: 42px;
+  margin-bottom: 50px;
+}
+
+.pr-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.pr-gallery-item {
+  height: 260px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.pr-gallery-item:hover {
+  transform: scale(1.04);
+  opacity: 0.9;
+}
+
+/* ==================== FOOTER ==================== */
+.ah-footer {
+  background: var(--ah-primary-color);
+  color: var(--ah-white);
+  padding: 70px 40px 20px;
+}
+
+.ah-footer-content {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.ah-footer h3,
+.ah-footer h4 {
+  font-family: var(--ah-title-font);
+  margin-bottom: 15px;
+}
+
+.ah-footer p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.ah-footer-links ul {
+  list-style: none;
+}
+
+.ah-footer-links li {
+  margin-bottom: 10px;
+}
+
+.ah-footer-links a {
+  color: var(--ah-white);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.ah-footer-links a:hover {
+  color: var(--ah-secondary-color);
+}
+
+.ah-footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  font-size: 14px;
+}
+
+
+

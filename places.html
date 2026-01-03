@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Places | Kosovo Tour</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/places.css">
+  
 </head>
 <body>
 
 <!-- ==================== BACKGROUND VIDEO START ==================== -->
 <video autoplay muted loop class="ah-bg-video">
-  <source src="/files/places.webm" type="video/mp4">
+  <source src="video/place.mp4" type="video/mp4">
 </video>
 <!-- ==================== BACKGROUND VIDEO END ==================== -->
 
@@ -18,10 +20,17 @@
 <nav class="ah-navbar">
   <div class="ah-logo">Kosovo Tour</div>
   <ul class="ah-nav-links">
-    <li><a href="#">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="places.html">Places</a></li>
-    <li><a href="#">Gallery</a></li>
-    <li><a href="#">About</a></li>
+    <li><a href="regions.html">Regions</a></li>
+    <li><a href="statistic.html">Statistic</a></li>
+    <li class="ah-dropdown">
+      <a href="#">More ▾</a>
+      <ul class="ah-dropdown-menu">
+        <li><a href="about.html">About </a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 <!-- ==================== NAVBAR END ==================== -->
@@ -46,7 +55,7 @@
   <div class="ah-places-list">
 
     <div class="ah-place-item">
-      <img src="/files/prsh1.jpg" alt="Prishtina">
+      <img src="img/prishtinaplace.jpg" alt="Prishtina">
       <div class="ah-place-content">
         <h3>Prishtina</h3>
         <p>The capital city of Kosovo, known for its vibrant culture, modern lifestyle, and historical landmarks.</p>
@@ -55,7 +64,7 @@
     </div>
 
     <div class="ah-place-item">
-      <img src="/files/prz1.webp" alt="Prizren">
+      <img src="img/prizreniplace.webp" alt="Prizren">
       <div class="ah-place-content">
         <h3>Prizren</h3>
         <p>A historic city famous for its old town, stone bridge, cultural festivals, and rich heritage.</p>
@@ -64,7 +73,7 @@
     </div>
 
     <div class="ah-place-item">
-      <img src="/files/pj1.webp" alt="Peja">
+      <img src="img/pejaplace.webp" alt="Peja">
       <div class="ah-place-content">
         <h3>Peja</h3>
         <p>Gateway to the Rugova mountains, offering nature, adventure tourism, and cultural sites.</p>
@@ -73,7 +82,7 @@
     </div>
 
     <div class="ah-place-item">
-      <img src="/files/brz1.jpg" alt="Brezovica">
+      <img src="img/brezovicaplace.jpg" alt="Brezovica">
       <div class="ah-place-content">
         <h3>Brezovica</h3>
         <p>Kosovo’s main ski resort, popular for winter sports and mountain tourism.</p>
@@ -82,16 +91,16 @@
     </div>
 
     <div class="ah-place-item">
-      <img src="/files/rgv1.jpg" alt="Rugova Canyon">
+      <img src="img/rugovaplace.jpg" alt="Rugova Canyon">
       <div class="ah-place-content">
         <h3>Rugova Canyon</h3>
-        <p>A spectacular natural canyon known for hiking, climbing, and breathtaking landscapes.</p>
+        <p>The place where adventure begins.</p>
         <a href="rugova.html" class="ah-place-arrow">→</a>
       </div>
     </div>
 
     <div class="ah-place-item">
-      <img src="/files/mitro1.jpg" alt="Mitrovica">
+      <img src="img/mitrovicplace.jpg" alt="Mitrovica">
       <div class="ah-place-content">
         <h3>Mitrovica</h3>
         <p>A city rich in history and culture, located in the northern part of Kosovo.</p>
@@ -100,16 +109,13 @@
     </div>
 
     <div class="ah-place-item">
-      <img src="/files/bjg1.jpg" alt="Bajgora">
+      <img src="img/bajgoraplace.jpg" alt="Bajgora">
       <div class="ah-place-content">
         <h3>Bajgora</h3>
         <p>A mountainous region known for natural beauty, traditions, and eco-tourism.</p>
         <a href="bajgora.html" class="ah-place-arrow">→</a>
       </div>
     </div>
-
-  </div>
-
 </section>
 <!-- ==================== PLACES GRID END ==================== -->
 
@@ -117,41 +123,36 @@
 
 <!-- ==================== FOOTER START ==================== -->
 <footer class="ah-footer">
-
   <div class="ah-footer-content">
-
-    <div class="ah-footer-brand">
+    <div>
       <h3>Kosovo Tour</h3>
-      <p>
-        Discover Kosovo’s beauty through nature, culture,
-        history, and unforgettable experiences.
-      </p>
+      <p>Discover Kosovo’s beauty through nature and culture.</p>
     </div>
 
     <div class="ah-footer-links">
       <h4>Quick Links</h4>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Places</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="places.html">Places</a></li>
+        <li><a href="regions.html">Regions</a></li>
+        <li><a href="statistic.html">Statistic</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
 
-    <div class="ah-footer-info">
+    <div>
       <h4>Project Info</h4>
       <p>Frontend Project</p>
-      <p>HTML • CSS • JavaScript</p>
+      <p>HTML • CSS • JS</p>
     </div>
-
   </div>
 
   <div class="ah-footer-bottom">
-    <p>© 2025 Kosovo Tour | Agnesa Hyseni Project</p>
+    © 2025 Kosovo Tour | Agnesa Hyseni Project
   </div>
-
 </footer>
-<!-- ==================== FOOTER END ==================== -->
 
+<script src="js/script.js"></script>
 </body>
 </html>

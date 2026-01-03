@@ -1,0 +1,375 @@
+/* ==================== ROOT VARIABLES ==================== */
+:root {
+  --ah-primary-color: #004b8d;
+  --ah-secondary-color: #6ec1ff;
+  --ah-light-bg: #f4f6f8;
+  --ah-dark-text: #333;
+  --ah-white: #ffffff;
+
+  --ah-title-font: 'Segoe UI', sans-serif;
+  --ah-text-font: Arial, sans-serif;
+}
+
+/* ==================== RESET ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ah-text-font);
+}
+
+
+/* ==================== NAVBAR ==================== */
+.ah-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  z-index: 9999;
+}
+
+.ah-logo {
+  color: var(--ah-white);
+  font-size: 26px;
+  font-weight: bold;
+  font-family: var(--ah-title-font);
+}
+
+.ah-nav-links {
+  align-items: center;
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.ah-nav-links li {
+  position: relative;
+}
+
+.ah-nav-links a {
+  display:flex;
+  align-items: center;
+  line-height: 1;
+  color: var(--ah-white);
+  font-size: 18px;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: color 0.3s;
+}
+
+.ah-nav-links a:hover {
+  color: var(--ah-secondary-color);
+}
+
+/* ==================== DROPDOWN ==================== */
+.ah-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  min-width: 180px;
+  border-radius: 8px;
+  padding: 10px 0;
+}
+
+.ah-dropdown-menu a {
+  padding: 10px 15px;
+  display: block;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.ah-dropdown:hover .ah-dropdown-menu {
+  display: block;
+}
+/* ==================== HERO ==================== */
+.ah-hero {
+    height: 100vh;
+    background: url("../img/statistic.avif") center / cover no-repeat;
+    position: relative;
+}
+
+.ah-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ah-hero-content {
+    color: white;
+    text-align: left;
+    max-width: 600px;
+}
+
+
+.ah-hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.ah-hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+/* ==================== TABLES ==================== */
+.table {
+    width: 80%;
+    border-collapse: collapse;
+    margin:  0 auto 40px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+.container.my-5:first-of-type {
+    margin-top: 80px; /* rregullo sipas dëshirës, p.sh. 80px ose 100px */
+}
+/* ==================== HAPËSIRA MIDIS TABELAVE ==================== */
+section.container.my-5 {
+    margin: 80px auto; /* 80px lart e poshtë, qendrim horizontal auto */
+}
+
+
+.table th, .table td {
+    padding: 15px;
+}
+
+.table thead {
+    background: linear-gradient(135deg, #004b8d, #6ec1ff);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f4f6f8;
+}
+
+.table-striped tbody tr:hover {
+    background-color: #dbe9ff;
+    transform: scale(1.01);
+    transition: all 0.2s ease;
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid #ccc;
+    border-top: 0;
+}
+.ah-subtitle {
+    font-size: 2rem;
+    color: #004b8d;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: var(--ah-title-font);
+}
+
+/* Responsive tabelat */
+@media (max-width: 768px) {
+    .table th, .table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* ==================== BUTTONS ==================== */
+.btn {
+  transition: all 0.3s;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+  background-color: var(--ah-primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ==================== MODAL ==================== */
+.modal-content {
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 1rem;
+}
+
+/* ==================== FORMULARI ==================== */
+form input, form textarea, form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+  border-color: var(--ah-primary-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+form button {
+  background-color: var(--ah-primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 992px) {
+  .ah-hero-content h1 { font-size: 2.5rem; }
+  .ah-subtitle { font-size: 1.8rem; }
+}
+
+@media (max-width: 768px) {
+  .ah-hero { padding-left: 30px; }
+  .ah-hero-content h1 { font-size: 2rem; }
+  .ah-subtitle { font-size: 1.5rem; }
+}
+
+@media (max-width: 576px) {
+  .ah-hero-content h1 { font-size: 1.5rem; }
+  .ah-subtitle { font-size: 1.2rem; }
+  .table th, .table td { padding: 10px; }
+}
+/* ==================== FOOTER ==================== */
+.ah-footer {
+  background:  #004b8d;
+  color: white;
+  padding: 70px 40px 20px;
+}
+
+.ah-footer-content {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.ah-footer h3,
+.ah-footer h4 {
+  margin-bottom: 15px;
+  font-family: var(--ah-title-font);
+}
+
+.ah-footer p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.ah-footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ah-footer-links li {
+  margin-bottom: 10px;
+}
+
+.ah-footer-links a {
+  color: white;
+  transition: color 0.3s;
+}
+
+.ah-footer-links a:hover {
+  color: var(--ah-secondary-color);
+}
+
+.ah-footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+}
+/* ==================== NAVBAR ==================== */
+.ah-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+}
+
+.ah-logo {
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+  font-family: var(--ah-title-font);
+}
+
+.ah-nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+}
+
+.ah-nav-links li {
+  position: relative;
+}
+
+.ah-nav-links a {
+  color: white;
+  font-size: 18px;
+  padding: 8px 12px;
+  transition: color 0.3s;
+}
+
+.ah-nav-links a:hover {
+  color: #6ec1ff;
+}

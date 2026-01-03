@@ -1,0 +1,253 @@
+:root {
+  --ah-primary-color: #004b8d;
+  --ah-secondary-color: #6ec1ff;
+  --ah-light-bg: #f4f6f8;
+  --ah-dark-text: #333;
+  --ah-white: #ffffff;
+
+  --ah-title-font: 'Segoe UI', sans-serif;
+  --ah-text-font: Arial, sans-serif;
+}
+
+/* ==================== RESET ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ah-text-font);
+}
+
+/* ==================== BODY OFFSET ==================== */
+body {
+  padding-top: 90px;
+}
+/* ==================== BACKGROUND VIDEO ==================== */
+.ah-bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.6);
+}
+
+/* ==================== NAVBAR ==================== */
+.ah-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  z-index: 9999;
+}
+
+.ah-logo {
+  color: var(--ah-white);
+  font-size: 26px;
+  font-weight: bold;
+  font-family: var(--ah-title-font);
+}
+
+.ah-nav-links {
+  align-items: center;
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.ah-nav-links li {
+  position: relative;
+}
+
+.ah-nav-links a {
+  display:flex;
+  align-items: center;
+  line-height: 1;
+  color: var(--ah-white);
+  font-size: 18px;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: color 0.3s;
+}
+
+.ah-nav-links a:hover {
+  color: var(--ah-secondary-color);
+}
+
+/* ==================== DROPDOWN ==================== */
+.ah-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  min-width: 180px;
+  border-radius: 8px;
+  padding: 10px 0;
+}
+
+.ah-dropdown-menu a {
+  padding: 10px 15px;
+  display: block;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.ah-dropdown:hover .ah-dropdown-menu {
+  display: block;
+}
+
+/* ---------- INTRO ---------- */
+.rg-intro {
+  max-width: 1200px;
+  margin: 20px auto 90px;
+  background-color: whitesmoke;
+  padding: 140px 20px 100px;
+  text-align: center;
+}
+
+.rg-intro-box {
+  max-width: 900px;
+  margin: auto;
+  color: white;
+}
+
+.rg-intro h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: rgb(12, 11, 11);
+}
+
+.rg-intro p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgb(0, 0, 0);
+}
+
+/* ---------- PAGE WRAPPER ---------- */
+.rg-wrapper {
+  background: #f4f6f9;
+  padding: 80px 20px;
+}
+
+/* ---------- REGION SECTION ---------- */
+.rg-section {
+  max-width: 1200px;
+  margin: 0 auto 90px;
+  padding: 60px;
+  background: white;
+  border-radius: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.rg-section.rg-reverse {
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.rg-section.rg-reverse .rg-text {
+  order: 2;
+}
+
+/* ---------- TEXT ---------- */
+.rg-text h2 {
+  font-size: 34px;
+  margin-bottom: 15px;
+  color: #0a1f44;
+}
+
+.rg-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+/* ---------- MASONRY ---------- */
+.rg-masonry {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 140px;
+  gap: 15px;
+}
+
+.rg-masonry img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rg-masonry img:nth-child(1) {
+  grid-row: span 2;
+}
+
+.rg-masonry img:nth-child(4) {
+  grid-column: span 2;
+}
+
+.rg-masonry img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+/* ==================== FOOTER ==================== */
+.ah-footer {
+  background: var(--ah-primary-color);
+  color: var(--ah-white);
+  padding: 70px 40px 20px;
+}
+
+.ah-footer-content {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.ah-footer h3,
+.ah-footer h4 {
+  font-family: var(--ah-title-font);
+  margin-bottom: 15px;
+}
+
+.ah-footer p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.ah-footer-links ul {
+  list-style: none;
+}
+
+.ah-footer-links li {
+  margin-bottom: 10px;
+}
+
+.ah-footer-links a {
+  color: var(--ah-white);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.ah-footer-links a:hover {
+  color: var(--ah-secondary-color);
+}
+
+.ah-footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  font-size: 14px;
+}
+

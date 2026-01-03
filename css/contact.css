@@ -1,0 +1,236 @@
+:root {
+  --ah-primary-color: #004b8d;
+  --ah-secondary-color: #6ec1ff;
+  --ah-light-bg: #f4f6f8;
+  --ah-dark-text: #333;
+  --ah-white: #ffffff;
+
+  --ah-title-font: 'Segoe UI', sans-serif;
+  --ah-text-font: Arial, sans-serif;
+}
+/* ==================== RESET ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ah-text-font);
+}
+/* ==================== NAVBAR ==================== */
+.ah-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px; /* lartësia fikse */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px; /* vetëm padding horizontal */
+  background: var(--ah-primary-color);
+  z-index: 9999;
+}
+
+.ah-logo {
+  color: var(--ah-white);
+  font-size: 26px;
+  font-weight: bold;
+  font-family: var(--ah-title-font);
+  line-height: 60px; /* për qendrim vertikal */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.ah-nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 35px;
+  margin: 0;
+  padding: 0; /* hiq padding default nga Bootstrap */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.ah-nav-links li {
+  position: relative;
+}
+
+.ah-nav-links a {
+  display: inline-block; /* hiq display:flex që po prish vertikalitetin */
+  line-height: 60px;     /* për qendrim vertikal */
+  color: var(--ah-white);
+  font-size: 18px;
+  text-decoration: none;
+  padding: 0 12px;       /* padding horizontal minimal */
+  transition: color 0.3s;
+}
+
+.ah-nav-links a:hover {
+  color: var(--ah-secondary-color);
+}
+
+/* ==================== DROPDOWN ==================== */
+.ah-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* poshtë navbar-it */
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  min-width: 180px;
+  border-radius: 8px;
+  padding: 10px 0;
+  line-height: normal; /* hiq line-height 60px */
+}
+
+.ah-dropdown-menu a {
+  padding: 10px 15px;
+  display: block;
+  font-size: 16px;
+  line-height: normal; /* link-et të mos trashëgohen lartësia nga navbar-i */
+  white-space: nowrap;
+}
+
+.ah-dropdown:hover .ah-dropdown-menu {
+  display: block;
+}
+
+/* ==================== CONTACT SECTION ==================== */
+.ah-contact-section {
+  padding: 60px 20px;
+  background-color: #f4f6f8;
+  text-align: center;
+}
+
+.ah-contact-section h2 {
+  font-size: 2.5rem;
+  color: #004b8d;
+  margin-bottom: 10px;
+}
+
+.ah-contact-section p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.ah-contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.ah-contact-form {
+  flex: 1 1 300px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ah-contact-form input,
+.ah-contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.ah-contact-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #004b8d;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ah-contact-form button:hover {
+  background-color: #6ec1ff;
+}
+
+.ah-contact-info {
+  flex: 1 1 250px;
+  max-width: 350px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.ah-contact-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.ah-contact-info p {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .ah-contact-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ah-contact-info {
+    text-align: center;
+  }
+}
+
+/* ==================== FOOTER ==================== */
+.ah-footer {
+  background: var(--ah-primary-color);
+  color: var(--ah-white);
+  padding: 70px 40px 20px;
+}
+
+.ah-footer-content {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.ah-footer h3,
+.ah-footer h4 {
+  font-family: var(--ah-title-font);
+  margin-bottom: 15px;
+}
+
+.ah-footer p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.ah-footer-links ul {
+  list-style: none;
+}
+
+.ah-footer-links li {
+  margin-bottom: 10px;
+}
+
+.ah-footer-links a {
+  color: var(--ah-white);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.ah-footer-links a:hover {
+  color: var(--ah-secondary-color);
+}
+
+.ah-footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  font-size: 14px;
+}
+
+

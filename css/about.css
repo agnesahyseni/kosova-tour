@@ -1,0 +1,226 @@
+:root {
+  --ah-primary-color: #004b8d;
+  --ah-secondary-color: #6ec1ff;
+  --ah-light-bg: #f4f6f8;
+  --ah-dark-text: #333;
+  --ah-white: #ffffff;
+
+  --ah-title-font: 'Segoe UI', sans-serif;
+  --ah-text-font: Arial, sans-serif;
+}
+
+/* ==================== RESET ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ah-text-font);
+}
+
+
+/* ==================== NAVBAR ==================== */
+.ah-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--ah-primary-color);
+  backdrop-filter: blur(12px);
+  z-index: 9999;
+}
+
+.ah-logo {
+  color: var(--ah-white);
+  font-size: 26px;
+  font-weight: bold;
+  font-family: var(--ah-title-font);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* shton hije tek logo */
+}
+
+.ah-nav-links {
+  align-items: center;
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.ah-nav-links li {
+  position: relative;
+}
+
+.ah-nav-links a {
+  display:flex;
+  align-items: center;
+  line-height: 1;
+  color: var(--ah-white);
+  font-size: 18px;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: color 0.3s;
+}
+
+.ah-nav-links a:hover {
+  color: var(--ah-secondary-color);
+}
+
+/* ==================== DROPDOWN ==================== */
+.ah-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  min-width: 180px;
+  border-radius: 8px;
+  padding: 10px 0;
+}
+
+.ah-dropdown-menu a {
+  padding: 10px 15px;
+  display: block;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.ah-dropdown:hover .ah-dropdown-menu {
+  display: block;
+}
+/* ============ABOUT PROJECT SECTION ======================= */
+.ah-about-section {
+    padding: 160px 20px 80px;
+    background: linear-gradient(135deg, #f5f7fa, #e9ecef);
+    font-family: 'Poppins', sans-serif;
+}
+
+.ah-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* MAIN TITLE */
+.ah-about-section h1 {
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 25px;
+    color:  #004b8d;
+    position: relative;
+}
+
+.ah-about-section h1::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background-color: #004b8d;
+    display: block;
+    margin: 15px auto 0;
+    border-radius: 10px;
+}
+
+/* PARAGRAPHS */
+.ah-about-section p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #4b5563;
+    max-width: 850px;
+    margin: 0 auto 25px auto;
+    text-align: center;
+}
+
+/* SUBHEADINGS */
+.ah-about-section h2 {
+    font-size: 26px;
+    color:  #004b8d;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* LIST STYLE */
+.ah-about-section ul {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.ah-about-section ul li {
+    background: #ffffff;
+    padding: 18px 22px;
+    margin-bottom: 15px;
+    border-left: 5px solid #004b8d;
+    border-radius: 10px;
+    font-size: 17px;
+    color:  #004b8d;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.ah-about-section ul li:hover {
+    transform: translateX(8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* TECHNOLOGY + INFO BLOCKS */
+.ah-about-section h2 + p {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+/* ==================== FOOTER ==================== */
+.ah-footer {
+  background: var(--ah-primary-color);
+  color: var(--ah-white);
+  padding: 70px 40px 20px;
+}
+
+.ah-footer-content {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.ah-footer h3,
+.ah-footer h4 {
+  font-family: var(--ah-title-font);
+  margin-bottom: 15px;
+}
+
+.ah-footer p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.ah-footer-links ul {
+  list-style: none;
+}
+
+.ah-footer-links li {
+  margin-bottom: 10px;
+}
+
+.ah-footer-links a {
+  color: var(--ah-white);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.ah-footer-links a:hover {
+  color: var(--ah-secondary-color);
+}
+
+.ah-footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  font-size: 14px;
+}
+
