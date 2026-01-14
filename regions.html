@@ -1,137 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ================= KONFIGURIMI BAZË ================= -->
+  <!-- Përcaktimi i kodimit të karaktereve -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Titulli i faqes që shfaqet në tab të browser-it -->
   <title>Kosovo Tour</title>
+
+  <!-- Meta tag për responsivitet në pajisje mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ================= FONTI GOOGLE ================= -->
+  <!-- Fonti Poppins përdoret për një dizajn modern dhe të pastër -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- ================= BOOTSTRAP CSS ================= -->
+  <!-- Framework Bootstrap për grid system dhe komponente responsive -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ================= CSS I PERSONALIZUAR ================= -->
+  <!-- Fajlli kryesor i stilizimit të projektit -->
   <link rel="stylesheet" href="css/regions.css">
 </head>
-<body>
 
-<!-- ==================== BACKGROUND VIDEO SECTION START ==================== -->
-<video autoplay muted loop class="ah-bg-video">
-  <source src="files/Regions/vid.mp4" type="video/webm">
+<body id="ah">
+
+<video autoplay muted loop playsinline class="ah-bg-video">
+  <source src="files/Regions/vid.mp4" type="video/mp4">
 </video>
-<!-- ==================== BACKGROUND VIDEO SECTION END ==================== -->
 
+<!-- ================= NAVBAR ================= -->
+<!-- Navbar fikse dhe responsive e ndërtuar me Bootstrap -->
+<!-- Kalon automatikisht në menu hamburger në tablet dhe mobile -->
+<nav class="navbar navbar-expand-lg ah-navbar">
+  <div class="container-fluid px-lg-5">
 
-<!-- ==================== NAVBAR START ==================== -->
-<nav class="ah-navbar">
-  <div class="ah-logo">Kosovo Tour</div>
-  <ul class="ah-nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="places.html">Places</a></li>
-    <li><a href="regions.html">Regions</a></li>
-    <li><a href="statistic.html">Statistic</a></li>
-    <li class="ah-dropdown">
-      <a href="#">More ▾</a>
-      <ul class="ah-dropdown-menu">
-        <li><a href="about.html">About </a></li>
-        <li><a href="contact.html">Contact</a></li>
+    <!-- Logo / Emri i faqes -->
+    <a class="navbar-brand ah-logo" href="index.html">Kosovo Tour</a>
+    
+    <!-- Butoni hamburger për pajisje mobile -->
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ahNavbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Linket e navigimit -->
+    <div class="collapse navbar-collapse" id="ahNavbarNav">
+      <ul class="navbar-nav ms-auto ah-nav-links">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="places.html">Places</a></li>
+        <li class="nav-item"><a class="nav-link" href="regions.html">Regions</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+        <!-- Dropdown menu për linke shtesë -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="ahDrop" role="button" data-bs-toggle="dropdown">
+            More
+          </a>
+          <ul class="dropdown-menu ah-dropdown-menu">
+            <li><a class="dropdown-item" href="statistic.html">Statistic</a></li>
+            <li><a class="dropdown-item" href="traditions.html">Traditions</a></li>
+            <li><a class="dropdown-item" href="traveltips.html">Travel Tips</a></li>
+            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+          </ul>
+        </li>
       </ul>
-    </li>
-  </ul>
+    </div>
+
+  </div>
 </nav>
-<!-- ==================== NAVBAR END ==================== -->
 
-
-<!-- ==================== REGIONS INTRO START ==================== -->
-<section class="rg-intro">
+<!-- ==================================================
+     INTRO SECTION – REGIONS
+================================================== -->
+<section class="rg-intro container rounded-4 shadow-sm">
+  <!-- Seksion hyrës për rajonet -->
   <h1>Regions of Kosovo</h1>
   <p>
     Kosovo is divided into several historical and geographical regions,
     each with its own identity, traditions, landscapes, and cultural heritage.
   </p>
 </section>
-<!-- ==================== REGIONS INTRO END ==================== -->
 
+<!-- ==================================================
+     REGION: RRAFSHI I DUKAGJINIT
+================================================== -->
+<section class="container rg-section">
+  <div class="row align-items-center">
 
-<!-- ==================== REGION: DUKAGJIN ==================== -->
-<section class="rg-section rg-reveal">
+    <!-- Teksti -->
+    <div class="col-12 col-lg-5 rg-text">
+      <h2>Rrafshi i Dukagjinit</h2>
+      <p><strong>Position:</strong> Western Kosovo</p>
+      <p><strong>Population:</strong> One of the most populated regions</p>
+      <p>The Dukagjin Plain is known for its fertile land and cities such as Peja, Gjakova, and Deçan.</p>
+    </div>
 
-  <div class="rg-text">
-    <h2>Rrafshi i Dukagjinit</h2>
-    <p><strong>Position:</strong> Western Kosovo</p>
-    <p><strong>Population:</strong> One of the most populated regions</p>
-    <p>
-      The Dukagjin Plain is known for its fertile land, agriculture,
-      and strong traditional culture. Cities such as Peja, Gjakova,
-      and Deçan are located in this region.
-    </p>
-    <p>
-      The region is rich in history, featuring monasteries, old bazaars,
-      and traditional stone houses. Dukagjin is also closely connected
-      with Albanian customary law and heritage.
-    </p>
+    <!-- Galeria e imazheve -->
+    <div class="col-12 col-lg-7">
+      <div class="rg-masonry">
+        <img src="files/Regions/duk1.jfif" alt="Dukagjin">
+        <img src="files/Regions/duk2.jpg" alt="Dukagjin">
+        <img src="files/Regions/duk3.jpg" alt="Dukagjin">
+      </div>
+    </div>
+
   </div>
+</section>
 
-  <div class="rg-masonry">
-    <img src="files/Regions/duk1.jfif">
-    <img src="files/Regions/duk2.jpg">
-    <img src="files/Regions/duk3.jpg">
-    <img src="files/Regions/duk4.jpg">
+<!-- ==================================================
+     REGION: FUSHA E KOSOVËS
+================================================== -->
+<section class="container rg-section">
+  <div class="row align-items-center">
+
+    <!-- Teksti -->
+    <div class="col-12 col-lg-5 rg-text">
+      <h2>Fusha e Kosovës</h2>
+      <p><strong>Position:</strong> Central Kosovo</p>
+      <p><strong>Population:</strong> Highly urbanized</p>
+      <p>The economic heart of the country, including the capital city, Prishtina.</p>
+    </div>
+
+    
+    <!-- Galeria e imazheve -->
+    <div class="col-12 col-lg-7">
+      <div class="rg-masonry">
+        <img src="files/Regions/fshks.png" alt="">
+        <img src="files/Regions/fsh2.jpg" alt="">
+        <img src="files/Regions/fsh3.jpg" alt="">
+      </div>
+    </div>
+
   </div>
+</section>
 
+<!-- ==================================================
+     REGION: ANAMORAVA
+================================================== -->
+<section class="container rg-section">
+  <div class="row align-items-center">
+
+    <!-- Teksti -->
+    <div class="col-12 col-lg-5 rg-text">
+      <h2>Anamorava</h2>
+      <p><strong>Position:</strong> Eastern Kosovo</p>
+      <p><strong>Population:</strong> Medium density</p>
+      <p>Anamorava is known for agriculture, open plains, and strong family traditions.</p>
+      <p>The region preserves folklore, traditional music, and rural architecture.</p>
+    </div>
+
+    
+    <!-- Galeria e imazheve -->
+    <div class="col-12 col-lg-7">
+      <div class="rg-masonry">
+        <img src="files/Regions/anamorava.png">
+        <img src="files/Regions/ana1.jpg">
+        <img src="files/Regions/ana2.png">
+      </div>
+    </div>
+
+  </div>
 </section>
 
 
-<!-- ==================== REGION: FUSHA E KOSOVËS ==================== -->
-<section class="rg-section rg-reverse rg-reveal">
+<!-- ==================================================
+     REGION: SHALA E BAJGORËS
+================================================== -->
+<section class="container rg-section">
+  <div class="row align-items-center">
 
-  <div class="rg-text">
-    <h2>Fusha e Kosovës</h2>
-    <p><strong>Position:</strong> Central Kosovo</p>
-    <p><strong>Population:</strong> Highly urbanized</p>
-    <p>
-      Fusha e Kosovës represents the political, economic, and administrative
-      heart of the country. It includes the capital city, Prishtina.
-    </p>
-    <p>
-      The region has great historical importance, including medieval battlefields,
-      monuments, and cultural institutions.
-    </p>
-  </div>
-
-  <div class="rg-masonry">
-    <img src="files/Regions/fshks.png">
-    <img src="files/Regions/fsh2.jpg">
-    <img src="files/Regions/fsh3.jpg">
-    <img src="files/Regions/fsh4.jpg">
-  </div>
-
-</section>
-
-
-<!-- ==================== REGION: ANAMORAVA ==================== -->
-<section class="rg-section rg-reveal ahrg" id="123">
-
-  <div class="rg-text">
-    <h2>Anamorava</h2>
-    <p><strong>Position:</strong> Eastern Kosovo</p>
-    <p><strong>Population:</strong> Medium density</p>
-    <p>
-      Anamorava is known for agriculture, open plains, and strong family traditions.
-      Cities like Gjilan are central to this region.
-    </p>
-    <p>
-      The region preserves folklore, traditional music, and rural architecture.
-    </p>
-  </div>
-
-  <div class="rg-masonry">
-    <img src="files/Regions/anamorava.png">
-    <img src="files/Regions/ana1.jpg">
-    <img src="files/Regions/ana2.png">
-  </div>
-
-</section>
-
-
-<!-- ==================== REGION: SHALA E BAJGORES ==================== -->
-<section class="rg-section rg-reverse rg-reveal ahrg">
-
-  <div class="rg-text">
-    <h2>Shala e Bajgorës</h2>
+    <!-- Teksti -->
+    <div class="col-12 col-lg-5 rg-text">
+      <h2>Shala e Bajgorës</h2>
     <p><strong>Position:</strong> Northern mountainous area</p>
     <p><strong>Population:</strong> Sparsely populated</p>
     <p>
@@ -142,21 +185,27 @@
       Shala e Bajgorës is ideal for eco-tourism, hiking, and cultural exploration.
     </p>
   </div>
-
-  <div class="rg-masonry">
-    <img src="files/Regions/shala.png">
-    <img src="files/Regions/sh2.jpg">
-    <img src="files/Regions/sh3.jpg">
+  
+    <!-- Galeria e imazheve -->
+    <div class="col-12 col-lg-7">
+      <div class="rg-masonry">
+        <img src="files/Regions/shala.png">
+        <img src="files/Regions/sh2.jpg">
+        <img src="files/Regions/sh3.jpg">
+      </div>
+    </div>
   </div>
-
 </section>
 
+<!-- ==================================================
+     REGION: DRENICA
+================================================== -->
+<section class="container rg-section">
+  <div class="row align-items-center">
 
-<!-- ==================== REGION: DRENICA ==================== -->
-<section class="rg-section rg-reveal ahrg" >
-
-  <div class="rg-text">
-    <h2>Drenica</h2>
+    <!-- Teksti -->
+    <div class="col-12 col-lg-5 rg-text">
+      <h2>Drenica</h2>
     <p><strong>Position:</strong> Central-west Kosovo</p>
     <p><strong>Population:</strong> Traditional rural communities</p>
     <p>
@@ -168,20 +217,28 @@
     </p>
   </div>
 
-  <div class="rg-masonry">
-    <img src="files/Regions/dr1.png">
-    <img src="files/Regions/dr2.jpg">
-    <img src="files/Regions/dr3.jpg">
+  
+    <!-- Galeria e imazheve -->
+    <div class="col-12 col-lg-7">
+      <div class="rg-masonry">
+        <img src="files/Regions/dr1.png">
+        <img src="files/Regions/dr2.jpg">
+        <img src="files/Regions/dr3.jpg">
+       </div>
+    </div>
   </div>
-
 </section>
 
 
-<!-- ==================== REGION: LLAPI ==================== -->
-<section class="rg-section rg-reverse rg-reveal ahrg " >
+<!-- ==================================================
+     REGION: LLAPI
+================================================== -->
+<section class="container rg-section">
+  <div class="row align-items-center">
 
-  <div class="rg-text" >
-    <h2>Llapi</h2>
+    <!-- Teksti -->
+    <div class="col-12 col-lg-5 rg-text">
+      <h2>Llapi</h2>
     <p><strong>Position:</strong> North-eastern Kosovo</p>
     <p><strong>Population:</strong> Mixed urban and rural</p>
     <p>
@@ -192,57 +249,79 @@
       The region combines natural beauty with cultural heritage and folklore.
     </p>
   </div>
-
-  <div class="rg-masonry">
-    <img src="files/Regions/ll1.svg">
-    <img src="files/Regions/ll2.jpg">
-    <img src="files/Regions/ll3.jpg">
+  
+    <!-- Galeria e imazheve -->
+    <div class="col-12 col-lg-7">
+      <div class="rg-masonry">
+        <img src="files/Regions/ll1.svg">
+        <img src="files/Regions/ll2.jpg">
+        <img src="files/Regions/ll3.jpg">
+      </div>
+    </div>
   </div>
-
 </section>
 
-<!-- ==================== FOOTER START ==================== -->
+
+
+<!-- ================= FOOTER ================= -->
+<!-- Footer-i përmban informacione për projektin dhe linke navigimi -->
 <footer class="ah-footer">
+  <div class="container">
+    <div class="row gy-5">
 
-  <div class="ah-footer-content">
+      <!-- Përshkrimi i projektit -->
+      <div class="col-12 col-md-4">
+        <h3>Kosovo Tour</h3>
+        <p>Embark on a journey through the heart of the Balkans. 
+        Our mission is to showcase Kosovo's authentic culture, 
+        breathtaking nature, and the legendary hospitality that defines our people.</p>
+      </div>
 
-    <div class="ah-footer-brand">
-      <h3>Kosovo Tour</h3>
-      <p>
-        Discover Kosovo’s beauty through nature, culture,
-        history, and unforgettable experiences.
-      </p>
+      <!-- Linke të shpejta navigimi -->
+      <div class="col-12 col-md-4 ah-footer-links">
+        <h4>Quick Links</h4>
+        <ul class="list-unstyled p-0">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="places.html">Places</a></li>
+          <li><a href="regions.html">Regions</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="statistic.html">Statistic</a></li>
+          <li><a href="traditions.html">Traditions</a></li>
+          <li><a href="traveltips.html">Travel Tips</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Informacion teknik për projektin -->
+      <div class="col-12 col-md-4">
+        <h4 class="ah-footer-title">Project Info</h4>
+        <ul class="list-unstyled ah-info-list">
+          <li><strong>Student:</strong> Agnesa Hyseni</li>
+          <li><strong>ID:</strong> AH-2025</li>
+          <li><strong>Tools:</strong> HTML5, CSS3, JS, Bootstrap 5</li>
+          <li><strong>Design:</strong> Multipage & Responsive</li>
+        </ul>
+      </div>
+
     </div>
 
-    <div class="ah-footer-links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="places.html">Places</a></li>
-        <li><a href="regions.html">Regions</a></li>
-        <li><a href="statistic.html">Statistic</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <!-- Pjesa e poshtme e footer-it -->
+    <div class="row">
+      <div class="col-12 ah-footer-bottom mt-5">
+        © 2025 Kosovo Tour | Agnesa Hyseni Project
+      </div>
     </div>
-
-    <div class="ah-footer-info">
-      <h4>Project Info</h4>
-      <p>Frontend Project</p>
-      <p>HTML • CSS • JavaScript</p>
-    </div>
-
   </div>
-
-  <div class="ah-footer-bottom">
-    <p>© 2025 Kosovo Tour | Agnesa Hyseni Project</p>
-  </div>
-
 </footer>
-<!-- ==================== FOOTER END ==================== -->
 
+<!-- ================= JAVASCRIPT ================= -->
+<!-- Bootstrap JS Bundle (përfshin edhe Popper për dropdown) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-
+<!-- JavaScript i personalizuar për funksione specifike të faqes -->
 <script src="js/script.js"></script>
+
 </body>
 </html>

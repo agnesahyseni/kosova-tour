@@ -1,12 +1,13 @@
+/* ==================== VARIABLAT DHE CONFIG ==================== */
 :root {
   --ah-primary-color: #004b8d;
   --ah-secondary-color: #6ec1ff;
   --ah-light-bg: #f4f6f8;
   --ah-dark-text: #333;
   --ah-white: #ffffff;
-
-  --ah-title-font: 'Segoe UI', sans-serif;
-  --ah-text-font: Arial, sans-serif;
+  --ah-title-font: 'Poppins', sans-serif;
+  --ah-text-font: 'Poppins', sans-serif;
+  --ah-transition: all 0.3s ease;
 }
 
 /* ==================== RESET ==================== */
@@ -14,13 +15,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--ah-text-font);
 }
 
-/* ==================== BODY OFFSET ==================== */
-body {
-  padding-top: 90px;
+/* ==================== BODY ==================== */
+#ah {
+  font-family: var(--ah-text-font);
+  overflow-x: hidden;
+  color: var(--ah-dark-text);
+  scroll-behavior: smooth; /* Lëvizje e lëmuar për butonat brenda faqes */
 }
+
 /* ==================== BACKGROUND VIDEO ==================== */
 .ah-bg-video {
   position: fixed;
@@ -30,153 +34,97 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  filter: brightness(0.6);
+  filter: brightness(0.5);
 }
 
 /* ==================== NAVBAR ==================== */
 .ah-navbar {
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 15px 0;
+  transition: var(--ah-transition);
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  padding: 20px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(12px);
-  z-index: 9999;
+  top: 0;
+  z-index: 1000;
 }
 
 .ah-logo {
-  color: var(--ah-white);
-  font-size: 26px;
-  font-weight: bold;
-  font-family: var(--ah-title-font);
+  color: var(--ah-white) !important;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-.ah-nav-links {
-  align-items: center;
-  list-style: none;
-  display: flex;
-  gap: 35px;
-}
-
-.ah-nav-links li {
-  position: relative;
-}
-
-.ah-nav-links a {
-  display:flex;
-  align-items: center;
-  line-height: 1;
-  color: var(--ah-white);
+.ah-nav-links .nav-link {
+  color: var(--ah-white) !important;
   font-size: 18px;
-  text-decoration: none;
-  padding: 8px 12px;
-  transition: color 0.3s;
+  margin: 0 10px;
+  transition: var(--ah-transition);
 }
 
-.ah-nav-links a:hover {
-  color: var(--ah-secondary-color);
+.ah-nav-links .nav-link:hover {
+  color: var(--ah-secondary-color) !important;
 }
 
 /* ==================== DROPDOWN ==================== */
 .ah-dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: rgba(0, 0, 0, 0.9);
-  min-width: 180px;
-  border-radius: 8px;
-  padding: 10px 0;
+  background: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(10px);
+  border: none;
 }
 
-.ah-dropdown-menu a {
-  padding: 10px 15px;
-  display: block;
-  font-size: 16px;
-  white-space: nowrap;
+.ah-dropdown-menu .dropdown-item {
+  color: var(--ah-white) !important;
+  padding: 10px 20px;
 }
 
-.ah-dropdown:hover .ah-dropdown-menu {
-  display: block;
+.ah-dropdown-menu .dropdown-item:hover {
+  background: var(--ah-primary-color);
 }
 
-/* ---------- INTRO ---------- */
+/* ==================== HAMBURGER ==================== */
+.custom-toggler.navbar-toggler {
+  border-color: var(--ah-white);
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+/* ==================== INTRO ==================== */
 .rg-intro {
-  max-width: 1200px;
-  margin: 20px auto 90px;
-  background-color: whitesmoke;
-  padding: 140px 20px 100px;
+  margin-top: 150px;
+  margin-bottom: 80px;
+  padding: 60px 40px;
+  background: rgba(255, 255, 255, 0.95);
   text-align: center;
+  border-radius: 1rem;
 }
 
-.rg-intro-box {
-  max-width: 900px;
-  margin: auto;
-  color: white;
-}
-
-.rg-intro h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-  color: rgb(12, 11, 11);
-}
-
-.rg-intro p {
-  font-size: 18px;
-  line-height: 1.7;
-  color: rgb(0, 0, 0);
-}
-
-/* ---------- PAGE WRAPPER ---------- */
-.rg-wrapper {
-  background: #f4f6f9;
-  padding: 80px 20px;
-}
-
-/* ---------- REGION SECTION ---------- */
+/* ==================== SECTIONS ==================== */
 .rg-section {
-  max-width: 1200px;
-  margin: 0 auto 90px;
-  padding: 60px;
-  background: white;
-  border-radius: 24px;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 50px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  background: var(--ah-white);
+  padding: 50px;
+  border-radius: 30px;
+  margin-bottom: 80px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
 }
 
-.rg-section.rg-reverse {
-  grid-template-columns: 1.2fr 1fr;
-}
-
-.rg-section.rg-reverse .rg-text {
-  order: 2;
-}
-
-/* ---------- TEXT ---------- */
 .rg-text h2 {
-  font-size: 34px;
-  margin-bottom: 15px;
-  color: #0a1f44;
+  color: var(--ah-primary-color);
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.rg-text p {
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 12px;
-  color: #333;
-}
-
-/* ---------- MASONRY ---------- */
+/* ==================== MASONRY GRID ==================== */
 .rg-masonry {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 140px;
+  grid-auto-rows: 150px;
   gap: 15px;
 }
 
@@ -184,70 +132,112 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+  transition: var(--ah-transition);
 }
 
-.rg-masonry img:nth-child(1) {
+/* imazhi i parë më i madh */
+.rg-masonry img:first-child {
   grid-row: span 2;
 }
 
-.rg-masonry img:nth-child(4) {
-  grid-column: span 2;
-}
-
-.rg-masonry img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-}
 /* ==================== FOOTER ==================== */
 .ah-footer {
   background: var(--ah-primary-color);
   color: var(--ah-white);
-  padding: 70px 40px 20px;
-}
-
-.ah-footer-content {
-  max-width: 1200px;
-  margin: 0 auto 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-}
-
-.ah-footer h3,
-.ah-footer h4 {
-  font-family: var(--ah-title-font);
-  margin-bottom: 15px;
-}
-
-.ah-footer p {
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.ah-footer-links ul {
-  list-style: none;
-}
-
-.ah-footer-links li {
-  margin-bottom: 10px;
+  padding: 80px 0 30px;
 }
 
 .ah-footer-links a {
-  color: var(--ah-white);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  transition: color 0.3s;
+  transition: var(--ah-transition);
 }
 
 .ah-footer-links a:hover {
   color: var(--ah-secondary-color);
+  padding-left: 5px;
 }
 
 .ah-footer-bottom {
   text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 30px;
+  margin-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 14px;
+  opacity: 0.8;
 }
 
+/* ==================== RESPONSIVE ==================== */
+
+/* ===== TABLET + MOBILE (< 992px) ===== */
+@media (max-width: 991.98px) {
+  .rg-section {
+    padding: 35px 30px;
+  }
+
+  .rg-text {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .flex-lg-row-reverse {
+    flex-direction: column !important;
+  }
+}
+
+/* ===== MOBILE (< 768px) ===== */
+@media (max-width: 767.98px) {
+  /* Korrigjuar: shtuar pika te .ah-bg-video */
+  .ah-bg-video {
+    display: block !important;
+    position: fixed; /* Fixed është më mirë se absolute për background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  #ah {
+    background: var(--ah-primary-color);
+  }
+
+  .rg-masonry {
+    grid-auto-rows: 120px;
+  }
+
+  .ah-navbar {
+    padding: 10px 0;
+  }
+}
+
+/* ===== MOBILE I VOGËL (< 576px - Përfshirë 438px) ===== */
+@media (max-width: 575.98px) {
+  .rg-masonry {
+    grid-template-columns: 1fr; /* 1 kolonë parandalon ngjeshjen anësore */
+    grid-auto-rows: auto;      /* Lartësia auto parandalon zoom-in e padëshiruar */
+    gap: 20px;
+  }
+
+  .rg-masonry img {
+    height: 250px; /* Lartësi fikse por e bollshme për mobile */
+    object-fit: cover;
+  }
+
+  .rg-masonry img:first-child {
+    grid-row: span 1; /* Kthehet në normale në mobile */
+  }
+
+  .rg-intro {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding: 40px 20px;
+  }
+
+  .ah-nav-links .nav-link {
+    font-size: 15px;
+    margin: 4px 0;
+  }
+}

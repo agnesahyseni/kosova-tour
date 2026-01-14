@@ -1,54 +1,34 @@
-// ==================== NAVBAR DROPDOWN ====================
-const dropdown = document.querySelector('.ah-dropdown');
-if (dropdown) {
-  const toggleBtn = dropdown.querySelector('.ah-dropdown-toggle'); // butoni që hap dropdown
-  const dropdownMenu = dropdown.querySelector('.ah-dropdown-menu');
+document.addEventListener('DOMContentLoaded', () => {
 
-  if (toggleBtn && dropdownMenu) {
-    toggleBtn.addEventListener('click', (e) => {
-      e.preventDefault(); // vetëm për butonin
-      dropdownMenu.classList.toggle('ah-show');
-    });
-
-    // Klik jashtë dropdown për ta mbyllur
-    window.addEventListener('click', (e) => {
-      if (!dropdown.contains(e.target)) {
-        dropdownMenu.classList.remove('ah-show');
-      }
-    });
-  }
-}
-
-// ==================== EXPLORE MORE BUTTON ====================
-const exploreBtn = document.getElementById('ahExploreBtn');
-if (exploreBtn) {
-  exploreBtn.addEventListener('click', () => {
-    window.location.href = 'places.html'; // vendos faqen që dëshiron
-  });
-}
-
-// ==================== FORM SUBMISSION (CONTACT.HTML) ====================
-const form = document.getElementById('ah-contact-form');
-const successAlert = document.getElementById('ah-success-alert');
-
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const name = form.querySelector('input[type="text"]').value.trim();
-    const email = form.querySelector('input[type="email"]').value.trim();
-    const message = form.querySelector('textarea').value.trim();
-
-    if (name && email && message) {
-      successAlert.classList.remove('d-none');
-
-      setTimeout(() => {
-        successAlert.classList.add('d-none');
-        form.reset();
-      }, 3000);
-    } else {
-      alert('Please fill in all fields.');
+    // 1. BUTONI EXPLORE (SMOOTH SCROLL)
+    // Ky kod bën që kur klikon butonin, faqja të rrëshqasë lëshueshëm poshtë
+    const exploreBtn = document.getElementById('ahExploreBtn');
+    
+    if (exploreBtn) {
+        exploreBtn.addEventListener('click', () => {
+            const nextSection = document.querySelector('.ah-why-section');
+            if (nextSection) {
+                window.scrollTo({
+                    top: nextSection.offsetTop - 80, // -80px që mos të mbulohet titulli nga navbari
+                    behavior: 'smooth'
+                });
+            }
+        });
     }
-  });
-}
+
+    // 2. NAVBAR SCROLL EFFECT
+    // Ky kod shton një sfond më të errët navbar-it kur fillon me bo scroll
+    const navbar = document.querySelector('.ah-navbar');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(0, 0, 0, 0.9)'; // Bëhet më e errët
+            navbar.style.padding = '10px 0'; // Ngushtohet pak
+        } else {
+            navbar.style.background = 'rgba(0, 0, 0, 0.35)'; // Kthehet siç ishte
+            navbar.style.padding = '15px 0';
+        }
+    });
+
+});
 

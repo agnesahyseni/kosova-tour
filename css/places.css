@@ -1,21 +1,28 @@
+/* ==================== VARIABLAT DHE CONFIG ==================== */
+/* Variabla CSS për ngjyra dhe fonte, lehtësojnë mirëmbajtjen dhe ndryshimet globale */
 :root {
-  --ah-primary-color: #004b8d;
-  --ah-secondary-color: #6ec1ff;
-  --ah-light-bg: #f4f6f8;
-  --ah-dark-text: #333;
-  --ah-white: #ffffff;
-
-  --ah-title-font: 'Segoe UI', sans-serif;
-  --ah-text-font: Arial, sans-serif;
+  --ah-primary-color: #004b8d;          /* Ngjyra kryesore e markës / temës */
+  --ah-secondary-color: #6ec1ff;        /* Ngjyra dytësore (hover, aksente) */
+  --ah-light-bg: #f4f6f8;               /* Ngjyra e sfondit të lehtë për seksione */
+  --ah-dark-text: #333;                  /* Ngjyra tekst standarde */
+  --ah-white: #ffffff;                   /* Ngjyra e bardhë për tekst dhe butona */
+  --ah-title-font: 'Poppins', sans-serif; /* Fonti i titujve */
+  --ah-text-font: 'Poppins', sans-serif;  /* Fonti i paragrafëve */
 }
 
-/* ==================== RESET ==================== */
+/* Reset bazik i marginave, padding dhe box-sizing për të gjithë elementët */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--ah-text-font);
 }
+
+/* Stil bazik për body */
+body {
+  font-family: var(--ah-text-font);
+  overflow-x: hidden; /* Parandalon scroll horizontal të panevojshëm */
+}
+
 /* ==================== BACKGROUND VIDEO ==================== */
 .ah-bg-video {
   position: fixed;
@@ -25,384 +32,341 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  filter: brightness(0.6);
+  filter: brightness(0.5);
 }
 
-/* ==================== NAVBAR ==================== */
+/* ==================== NAVBAR (BOOTSTRAP COMPATIBLE) ==================== */
 .ah-navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(12px);
-  z-index: 9999;
+  background: rgba(0, 0, 0, 0.4) !important; /* Navbar transparent me blur */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px); /* Mbështetje Safari */
+  padding: 15px 0;
+  transition: all 0.3s ease; /* Efekte të qeta gjatë scroll apo hover */
 }
 
 .ah-logo {
-  color: var(--ah-white);
-  font-size: 26px;
-  font-weight: bold;
-  font-family: var(--ah-title-font);
+  color: var(--ah-white) !important;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px; /* Hapsirë mes shkronjave */
 }
 
-.ah-nav-links {
-  align-items: center;
-  list-style: none;
-  display: flex;
-  gap: 35px;
-}
-
-.ah-nav-links li {
-  position: relative;
-}
-
-.ah-nav-links a {
-  display:flex;
-  align-items: center;
-  line-height: 1;
-  color: var(--ah-white);
+/* Linket e navbar */
+.ah-nav-links .nav-link {
+  color: var(--ah-white) !important;
   font-size: 18px;
-  text-decoration: none;
-  padding: 8px 12px;
-  transition: color 0.3s;
+  margin: 0 10px;
+  transition: 0.3s;
 }
 
-.ah-nav-links a:hover {
-  color: var(--ah-secondary-color);
+.ah-nav-links .nav-link:hover {
+  color: var(--ah-secondary-color) !important; /* Ngjyra hover */
 }
 
-/* ==================== DROPDOWN ==================== */
+/* Dropdown hover për desktop */
+.dropdown:hover .ah-dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+/* Stili i dropdown-it */
 .ah-dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: rgba(0, 0, 0, 0.9);
-  min-width: 180px;
-  border-radius: 8px;
-  padding: 10px 0;
-}
-
-.ah-dropdown-menu a {
-  padding: 10px 15px;
-  display: block;
-  font-size: 16px;
-  white-space: nowrap;
-}
-
-.ah-dropdown:hover .ah-dropdown-menu {
-  display: block;
-}
-
-/* ==================== PLACES HERO ==================== */
-.ah-places-hero {
-  max-width: 1000px;
-  margin: 140px auto 250px;
-  padding: 50px;
-  text-align: center;
-  background: rgba(255,255,255,0.15);
+  background: rgba(0, 0, 0, 0.85) !important;
   backdrop-filter: blur(10px);
-  border-radius: 20px;
+  border: none;
+  display: none; /* Fshihet default */
+}
+
+.ah-dropdown-menu .dropdown-item {
+  color: white !important;
+  padding: 10px 20px;
+}
+
+.ah-dropdown-menu .dropdown-item:hover {
+  background: var(--ah-primary-color); /* Ngjyra hover e dropdown */
+}
+
+/* Hamburger custom */
+.custom-toggler.navbar-toggler { 
+  border-color: white; 
+}
+
+.custom-toggler .navbar-toggler-icon { 
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
+}
+
+/* ==================== HERO SECTION ==================== */
+.ah-hero-wrapper {
+  padding: 200px 0 100px;
+}
+
+.ah-places-hero {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 60px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
+  text-align: center;
 }
 
 .ah-places-hero h1 {
-  font-size: 48px;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 600;
   margin-bottom: 20px;
 }
 
-.ah-places-hero p {
-  font-size: 18px;
-  line-height: 1.7;
-}
-
-/* ==================== PLACES GRID ==================== */
+/* ==================== PLACES SECTION ==================== */
 .ah-places-section {
   background: var(--ah-light-bg);
-  padding: 80px 5px;
+  padding: 80px 0;
 }
 
-.ah-places-list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(250px,1fr));
-  gap: 50px;
-  max-width: 90%;
-  margin: 0 auto;
-}
-
-/* ==================== PLACE CARD ==================== */
 .ah-place-item {
-  display: flex;
   background: white;
-  height: 250px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: 0.4s ease;
+  height: 100%; /* Siguron që të gjitha kartat të kenë lartësi të barabartë */
+  display: flex;
+  flex-direction: column;
 }
 
 .ah-place-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .ah-place-item img {
-  width: 50%;
-  height: 100%;
+  width: 100%;
+  height: 250px;
   object-fit: cover;
 }
 
 .ah-place-content {
-  padding: 30px 20px;
+  padding: 25px;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
 
 .ah-place-content h3 {
-  font-size: 25px;
   color: var(--ah-primary-color);
-  margin-bottom: 8px;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
 .ah-place-content p {
-  font-size: 15px;
-  color: var(--ah-dark-text);
-  line-height: 1.5;
-  flex: 1;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+  flex-grow: 1;
 }
 
-.ah-place-arrow {
-  align-self: flex-end;
-  width: 40px;
-  height: 40px;
+/* Button style */
+.ah-btn-more {
   background: var(--ah-primary-color);
   color: white;
-  font-size: 22px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 40px;
-  text-decoration: none;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 500;
   transition: 0.3s;
+  align-self: flex-start;
 }
 
-.ah-place-arrow:hover {
-  background: #007bff;
-  transform: translateX(5px);
+.ah-btn-more:hover {
+  background: var(--ah-secondary-color);
+  transform: scale(1.05);
 }
-/* ==================== PRISHTINA ====================== */
-/* HERO */
-.pr-hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  background: linear-gradient(120deg, #0a1f44, #0a1f44);
+
+/* ==================== MODAL STYLING ==================== */
+.ah-modal-style {
+  border-radius: 25px !important;
+  border: none !important;
   overflow: hidden;
 }
 
-.pr-hero-left {
-  padding: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.ah-modal-style .modal-header {
+  background: var(--ah-primary-color);
   color: white;
-  z-index: 2;
+  border-bottom: none;
 }
 
-.pr-hero-left h1 {
-  font-size: 90px;
-  letter-spacing: 5px;
+.ah-modal-style .modal-body {
+  padding: 30px;
+  background: #fff;
 }
 
-.pr-hero-left p {
+.ah-modal-list {
+  list-style: none;
+  padding: 0;
   margin-top: 20px;
-  font-size: 20px;
-  max-width: 420px;
 }
 
-.pr-hero-right {
+.ah-modal-list li {
+  margin-bottom: 12px;
+  padding-left: 30px;
   position: relative;
+  font-size: 15px;
 }
 
-.pr-hero-right img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.pr-hero-fade {
+.ah-modal-list li::before {
+  content: '📍';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to left,
-    rgba(10,31,68,0) 30%,
-    rgba(10,31,68,0.4) 55%,
-    rgba(10,31,68,0.85) 75%,
-    rgba(10,31,68,1) 100%
-  );
-}
-
-/* STORY */
-.pr-story {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  padding: 120px;
-  background: #f5f7fa;
-}
-
-.pr-story-text h2 {
-  font-size: 40px;
-  margin-bottom: 25px;
-  color: #0a1f44;
-}
-
-.pr-story-text p {
-  font-size: 18px;
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-.pr-story-image img {
-  width: 100%;
-  border-radius: 20px;
-}
-
-/* LANDMARKS */
-.pr-landmarks {
-  padding: 120px;
-  background: white;
-}
-
-.pr-landmarks h2 {
-  font-size: 42px;
-  margin-bottom: 60px;
-  color: #0a1f44;
-}
-
-.pr-landmark-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-  gap: 40px;
-}
-
-.pr-landmark-card {
-  background: #f8f9fb;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-  transition: transform 0.3s ease;
-}
-
-.pr-landmark-card:hover {
-  transform: translateY(-10px);
-}
-
-.pr-landmark-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-.pr-landmark-card h3 {
-  font-size: 22px;
-  margin: 20px;
-  color: #0a1f44;
-}
-
-.pr-landmark-card p {
-  margin: 0 20px 25px;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-/* GALLERY */
-/* ==================== PR GALLERY (FIXED) ==================== */
-.pr-gallery {
-  padding: 120px;
-  background: #0a1f44;
-  color: white;
-}
-
-.pr-gallery h2 {
-  font-size: 42px;
-  margin-bottom: 50px;
-}
-
-.pr-gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.pr-gallery-item {
-  height: 260px;
-  border-radius: 16px;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.pr-gallery-item:hover {
-  transform: scale(1.04);
-  opacity: 0.9;
+  left: 0;
+  color: var(--ah-primary-color);
 }
 
 /* ==================== FOOTER ==================== */
 .ah-footer {
   background: var(--ah-primary-color);
   color: var(--ah-white);
-  padding: 70px 40px 20px;
+  padding: 80px 0 30px;
 }
 
-.ah-footer-content {
-  max-width: 1200px;
-  margin: 0 auto 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+.ah-footer h3, .ah-footer h4 {
+  font-weight: 600;
+  margin-bottom: 25px;
 }
 
-.ah-footer h3,
-.ah-footer h4 {
-  font-family: var(--ah-title-font);
-  margin-bottom: 15px;
-}
-
-.ah-footer p {
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.ah-footer-links ul {
-  list-style: none;
-}
-
-.ah-footer-links li {
-  margin-bottom: 10px;
+.ah-footer-links ul li {
+  margin-bottom: 12px;
 }
 
 .ah-footer-links a {
-  color: var(--ah-white);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  transition: color 0.3s;
+  transition: 0.3s;
 }
 
 .ah-footer-links a:hover {
   color: var(--ah-secondary-color);
+  padding-left: 5px;
+}
+
+.ah-info-list li {
+  margin-bottom: 10px;
+  font-size: 15px;
 }
 
 .ah-footer-bottom {
   text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 30px;
+  margin-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 14px;
+  opacity: 0.8;
+}
+/* ==================== RESPONSIVE (BOOTSTRAP SAFE) ==================== */
+
+/* ===== DESKTOP (≥ 992px) ===== */
+@media (min-width: 992px) {
+  /* Hero Section */
+  .ah-places-hero {
+    padding: 80px 60px; /* Hero më i madh në desktop */
+  }
+
+  /* Dropdown / Navbar: hapet me hover vetëm në desktop */
+  .dropdown:hover .ah-dropdown-menu {
+    display: block;
+  }
 }
 
+/* ===== TABLET + MOBILE (< 992px) ===== */
+@media (max-width: 991.98px) {
+  /* Hero Section - pak më kompakt */
+  .ah-places-hero {
+    padding: 60px 30px;
+  }
 
+  /* Navbar për touch devices */
+  .dropdown:hover .ah-dropdown-menu {
+    display: none; /* hiq hover në tablet/mobile */
+  }
+
+  .dropdown.show .ah-dropdown-menu {
+    display: block; /* hapet me click */
+  }
+
+  /* Navbar collapse styling */
+  .navbar-collapse {
+    background: rgba(0, 0, 0, 0.95);
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+  }
+
+  /* Nav links mobile */
+  .ah-nav-links .nav-link {
+    margin: 0;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* Places cards - dy kolona për tablet */
+  .ah-places-section .col-md-6 {
+    margin-bottom: 20px;
+  }
+}
+
+/* ===== MOBILE (< 768px) ===== */
+@media (max-width: 767.98px) {
+  /* Hero Section më i vogël */
+  .ah-places-hero {
+    padding: 50px 20px;
+  }
+
+  .ah-places-hero h1 {
+    font-size: 2rem;
+  }
+
+  /* Cards - një kolonë për mobile */
+  .ah-places-section .col-12 {
+    margin-bottom: 20px;
+  }
+
+  /* Dropdown si listë nën menu */
+  .ah-dropdown-menu {
+    position: static;
+    background: transparent !important;
+    backdrop-filter: none;
+    padding-left: 20px;
+  }
+
+  /* Modal dhe kartela më kompakte */
+  .ah-place-item img {
+    height: 200px;
+  }
+
+  .ah-place-content p {
+    font-size: 13px;
+  }
+}
+
+/* ===== MOBILE I VOGËL (< 576px) ===== */
+@media (max-width: 575.98px) {
+  /* Hero Section më kompakt */
+  .ah-places-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  /* Butonët mbulojnë 100% gjerësinë */
+  .ah-btn-more {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* Performancë më e mirë: hiq blur për navbar në mobile të vogël */
+  .ah-navbar {
+    backdrop-filter: none;
+  }
+
+  /* Kartat: imazhe pak më të vogla */
+  .ah-place-item img {
+    height: 180px;
+  }
+}
 

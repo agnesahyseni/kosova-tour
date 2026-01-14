@@ -1,124 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ================= KONFIGURIMI BAZË ================= -->
+  <!-- Përcaktimi i kodimit të karaktereve -->
   <meta charset="UTF-8">
+
+  <!-- Titulli i faqes që shfaqet në tab të browser-it -->
   <title>Kosovo Tour</title>
+
+  <!-- Meta tag për responsivitet në pajisje mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ================= FONTI GOOGLE ================= -->
+  <!-- Fonti Poppins përdoret për një dizajn modern dhe të pastër -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- ================= BOOTSTRAP CSS ================= -->
+  <!-- Framework Bootstrap për grid system dhe komponente responsive -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ================= CSS I PERSONALIZUAR ================= -->
+  <!-- Fajlli kryesor i stilizimit të projektit -->
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body id="ah">
 
-<!-- ==================== BACKGROUND VIDEO ==================== -->
-<video autoplay muted loop class="ah-bg-video">
+<!-- ================= VIDEO NË SFOND ================= -->
+<!-- Video që shfaqet në sfond dhe mbulon tërë ekranin -->
+<!-- Autoplay, muted dhe loop sigurojnë përvojë më të mirë për përdoruesin -->
+<video autoplay muted loop playsinline class="ah-bg-video">
   <source src="video/kosovo.mp4" type="video/mp4">
 </video>
 
-<!-- ==================== NAVBAR ==================== -->
-<nav class="ah-navbar">
-  <div class="ah-logo">Kosovo Tour</div>
-  <ul class="ah-nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="places.html">Places</a></li>
-    <li><a href="regions.html">Regions</a></li>
-    <li><a href="statistic.html">Statistic</a></li>
-    <li class="ah-dropdown">
-      <a href="#">More ▾</a>
-      <ul class="ah-dropdown-menu">
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+<!-- ================= NAVBAR ================= -->
+<!-- Navbar fikse dhe responsive e ndërtuar me Bootstrap -->
+<!-- Kalon automatikisht në menu hamburger në tablet dhe mobile -->
+<nav class="navbar navbar-expand-lg ah-navbar">
+  <div class="container-fluid px-lg-5">
+
+    <!-- Logo / Emri i faqes -->
+    <a class="navbar-brand ah-logo" href="index.html">Kosovo Tour</a>
+    
+    <!-- Butoni hamburger për pajisje mobile -->
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ahNavbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Linket e navigimit -->
+    <div class="collapse navbar-collapse" id="ahNavbarNav">
+      <ul class="navbar-nav ms-auto ah-nav-links">
+        <!-- Linke kryesore -->
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="places.html">Places</a></li>
+        <li class="nav-item"><a class="nav-link" href="regions.html">Regions</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+        <!-- Dropdown menu për linke shtesë -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="ahDrop" role="button" data-bs-toggle="dropdown">
+            More
+          </a>
+          <ul class="dropdown-menu ah-dropdown-menu">
+            <!-- Linke të brendshme të dropdown -->
+            <li><a class="dropdown-item" href="statistic.html">Statistic</a></li>
+            <li><a class="dropdown-item" href="traditions.html">Traditions</a></li>
+            <li><a class="dropdown-item" href="traveltips.html">Travel Tips</a></li>
+            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+          </ul>
+        </li>
       </ul>
-    </li>
-  </ul>
+    </div>
+
+  </div>
 </nav>
 
+<!-- ================= HERO SECTION ================= -->
+<!-- Seksioni kryesor hyrës i faqes -->
+<!-- I pozicionuar në qendër të ekranit si horizontalisht ashtu edhe vertikalisht -->
+<section class="ah-hero-wrapper">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-11 col-lg-10">
 
-<!-- ==================== HERO ==================== -->
-<section class="ah-hero">
-  <h1>Kosovo Tour</h1>
-  <p>
-    Discover the beauty of Kosovo — a country rich in history, culture,
-    and natural landscapes. This website highlights the best places to visit
-    and the experiences tourists can enjoy, from vibrant cities and historic
-    sites to mountains, traditions, and local cuisine.
-  </p>
- <button id="ahExploreBtn" class="ah-btn">Explore More</button>
+        <!-- Përmbajtja kryesore e hero section -->
+        <div class="ah-hero">
+          <h1>Kosovo Tour</h1>
+          <p>
+            Discover the beauty of Kosovo — a country rich in history, culture,
+            and natural landscapes. This website highlights the best places to visit
+            and the experiences tourists can enjoy.
+          </p>
+
+          <!-- Buton thirrës për veprim -->
+          <button id="ahExploreBtn" class="ah-btn">Explore More</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- ==================== WHY VISIT ==================== -->
+<!-- ================= WHY VISIT SECTION ================= -->
+<!-- Seksion informativ që prezanton arsyet pse duhet vizituar Kosova -->
+<!-- Përdorimi i Bootstrap grid siguron layout responsive -->
 <section class="ah-why-section">
-  <h2 class="ah-why-title">The Wonders of Kosovo</h2>
+  <div class="container">
+    <h2 class="ah-why-title">The Wonders of Kosovo</h2>
 
-  <div class="ah-why-cards">
-    <div class="ah-why-card">
-      <img src="img/natureindex.jpeg">
-      <h3>Nature</h3>
-      <p>Kosovo’s nature offers peaceful landscapes where mountains, rivers, and open skies create a deep sense of harmony.</p>
-    </div>
+    <div class="row g-4">
 
-    <div class="ah-why-card">
-      <img src="img/cultureindex.jpeg">
-      <h3>Culture & History</h3>
-      <p>Culture and history in Kosovo reflect centuries of identity, faith, and traditions preserved through generations.</p>
-    </div>
+      <!-- Kartela 1: Natyra -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-why-card h-100">
+          <img src="img/natureindex.jpeg" alt="Nature of Kosovo">
+          <h3>Nature</h3>
+          <p>Kosovo’s nature offers peaceful landscapes where mountains, rivers, and open skies create harmony.</p>
+        </div>
+      </div>
 
-    <div class="ah-why-card">
-      <img src="img/foodindex.JPG">
-      <h3>Food & Traditions</h3>
-      <p>Traditional food and customs express warmth, care, and the strong connection between people and their heritage.</p>
-    </div>
+      <!-- Kartela 2: Kulturë dhe Histori -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-why-card h-100">
+          <img src="img/cultureindex.jpeg" alt="Culture and History">
+          <h3>Culture & History</h3>
+          <p>Culture and history in Kosovo reflect centuries of identity, faith, and traditions.</p>
+        </div>
+      </div>
 
-    <div class="ah-why-card">
-      <img src="img/historicindex.jpg">
-      <h3>Historic Cities</h3>
-      <p>Historic cities reveal layers of architecture, daily life, and stories shaped by time.</p>
-    </div>
+      <!-- Kartela 3: Ushqim dhe Tradita -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-why-card h-100">
+          <img src="img/foodindex.JPG" alt="Food & Traditions">
+          <h3>Food & Traditions</h3>
+          <p>Traditional food and customs express warmth, care, and the strong connection to heritage.</p>
+        </div>
+      </div>
 
-    <div class="ah-why-card">
-      <img src="img/adventureindex.webp">
-      <h3>Adventure</h3>
-      <p>Kosovo’s landscapes provide space for adventure, reflection, and a close connection with nature.</p>
-    </div>
+      <!-- Kartela 4: Qytete Historike -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-why-card h-100">
+          <img src="img/historicindex.jpg" alt="Historic Cities">
+          <h3>Historic Cities</h3>
+          <p>Historic cities reveal layers of architecture, daily life, and stories shaped by time.</p>
+        </div>
+      </div>
 
-    <div class="ah-why-card">
-      <img src="img/welcomingindex.jpg">
-      <h3>Welcoming Culture</h3>
-      <p>A culture rooted in kindness and respect, where visitors are welcomed sincerely and treated as part of everyday life.</p>
+      <!-- Kartela 5: Aventurë -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-why-card h-100">
+          <img src="img/adventureindex.webp" alt="Adventure">
+          <h3>Adventure</h3>
+          <p>Kosovo’s landscapes provide space for adventure, reflection, and connection with nature.</p>
+        </div>
+      </div>
+
+      <!-- Kartela 6: Kulturë Mikpritëse -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-why-card h-100">
+          <img src="img/welcomingindex.jpg" alt="Welcoming Culture">
+          <h3>Welcoming Culture</h3>
+          <p>A culture rooted in kindness and respect, where visitors are treated as part of everyday life.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ==================== FOOTER ==================== -->
+<!-- ================= FOOTER ================= -->
+<!-- Footer-i përmban informacione për projektin dhe linke navigimi -->
 <footer class="ah-footer">
-  <div class="ah-footer-content">
-    <div>
-      <h3>Kosovo Tour</h3>
-      <p>Discover Kosovo’s beauty through nature and culture.</p>
+  <div class="container">
+    <div class="row gy-5">
+
+      <!-- Përshkrimi i projektit -->
+      <div class="col-12 col-md-4">
+        <h3>Kosovo Tour</h3>
+        <p>Embark on a journey through the heart of the Balkans. 
+        Our mission is to showcase Kosovo's authentic culture, 
+        breathtaking nature, and the legendary hospitality that defines our people.</p>
+      </div>
+
+      <!-- Linke të shpejta navigimi -->
+      <div class="col-12 col-md-4 ah-footer-links">
+        <h4>Quick Links</h4>
+        <ul class="list-unstyled p-0">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="places.html">Places</a></li>
+          <li><a href="regions.html">Regions</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="statistic.html">Statistic</a></li>
+          <li><a href="traditions.html">Traditions</a></li>
+          <li><a href="traveltips.html">Travel Tips</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Informacion teknik për projektin -->
+      <div class="col-12 col-md-4">
+        <h4 class="ah-footer-title">Project Info</h4>
+        <ul class="list-unstyled ah-info-list">
+          <li><strong>Student:</strong> Agnesa Hyseni</li>
+          <li><strong>ID:</strong> AH-2025</li>
+          <li><strong>Tools:</strong> HTML5, CSS3, JS, Bootstrap 5</li>
+          <li><strong>Design:</strong> Multipage & Responsive</li>
+        </ul>
+      </div>
+
     </div>
 
-    <div class="ah-footer-links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="places.html">Places</a></li>
-        <li><a href="regions.html">Regions</a></li>
-        <li><a href="statistic.html">Statistic</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <!-- Pjesa e poshtme e footer-it -->
+    <div class="row">
+      <div class="col-12 ah-footer-bottom mt-5">
+        © 2025 Kosovo Tour | Agnesa Hyseni Project
+      </div>
     </div>
-
-    <div>
-      <h4>Project Info</h4>
-      <p>Frontend Project</p>
-      <p>HTML • CSS • JS</p>
-    </div>
-  </div>
-
-  <div class="ah-footer-bottom">
-    © 2025 Kosovo Tour | Agnesa Hyseni Project
   </div>
 </footer>
 
+<!-- ================= JAVASCRIPT ================= -->
+<!-- Bootstrap JS Bundle (përfshin edhe Popper për dropdown) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript i personalizuar për funksione specifike të faqes -->
 <script src="js/script.js"></script>
+
 </body>
 </html>
