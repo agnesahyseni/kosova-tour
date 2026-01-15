@@ -1,160 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- =========================================================
+       META & KONFIGURIMI BAZË I FAQES
+       Ky seksion përfshin charset, viewport dhe titullin e faqes
+  ========================================================= -->
+
+  <!-- Charset për mbështetje të plotë të karaktereve -->
   <meta charset="UTF-8">
-  <title>Statistic</title>
+
+  <!-- Responsive design për mobile, tablet dhe desktop -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Titulli i faqes që shfaqet në browser -->
+  <title>Kosova Tour - Eksploro</title>
+
+  <!-- =========================================================
+       IMPORTIMI I STILEVE TË JASHTME
+       1. Bootstrap 5 për grid system, navbar dhe utilities
+       2. CSS i personalizuar për seksionin Statistic
+  ========================================================= -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/statistic.css">
-  
 </head>
-<body id="ah">
 
+<body class="ah">
+<!-- =========================================================
+     NAVBAR – MENU KRYESORE
+     Navbar fikse, responsive dhe me dropdown
+========================================================= -->
+<nav class="navbar navbar-expand-lg ah-navbar">
+  <div class="container-fluid px-lg-5">
 
-    <!-- ==================== NAVBAR ==================== -->
-   <nav class="ah-navbar">
-  <div class="ah-logo">Kosovo Tour</div>
-  <ul class="ah-nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="places.html">Places</a></li>
-    <li><a href="regions.html">Regions</a></li>
-    <li><a href="statistic.html">Statistic</a></li>
-    <li class="ah-dropdown">
-      <a href="#">More ▾</a>
-      <ul class="ah-dropdown-menu">
-        <li><a href="about.html">About </a></li>
-        <li><a href="contact.html">Contact</a></li>
+    <!-- Logo / Emri i projektit që kthehet në faqen kryesore -->
+    <a class="navbar-brand ah-logo" href="index.html">Kosovo Tour</a>
+
+    <!-- Butoni hamburger për mobile (collapse navbar) -->
+    <button class="navbar-toggler custom-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#ahNavbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Linket e navigimit kryesor -->
+    <div class="collapse navbar-collapse" id="ahNavbarNav">
+      <ul class="navbar-nav ms-auto ah-nav-links">
+
+        <!-- Linket kryesore të faqes -->
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="places.html">Places</a></li>
+        <li class="nav-item"><a class="nav-link" href="regions.html">Regions</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+        <!-- Dropdown për faqe shtesë -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#"
+             id="ahDrop" role="button"
+             data-bs-toggle="dropdown">
+            More
+          </a>
+
+          <!-- Përmbajtja e dropdown -->
+          <ul class="dropdown-menu ah-dropdown-menu">
+            <li><a class="dropdown-item" href="statistic.html">Statistic</a></li>
+            <li><a class="dropdown-item" href="traditions.html">Traditions</a></li>
+            <li><a class="dropdown-item" href="traveltips.html">Travel Tips</a></li>
+            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+          </ul>
+        </li>
+
       </ul>
-    </li>
-  </ul>
+    </div>
+  </div>
 </nav>
-    <!-- ==================== HERO VIDEO ==================== -->
-    <header class="ah-hero">
-    <div class="ah-hero-overlay">
-        <div class="ah-hero-content">
-            <h1>Kosovo at a Glance</h1>
-            <p>Explore the latest data on Kosovo’s population, economy, and tourism. Discover key insights about urban and rural demographics, employment trends, average salaries, and the most popular destinations for visitors — all in one place for a comprehensive overview of the country.</p>
+
+<!-- =========================================================
+     SECTION 1 – MAIN STATISTICS
+     Përmban titullin, cards dhe tabela kryesore
+========================================================= -->
+<section class="ah-stats-section py-5 bg-light">
+    <div class="container">
+
+        <!-- Row i titullit dhe përshkrimit -->
+        <div class="row mb-5 text-center">
+            <div class="col-12">
+                <h2 class="ah-main-title fw-bold text-uppercase">Kosovo Vital Statistics</h2>
+                <p class="ah-subtitle text-muted">A comprehensive overview of economic and demographic indicators</p>
+                <div class="ah-title-line mx-auto"></div> <!-- Linja vizuale nën titull -->
+            </div>
+        </div>
+
+        <!-- Row me cards kryesore të statistikave -->
+        <div class="row g-4 mb-5">
+            <!-- Card 1: GDP Growth -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="ah-stat-card p-4 text-center shadow-sm h-100 bg-white border-0">
+                    <div class="ah-icon-box mb-3">📈</div> <!-- Ikona -->
+                    <h3 class="ah-stat-number fw-bold mb-1">3.8%</h3>
+                    <p class="ah-stat-label text-muted mb-0">GDP Growth (2024)</p>
+                </div>
+            </div>
+            <!-- Card 2: Total Population -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="ah-stat-card p-4 text-center shadow-sm h-100 bg-white border-0">
+                    <div class="ah-icon-box mb-3">👥</div>
+                    <h3 class="ah-stat-number fw-bold mb-1">1.8M</h3>
+                    <p class="ah-stat-label text-muted mb-0">Total Population</p>
+                </div>
+            </div>
+            <!-- Card 3: Unemployment Rate -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="ah-stat-card p-4 text-center shadow-sm h-100 bg-white border-0">
+                    <div class="ah-icon-box mb-3">💼</div>
+                    <h3 class="ah-stat-number fw-bold mb-1">12.6%</h3>
+                    <p class="ah-stat-label text-muted mb-0">Unemployment Rate</p>
+                </div>
+            </div>
+            <!-- Card 4: EU Integration Support -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="ah-stat-card p-4 text-center shadow-sm h-100 bg-white border-0">
+                    <div class="ah-icon-box mb-3">🇪🇺</div>
+                    <h3 class="ah-stat-number fw-bold mb-1">95%</h3>
+                    <p class="ah-stat-label text-muted mb-0">EU Integration Support</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row me tabela kryesore të statistikave ekonomike -->
+        <div class="row">
+            <div class="col-12">
+                <div class="ah-table-container shadow-sm bg-white p-4 rounded">
+                    <h4 class="ah-table-title mb-4 border-start border-4 border-primary ps-3">Year-over-Year Economic Comparison</h4>
+                    <div class="table-responsive">
+                        <table class="table table-hover ah-custom-table align-middle">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col" class="ah-th">Indicator</th>
+                                    <th scope="col" class="ah-th">2022 Actual</th>
+                                    <th scope="col" class="ah-th">2023 Actual</th>
+                                    <th scope="col" class="ah-th">2024 Forecast</th>
+                                    <th scope="col" class="ah-th">Trend</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-bold">GDP per Capita</td>
+                                    <td>€5,100</td>
+                                    <td>€5,450</td>
+                                    <td>€5,900</td>
+                                    <td><span class="badge bg-success">Upward</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Export of Services</td>
+                                    <td>€1.2B</td>
+                                    <td>€1.4B</td>
+                                    <td>€1.7B</td>
+                                    <td><span class="badge bg-success">Strong</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Inflation Rate (CPI)</td>
+                                    <td>11.6%</td>
+                                    <td>4.9%</td>
+                                    <td>3.2%</td>
+                                    <td><span class="badge bg-info">Stabilizing</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Foreign Direct Investment</td>
+                                    <td>€750M</td>
+                                    <td>€810M</td>
+                                    <td>€950M</td>
+                                    <td><span class="badge bg-success">Growing</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</header>
+</section>
 
+<!-- =========================================================
+     SECTION 2 – TOURISM & CULTURAL GROWTH
+     Përmban progress bars, listë dhe informacion të detajuar
+========================================================= -->
+<section class="ah-detailed-stats py-5">
+    <div class="container">
+        <div class="row g-5">
+            
+            <!-- Column kryesore me statistika dhe progress bars -->
+            <div class="col-lg-8 col-md-12">
+                <div class="ah-info-wrapper p-4 bg-white shadow-sm rounded-4">
+                    <h3 class="ah-section-heading mb-4 fw-bold">Tourism & Cultural Growth</h3>
+                    <p class="text-muted mb-4">Kosovo has seen a significant surge in international visitors, particularly in the cultural hubs of Prizren and Peja. The following data highlights the sector's recovery and expansion.</p>
+                    
+                    <!-- Row me dy progress bars -->
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <div class="ah-progress-card border p-3 rounded">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">International Visitors</span>
+                                    <span class="text-primary">+24%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="ah-progress-card border p-3 rounded">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">Hotel Occupancy</span>
+                                    <span class="text-success">62%</span>
+                                </div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 62%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Lista me top nacionalitete -->
+                    <div class="mt-5">
+                        <h5 class="fw-bold mb-3">Top Visiting Nationalities (2024)</h5>
+                        <ul class="list-group list-group-flush ah-list-custom">
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                🇩🇪 Germany & Switzerland (Diaspora)
+                                <span class="badge bg-primary rounded-pill">42%</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                🇦l Albania
+                                <span class="badge bg-primary rounded-pill">18%</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                🇹🇷 Turkey
+                                <span class="badge bg-primary rounded-pill">12%</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                🇪🇺 Other EU Countries
+                                <span class="badge bg-primary rounded-pill">28%</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-    <!-- ==================== TABELA ==================== -->
-     <section class="container my-5">
-    <h2 class="ah-subtitle mb-3">Population in Kosovo</h2>
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered">
-            <thead class="table-dark">
-                <tr>
-                    <th>Municipality</th>
-                    <th>Total</th>
-                    <th>Male</th>
-                    <th>Female</th>
-                    <th>Urban</th>
-                    <th>Rural</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Prishtina</td><td>227,466</td><td>114,000</td><td>113,466</td><td>205,000</td><td>22,466</td></tr>
-                <tr><td>Peja</td><td>82,661</td><td>41,300</td><td>41,361</td><td>30,400</td><td>52,261</td></tr>
-                <tr><td>Istog</td><td>33,066</td><td>16,700</td><td>16,366</td><td>9,800</td><td>23,266</td></tr>
-                <tr><td>Klina</td><td>30,574</td><td>15,450</td><td>15,124</td><td>12,100</td><td>18,474</td></tr>
-                <tr><td>Deçan</td><td>27,758</td><td>13,800</td><td>13,958</td><td>6,200</td><td>21,558</td></tr>
-                <tr><td>Suharekë</td><td>91,450</td><td>46,800</td><td>44,650</td><td>18,000</td><td>73,450</td></tr>
-            </tbody>
-        </table>
+            <!-- Column sidebar me fakte interesante -->
+            <div class="col-lg-4 col-md-12">
+                <div class="ah-sidebar-card p-4 bg-dark text-white shadow rounded-4 h-100">
+                    <h4 class="ah-sidebar-title mb-4">Did You Know?</h4>
+                    
+                    <!-- Fact 1 -->
+                    <div class="ah-fact-item mb-4 pb-3 border-bottom border-secondary">
+                        <h6 class="text-info text-uppercase small fw-bold">Youngest Population</h6>
+                        <p class="small mb-0">Over 50% of Kosovo's population is under the age of 25, making it the "youngest" country in Europe.</p>
+                    </div>
+
+                    <!-- Fact 2 -->
+                    <div class="ah-fact-item mb-4 pb-3 border-bottom border-secondary">
+                        <h6 class="text-info text-uppercase small fw-bold">The Euro Currency</h6>
+                        <p class="small mb-0">Although not in the EU yet, Kosovo uses the Euro (€) as its official currency since 2002.</p>
+                    </div>
+
+                    <!-- Fact 3 -->
+                    <div class="ah-fact-item mb-4 pb-3 border-bottom border-secondary">
+                        <h6 class="text-info text-uppercase small fw-bold">Mountain Peaks</h6>
+                        <p class="small mb-0">Kosovo has over 50 peaks exceeding 2,000 meters, offering immense potential for winter sports.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </section>
 
-<section class="container my-5">
-    <h2 class="ah-subtitle mb-3">Economy in Kosovo</h2>
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered">
-            <thead class="table-dark">
-                <tr>
-                    <th>Indicator</th>
-                    <th>Value</th>
-                    <th>Year / Source</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Unemployment Rate</td><td>10.9%</td><td>Q4 2024 – ASK</td></tr>
-                <tr><td>Employed (registered)</td><td>~417,175</td><td>Q4 2024 – ASK</td></tr>
-                <tr><td>Number of Unemployed</td><td>~51,128</td><td>Q4 2024 – ASK</td></tr>
-                <tr><td>Average Monthly Wage</td><td>~€500–€600</td><td>Latest Statistics</td></tr>
-                <tr><td>Main Employment Sector</td><td>Services (~70%), Construction, Manufacturing</td><td>Labour Market Statistics</td></tr>
-                <tr><td>Registered Businesses (example)</td><td>~12,000 (Gjakova – SME example)</td><td>Local Registrations</td></tr>
-            </tbody>
-        </table>
+<!-- =========================================================
+     SECTION 3 – REGIONAL DEVELOPMENT
+     Përmban imazh, floating card dhe mini stats
+========================================================= -->
+<section class="ah-regional-stats py-5 border-top border-bottom">
+    <div class="container py-lg-4">
+        <div class="row align-items-center gy-5">
+            
+            <!-- Column me imazh dhe floating card -->
+            <div class="col-lg-6">
+                <div class="ah-image-stack position-relative">
+                    <div class="ah-main-img shadow-lg rounded-4 overflow-hidden">
+                        <img src="img/infrastructure.webp" class="img-fluid w-100" alt="Infrastructure Progress">
+                    </div>
+                    <div class="ah-floating-card bg-primary text-white p-4 rounded-4 shadow position-absolute bottom-0 end-0 translate-middle-y d-none d-md-block" style="width: 200px;">
+                        <h2 class="fw-bold mb-0">800+</h2>
+                        <p class="small mb-0">Km of New Highways connecting the region</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column me tekst dhe mini statistics -->
+            <div class="col-lg-6 ps-lg-5">
+                <span class="text-primary text-uppercase fw-bold ls-1 d-block mb-2">Development Hubs</span>
+                <h2 class="ah-section-title fw-bold mb-4">Strategic Regional Growth</h2>
+                <p class="ah-text text-muted mb-4">
+                    Kosovo is strategically positioned as a gateway between the Adriatic Sea and Central Europe. 
+                    Significant investments in the "Arbën Xhaferi" and "Ibrahim Rugova" highways have reduced 
+                    travel times to neighboring capitals by over 40%.
+                </p>
+
+                <!-- Mini stats cards -->
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="ah-mini-stat p-3 border-start border-4 border-info bg-white shadow-sm">
+                            <h5 class="fw-bold mb-1">Prishtina</h5>
+                            <p class="small text-muted mb-0">35% of Total Business Activity</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="ah-mini-stat p-3 border-start border-4 border-success bg-white shadow-sm">
+                            <h5 class="fw-bold mb-1">Prizren</h5>
+                            <p class="small text-muted mb-0">Cultural & Tourism Center</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="ah-mini-stat p-3 border-start border-4 border-warning bg-white shadow-sm">
+                            <h5 class="fw-bold mb-1">Peja</h5>
+                            <p class="small text-muted mb-0">Eco-Tourism & Agriculture</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="ah-mini-stat p-3 border-start border-4 border-danger bg-white shadow-sm">
+                            <h5 class="fw-bold mb-1">Mitrovica</h5>
+                            <p class="small text-muted mb-0">Mining & Industrial Sector</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </section>
 
-<section class="container my-5">
-    <h2 class="ah-subtitle mb-3">Tourism in Kosovo </h2>
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered">
-            <thead class="table-dark">
-                <tr>
-                    <th>Month</th>
-                    <th>Total Visitors</th>
-                    <th>Domestic Visitors</th>
-                    <th>Foreign Visitors</th>
-                    <th>Visited Places</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>January</td><td>38,500</td><td>16,200</td><td>22,300</td><td>Prishtina, Peja, Prizren</td></tr>
-                <tr><td>February</td><td>41,200</td><td>17,500</td><td>23,700</td><td>Prishtina, Rugova, Brezovica</td></tr>
-                <tr><td>March</td><td>49,700</td><td>20,300</td><td>29,400</td><td>Peja, Prizren, Mirushë Waterfall</td></tr>
-                <tr><td>April</td><td>54,812</td><td>22,367</td><td>32,445</td><td>Peja, Rugova, Mirushë Waterfall, Prizren</td></tr>
-                <tr><td>May</td><td>61,931</td><td>24,567</td><td>37,364</td><td>Brezovica, Peja, Prishtina, Prizren</td></tr>
-                <tr><td>June</td><td>72,400</td><td>28,100</td><td>44,300</td><td>Prishtina, Prizren, Brezovica, Rugova</td></tr>
-                <tr><td>July</td><td>85,600</td><td>31,900</td><td>53,700</td><td>Peja, Rugova, Brezovica, Mirushë Waterfall</td></tr>
-                <tr><td>August</td><td>92,544</td><td>33,059</td><td>59,485</td><td>Peja, Rugova, Brezovica, Mirushë Waterfall, Prizren</td></tr>
-                <tr><td>September</td><td>64,727</td><td>26,030</td><td>38,697</td><td>Peja, Prishtina, Prizren, Deçan Monastery</td></tr>
-                <tr><td>October</td><td>60,737</td><td>24,402</td><td>36,335</td><td>Prizren, Peja, Rugova, Brezovica</td></tr>
-                <tr><td>November</td><td>52,400</td><td>21,000</td><td>31,400</td><td>Prishtina, Peja, Prizren</td></tr>
-                <tr><td>December</td><td>48,900</td><td>19,800</td><td>29,100</td><td>Brezovica, Prishtina, Peja</td></tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- =========================================================
+     FOOTER – Informacion, linke dhe kredite e projektit
+========================================================= -->
 <footer class="ah-footer">
-  <div class="ah-footer-content">
-    <div>
-      <h3>Kosovo Tour</h3>
-      <p>Discover Kosovo’s beauty through nature and culture.</p>
+  <div class="container">
+    <div class="row gy-5">
+
+      <!-- Përshkrimi i projektit -->
+      <div class="col-12 col-md-4">
+        <h3>Kosovo Tour</h3>
+        <p>
+          Embark on a journey through the heart of the Balkans.
+          Our mission is to showcase Kosovo's authentic culture,
+          breathtaking nature, and legendary hospitality.
+        </p>
+      </div>
+
+      <!-- Linke të shpejta për navigim -->
+      <div class="col-12 col-md-4 ah-footer-links">
+        <h4>Quick Links</h4>
+        <ul class="list-unstyled p-0">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="places.html">Places</a></li>
+          <li><a href="regions.html">Regions</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="statistic.html">Statistic</a></li>
+          <li><a href="traditions.html">Traditions</a></li>
+          <li><a href="traveltips.html">Travel Tips</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Informacion shtesë për projektin -->
+      <div class="col-12 col-md-4">
+        <h4 class="ah-footer-title">Project Info</h4>
+        <ul class="list-unstyled ah-info-list">
+          <li><strong>Student:</strong> Agnesa Hyseni</li>
+          <li><strong>ID:</strong> AH-2025</li>
+          <li><strong>Tools:</strong> HTML5, CSS3, JS, Bootstrap 5</li>
+          <li><strong>Design:</strong> Multipage & Responsive</li>
+        </ul>
+      </div>
+
     </div>
 
-    <div class="ah-footer-links">
-      <h4>Quick Links</h4>
-      <ul>
-         <li><a href="index.html">Home</a></li>
-        <li><a href="places.html">Places</a></li>
-        <li><a href="regions.html">Regions</a></li>
-        <li><a href="statistic.html">Statistic</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <!-- Fundi i footer-it me copyright -->
+    <div class="row">
+      <div class="col-12 ah-footer-bottom mt-5">
+        © 2025 Kosovo Tour | Agnesa Hyseni Project
+      </div>
     </div>
-
-    <div>
-      <h4>Project Info</h4>
-      <p>Frontend Project</p>
-      <p>HTML • CSS • JS</p>
-    </div>
-  </div>
-
-  <div class="ah-footer-bottom">
-    © 2025 Kosovo Tour | Agnesa Hyseni Project
   </div>
 </footer>
-<!-- Custom JS -->
-<script src="js/contact.js"></script>
+
+<!-- =========================================================
+     JAVASCRIPT
+     1. Bootstrap JS për navbar, collapse, dropdown
+     2. Script i personalizuar
+========================================================= -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
