@@ -1,0 +1,292 @@
+/* =========================================================
+   VARIABLAT GLOBALE & KONFIGURIMI BAZË
+   Përdoren për konsistencë vizuale dhe mirëmbajtje të lehtë
+========================================================= */
+:root {
+  /* Ngjyra kryesore e projektit */
+  --ah-primary-color: #004b8d;
+
+  /* Ngjyra sekondare për hover dhe theksime */
+  --ah-secondary-color: #6ec1ff;
+
+  /* Background i lehtë për seksione */
+  --ah-light-bg: #f4f6f8;
+
+  /* Ngjyrë standarde për tekst */
+  --ah-dark-text: #333;
+
+  /* Ngjyrë e bardhë universale */
+  --ah-white: #ffffff;
+
+  /* Fonti për tituj */
+  --ah-title-font: 'Poppins', sans-serif;
+
+  /* Fonti për tekst normal */
+  --ah-text-font: 'Poppins', sans-serif;
+}
+
+/* =========================================================
+   RESET GLOBAL
+   Eliminon diferencat mes shfletuesve
+========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   BODY STYLES
+   Vendos fontin bazë dhe parandalon scroll horizontal
+========================================================= */
+body {
+  font-family: var(--ah-text-font);
+  overflow-x: hidden;
+  background-color: white;
+}
+
+/* =========================================================
+   NAVBAR
+   Navbar fikse, transparente me blur efekt
+========================================================= */
+.ah-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 15px 0;
+  transition: all 0.3s ease;
+}
+
+/* Logo / emri i faqes */
+.ah-logo {
+  color: var(--ah-white) !important;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+/* Linket e navigimit */
+.ah-nav-links .nav-link {
+  color: var(--ah-white) !important;
+  font-size: 18px;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+/* Hover efekt për linket */
+.ah-nav-links .nav-link:hover {
+  color: var(--ah-secondary-color) !important;
+}
+
+/* =========================================================
+   DROPDOWN MENU
+   Stilizim i personalizuar mbi Bootstrap
+========================================================= */
+.ah-dropdown-menu {
+  background: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(10px);
+  border: none;
+}
+
+/* Elementet brenda dropdown */
+.ah-dropdown-menu .dropdown-item {
+  color: white !important;
+  padding: 10px 20px;
+}
+
+/* Hover për dropdown items */
+.ah-dropdown-menu .dropdown-item:hover {
+  background: var(--ah-primary-color);
+}
+
+/* =========================================================
+   HAMBURGER TOGGLER
+   Ikona custom për mobile
+========================================================= */
+.custom-toggler.navbar-toggler { 
+  border-color: rgba(255,255,255,0.5); 
+}
+
+.custom-toggler .navbar-toggler-icon { 
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
+}
+
+/* =========================================================
+   OFFSET I PËRMBAJTJES NGA NAVBAR FIXED
+   Parandalon mbivendosjen e navbar-it mbi content
+========================================================= */
+.container.my-5 {
+  margin-top: 120px !important; 
+}
+
+/* =========================================================
+   EVENT CARDS
+   Kartela vizuale për evente / aktivitete
+========================================================= */
+.ah-event-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    height: 100%;
+    border: 1px solid #eee;
+}
+
+/* Hover animacion për kartela */
+.ah-event-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Wrapper i fotos së eventit */
+.ah-event-img {
+    position: relative;
+    height: 200px;
+}
+
+/* Foto responsive brenda kartelës */
+.ah-event-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Etiketa e datës mbi foto */
+.ah-event-date {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--ah-primary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Trupi i kartelës */
+.ah-event-body {
+    padding: 20px;
+}
+
+/* Titulli i eventit */
+.ah-event-title {
+    font-weight: 700;
+    color: var(--ah-primary-color);
+    margin-bottom: 10px;
+}
+
+/* Lokacioni i eventit */
+.ah-event-location {
+    font-size: 0.9rem;
+    color: #e67e22;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+/* Përshkrimi i eventit */
+.ah-event-text {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.ah-footer {
+  background: var(--ah-primary-color);
+  color: var(--ah-white);
+  padding: 80px 0 30px;
+  position: relative;
+  z-index: 1;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  box-sizing: border-box;
+}
+
+/* Linket në footer */
+.ah-footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* Hover efekt footer */
+.ah-footer-links a:hover {
+  color: var(--ah-secondary-color);
+  padding-left: 5px;
+}
+
+/* Fundi i footer-it */
+.ah-footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  margin-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Lista pa bullet points */
+.ah-footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   Media queries për pajisje të ndryshme
+========================================================= */
+
+/* ==================== LARGE DESKTOP (≥1200px) ====================
+   Ekrane të mëdha – përmirësim vizual pa ndryshuar layout
+========================================================= */
+@media (min-width: 1200px) {
+  .ah-event-img { height: 220px; }
+  .ah-event-title { font-size: 1.2rem; }
+}
+
+/* ==================== TABLET (≤992px) ====================
+   iPad / tablet landscape / laptopë të vegjël
+========================================================= */
+@media (max-width: 992px) {
+  .ah-nav-links .nav-link { font-size: 16px; margin: 0 6px; }
+  .ah-event-img { height: 190px; }
+  .ah-event-text { font-size: 0.9rem; }
+  .ah-footer { padding: 60px 0 25px; }
+}
+
+/* ==================== MOBILE (≤768px) ====================
+   Telefona & tablet portrait
+========================================================= */
+@media (max-width: 768px) {
+  .ah-navbar { padding: 10px 0; }
+  .ah-logo { font-size: 20px; }
+  .ah-nav-links .nav-link {
+    font-size: 16px;
+    margin: 8px 0;
+    text-align: center;
+  }
+  .ah-dropdown-menu { text-align: center; }
+  .container.my-5 { margin-top: 140px !important; }
+  .ah-event-img { height: 180px; }
+  .ah-event-title { font-size: 1.1rem; }
+  .ah-event-location { font-size: 0.85rem; }
+  .ah-footer { text-align: center; }
+}
+
+/* ==================== SMALL MOBILE (≤480px) ====================
+   Telefona të vegjël
+========================================================= */
+@media (max-width: 480px) {
+  .ah-event-img { height: 160px; }
+  .ah-event-date { font-size: 0.8rem; padding: 4px 10px; }
+  .ah-event-text { font-size: 0.85rem; }
+  .ah-footer { padding: 50px 0 20px; }
+  .ah-footer-bottom { font-size: 0.85rem; }
+}
