@@ -1,226 +1,393 @@
+/* =========================================================
+   VARIABLAT GLOBALE & KONFIGURIMI BAZË
+   Përdoren për konsistencë vizuale dhe mirëmbajtje të lehtë
+========================================================= */
 :root {
+  /* Ngjyra kryesore e projektit */
   --ah-primary-color: #004b8d;
+
+  /* Ngjyra sekondare për hover dhe theksime */
   --ah-secondary-color: #6ec1ff;
+
+  /* Background i lehtë për seksione */
   --ah-light-bg: #f4f6f8;
+
+  /* Ngjyrë standarde për tekst */
   --ah-dark-text: #333;
+
+  /* Ngjyrë e bardhë universale */
   --ah-white: #ffffff;
 
-  --ah-title-font: 'Segoe UI', sans-serif;
-  --ah-text-font: Arial, sans-serif;
+  /* Fonti për tituj */
+  --ah-title-font: 'Poppins', sans-serif;
+
+  /* Fonti për tekst normal */
+  --ah-text-font: 'Poppins', sans-serif;
 }
 
-/* ==================== RESET ==================== */
+/* =========================================================
+   RESET GLOBAL
+   Eliminon diferencat mes shfletuesve
+========================================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* =========================================================
+   BODY STYLES
+   Vendos fontin bazë dhe parandalon scroll horizontal
+========================================================= */
+body {
   font-family: var(--ah-text-font);
+  overflow-x: hidden;
+  background-color: white; /* Siguron që s’ka hapësira të bardha anësore */
 }
 
-
-/* ==================== NAVBAR ==================== */
+/* =========================================================
+   NAVBAR
+   Navbar fikse, transparente me blur efekt
+========================================================= */
 .ah-navbar {
-  position: fixed;
+  position: fixed;              /* Mban navbar-in gjithmonë në krye */
   top: 0;
-  left: 0;
   width: 100%;
-  padding: 20px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--ah-primary-color);
-  backdrop-filter: blur(12px);
-  z-index: 9999;
+  z-index: 1000;                /* Siguron që qëndron mbi përmbajtje */
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(15px);  /* Efekt blur modern */
+  -webkit-backdrop-filter: blur(15px);
+  padding: 15px 0;
+  transition: all 0.3s ease;
 }
 
+/* Logo / emri i faqes */
 .ah-logo {
-  color: var(--ah-white);
-  font-size: 26px;
-  font-weight: bold;
-  font-family: var(--ah-title-font);
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* shton hije tek logo */
-}
-
-.ah-nav-links {
-  align-items: center;
-  list-style: none;
-  display: flex;
-  gap: 35px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
-}
-
-.ah-nav-links li {
-  position: relative;
-}
-
-.ah-nav-links a {
-  display:flex;
-  align-items: center;
-  line-height: 1;
-  color: var(--ah-white);
-  font-size: 18px;
+  color: var(--ah-white) !important;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
   text-decoration: none;
-  padding: 8px 12px;
-  transition: color 0.3s;
 }
 
-.ah-nav-links a:hover {
-  color: var(--ah-secondary-color);
+/* Linket e navigimit */
+.ah-nav-links .nav-link {
+  color: var(--ah-white) !important;
+  font-size: 18px;
+  margin: 0 10px;
+  transition: 0.3s;
 }
 
-/* ==================== DROPDOWN ==================== */
+/* Hover efekt për linket */
+.ah-nav-links .nav-link:hover {
+  color: var(--ah-secondary-color) !important;
+}
+
+/* =========================================================
+   DROPDOWN MENU
+   Stilizim i personalizuar mbi Bootstrap
+========================================================= */
 .ah-dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: rgba(0, 0, 0, 0.9);
-  min-width: 180px;
-  border-radius: 8px;
-  padding: 10px 0;
+  background: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(10px);
+  border: none;
 }
 
-.ah-dropdown-menu a {
-  padding: 10px 15px;
-  display: block;
-  font-size: 16px;
-  white-space: nowrap;
+/* Elementet brenda dropdown */
+.ah-dropdown-menu .dropdown-item {
+  color: white !important;
+  padding: 10px 20px;
 }
 
-.ah-dropdown:hover .ah-dropdown-menu {
-  display: block;
+/* Hover për dropdown items */
+.ah-dropdown-menu .dropdown-item:hover {
+  background: var(--ah-primary-color);
 }
-/* ============ABOUT PROJECT SECTION ======================= */
-.ah-about-section {
-    padding: 160px 20px 80px;
-    background: linear-gradient(135deg, #f5f7fa, #e9ecef);
+
+/* =========================================================
+   HAMBURGER TOGGLER
+   Ikona custom për mobile
+========================================================= */
+.custom-toggler.navbar-toggler { 
+  border-color: rgba(255,255,255,0.5); 
+}
+
+.custom-toggler .navbar-toggler-icon { 
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
+}
+
+/* =========================================================
+   OFFSET I PËRMBAJTJES NGA NAVBAR FIXED
+========================================================= */
+.container.my-5 {
+  margin-top: 120px !important; 
+}
+/* ================== About Us Section ================== */
+.ah-about {
     font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
 }
 
-.ah-container {
-    max-width: 1100px;
-    margin: auto;
+.ah-section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #0a1f44;
+    margin-bottom: 0.5rem;
+    margin-top: 70px;
 }
 
-/* MAIN TITLE */
-.ah-about-section h1 {
-    font-size: 42px;
-    text-align: center;
-    margin-bottom: 25px;
-    color:  #004b8d;
-    position: relative;
+.ah-section-subtitle {
+    font-size: 1.125rem;
+    color: #555;
 }
 
-.ah-about-section h1::after {
-    content: "";
-    width: 80px;
-    height: 4px;
-    background-color: #004b8d;
-    display: block;
-    margin: 15px auto 0;
-    border-radius: 10px;
-}
-
-/* PARAGRAPHS */
-.ah-about-section p {
-    font-size: 18px;
-    line-height: 1.7;
-    color: #4b5563;
-    max-width: 850px;
-    margin: 0 auto 25px auto;
-    text-align: center;
-}
-
-/* SUBHEADINGS */
-.ah-about-section h2 {
-    font-size: 26px;
-    color:  #004b8d;
-    margin-top: 60px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* LIST STYLE */
-.ah-about-section ul {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
-}
-
-.ah-about-section ul li {
-    background: #ffffff;
-    padding: 18px 22px;
-    margin-bottom: 15px;
-    border-left: 5px solid #004b8d;
-    border-radius: 10px;
-    font-size: 17px;
-    color:  #004b8d;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+.ah-about-img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* HOVER EFFECT */
-.ah-about-section ul li:hover {
-    transform: translateX(8px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+.ah-about-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
 }
 
-/* TECHNOLOGY + INFO BLOCKS */
-.ah-about-section h2 + p {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 14px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+.ah-about-heading {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #004b8d;
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
 }
-/* ==================== FOOTER ==================== */
+
+.ah-about-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+    .ah-about-heading {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .ah-about-text {
+        text-align: center;
+    }
+
+    .ah-about-img {
+        margin-bottom: 1.5rem;
+    }
+}
+/* --- ABOUT PROJECT STYLING --- */
+
+.ah-about-tag {
+    color:  #004b8d;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.ah-text-red {
+    color:  #004b8d;
+}
+
+.ah-underline-center {
+    width: 60px;
+    height: 4px;
+    background:  #004b8d;
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+/* Kartat (Items) */
+.ah-about-item {
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.ah-about-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    border-color:  #004b8d !important;
+}
+
+/* Rrethi i Ikonave */
+.ah-about-icon-box {
+    width: 70px;
+    height: 70px;
+    background: #212529; /* E zezë për kontrast */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.ah-about-item:hover .ah-about-icon-box {
+    background:  #004b8d; /* Kthehet në të kuqe kur kalon miun */
+    transform: rotateY(180deg);
+}
+/* =========================================================
+   FOOTER
+========================================================= */
 .ah-footer {
   background: var(--ah-primary-color);
   color: var(--ah-white);
-  padding: 70px 40px 20px;
+  padding: 80px 0 30px;
+  position: relative;
+  z-index: 1;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  box-sizing: border-box;
 }
 
-.ah-footer-content {
-  max-width: 1200px;
-  margin: 0 auto 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-}
-
-.ah-footer h3,
-.ah-footer h4 {
-  font-family: var(--ah-title-font);
-  margin-bottom: 15px;
-}
-
-.ah-footer p {
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.ah-footer-links ul {
-  list-style: none;
-}
-
-.ah-footer-links li {
-  margin-bottom: 10px;
-}
-
+/* Linket në footer */
 .ah-footer-links a {
-  color: var(--ah-white);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  transition: color 0.3s;
+  transition: 0.3s;
 }
 
+/* Hover efekt footer links */
 .ah-footer-links a:hover {
   color: var(--ah-secondary-color);
+  padding-left: 5px;
 }
 
+/* Fundi i footer-it */
 .ah-footer-bottom {
   text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.3);
-  font-size: 14px;
+  padding-top: 30px;
+  margin-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Lista pa bullet points */
+.ah-footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE – DESKTOP, TABLET & MOBILE
+   Ky seksion rregullon madhësitë e titujve, cards dhe imazheve
+========================================================= */
+
+/* ----------------- DESKTOP ≥ 992px ----------------- */
+@media (min-width: 992px) {
+  /* Titujt kryesorë për About */
+  .ah-section-title {
+    font-size: 2.5rem;
+  }
+
+  .ah-about-heading {
+    font-size: 1.75rem;
+  }
+
+  /* Teksti normal */
+  .ah-about-text {
+    font-size: 1rem;
+  }
+
+  /* Imazhet */
+  .ah-about-img {
+    width: 100%;
+    max-height: 400px;
+  }
+
+  /* Cards */
+  .ah-about-item {
+    padding: 30px;
+  }
+}
+
+/* ----------------- TABLET 768px – 991px ----------------- */
+@media (max-width: 991px) and (min-width: 768px) {
+  .ah-section-title {
+    font-size: 2.2rem;
+  }
+
+  .ah-about-heading {
+    font-size: 1.6rem;
+  }
+
+  .ah-about-text {
+    font-size: 0.95rem;
+  }
+
+  .ah-about-img {
+    max-height: 350px;
+  }
+
+  .ah-about-item {
+    padding: 25px;
+  }
+}
+
+/* ----------------- MOBILE ≤ 767px ----------------- */
+@media (max-width: 767px) {
+  .ah-section-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .ah-about-heading {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .ah-about-text {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .ah-about-img {
+    max-height: 300px;
+    margin-bottom: 1.5rem;
+  }
+
+  .ah-about-item {
+    padding: 20px;
+  }
+}
+
+/* ----------------- SMALL MOBILE ≤ 480px ----------------- */
+@media (max-width: 480px) {
+  .ah-section-title {
+    font-size: 1.7rem;
+  }
+
+  .ah-about-heading {
+    font-size: 1.4rem;
+  }
+
+  .ah-about-text {
+    font-size: 0.85rem;
+  }
+
+  .ah-about-img {
+    max-height: 250px;
+  }
+
+  .ah-about-item {
+    padding: 15px;
+  }
+
+  /* Rreshtimi i ikonave brenda cards */
+  .ah-about-icon-box {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}

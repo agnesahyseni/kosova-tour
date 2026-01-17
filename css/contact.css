@@ -1,236 +1,133 @@
+/* =========================================================
+   VARIABLAT GLOBALE
+========================================================= */
 :root {
-  --ah-primary-color: #004b8d;
-  --ah-secondary-color: #6ec1ff;
+  --ah-primary: #1a2a6c;
+  --ah-secondary: #f39c12;
+  --ah-bg: #ffffff;
   --ah-light-bg: #f4f6f8;
   --ah-dark-text: #333;
   --ah-white: #ffffff;
-
-  --ah-title-font: 'Segoe UI', sans-serif;
-  --ah-text-font: Arial, sans-serif;
+  --ah-title-font: 'Poppins', sans-serif;
+  --ah-text-font: 'Poppins', sans-serif;
+  
 }
-/* ==================== RESET ==================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+/* =========================================================
+   RESET GLOBAL
+========================================================= */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+/* =========================================================
+   BODY STYLES
+========================================================= */
+body {
   font-family: var(--ah-text-font);
+  overflow-x: hidden;
+  background-color: var(--ah-bg);
 }
-/* ==================== NAVBAR ==================== */
+
+/* =========================================================
+   NAVBAR
+========================================================= */
 .ah-navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70px; /* lartësia fikse */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 60px; /* vetëm padding horizontal */
-  background: var(--ah-primary-color);
-  z-index: 9999;
+  position: fixed; top:0; width:100%; z-index:1000;
+  background: rgba(0,0,0,0.4); backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px); padding:15px 0; transition:all 0.3s ease;
 }
 
-.ah-logo {
-  color: var(--ah-white);
-  font-size: 26px;
-  font-weight: bold;
-  font-family: var(--ah-title-font);
-  line-height: 60px; /* për qendrim vertikal */
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+.ah-logo { color:var(--ah-white); font-size:24px; font-weight:600; letter-spacing:1px; text-decoration:none; }
+.ah-nav-links .nav-link { color:var(--ah-white); font-size:18px; margin:0 10px; transition:0.3s; }
+.ah-nav-links .nav-link:hover { color:var(--ah-secondary); }
+.ah-dropdown-menu { background:rgba(0,0,0,0.9); backdrop-filter: blur(10px); border:none; }
+.ah-dropdown-menu .dropdown-item { color:white; padding:10px 20px; transition: background 0.3s; }
+.ah-dropdown-menu .dropdown-item:hover { background:var(--ah-primary); }
+.custom-toggler.navbar-toggler { border-color: rgba(255,255,255,0.5); }
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-.ah-nav-links {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: 35px;
-  margin: 0;
-  padding: 0; /* hiq padding default nga Bootstrap */
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+.ah-contact-wrapper {
+  padding-top:120px; padding-bottom:60px;
+  background: linear-gradient(to bottom, #f0f2f5, var(--ah-bg));
+  display:flex; justify-content:center;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.ah-nav-links li {
-  position: relative;
+.ah-contact-container {
+  display:grid; grid-template-columns:1fr 1.5fr; max-width:900px; width:95%;
+  background:var(--ah-bg); border-radius:15px; overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
-.ah-nav-links a {
-  display: inline-block; /* hiq display:flex që po prish vertikalitetin */
-  line-height: 60px;     /* për qendrim vertikal */
-  color: var(--ah-white);
-  font-size: 18px;
-  text-decoration: none;
-  padding: 0 12px;       /* padding horizontal minimal */
-  transition: color 0.3s;
-}
+/* LEFT INFO */
+.ah-contact-info { background:var(--ah-primary); color:white; padding:40px; display:flex; flex-direction:column; justify-content:center; text-align:left; }
+.ah-info-title { margin-bottom:20px; font-size:28px; font-weight:700; }
+.ah-info-text { margin-bottom:30px; opacity:0.8; line-height:1.6; }
+.ah-info-item { display:flex; align-items:center; margin-bottom:20px; }
+.ah-icon { margin-right:15px; font-size:20px; }
+.ah-social-links { margin-top:30px; }
+.ah-social-icon { display:inline-block; margin-right:10px; padding:8px 12px; background: rgba(255,255,255,0.2); border-radius:6px; cursor:pointer; transition:0.3s; }
+.ah-social-icon:hover { background:var(--ah-secondary); transform:translateY(-2px); }
 
-.ah-nav-links a:hover {
-  color: var(--ah-secondary-color);
-}
+/* RIGHT FORM */
+.ah-form-container { padding:40px; display:flex; flex-direction:column; gap:15px; }
+.ah-form-container input,
+.ah-form-container select,
+.ah-form-container textarea { width:100%; padding:12px; border:2px solid #eee; border-radius:8px; transition:0.3s; }
+.ah-form-container input:focus,
+.ah-form-container select:focus,
+.ah-form-container textarea:focus { border-color:var(--ah-primary); outline:none; background-color:#f9f9ff; }
+#send-btn { background:var(--ah-secondary); color:white; padding:15px; border:none; border-radius:8px; cursor:pointer; font-weight:bold; transition:0.3s; }
+#send-btn:hover { background:#e67e22; transform:translateY(-2px); }
 
-/* ==================== DROPDOWN ==================== */
-.ah-dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%; /* poshtë navbar-it */
-  left: 0;
-  background: rgba(0, 0, 0, 0.9);
-  min-width: 180px;
-  border-radius: 8px;
-  padding: 10px 0;
-  line-height: normal; /* hiq line-height 60px */
-}
-
-.ah-dropdown-menu a {
-  padding: 10px 15px;
-  display: block;
-  font-size: 16px;
-  line-height: normal; /* link-et të mos trashëgohen lartësia nga navbar-i */
-  white-space: nowrap;
-}
-
-.ah-dropdown:hover .ah-dropdown-menu {
-  display: block;
-}
-
-/* ==================== CONTACT SECTION ==================== */
-.ah-contact-section {
-  padding: 60px 20px;
-  background-color: #f4f6f8;
-  text-align: center;
-}
-
-.ah-contact-section h2 {
-  font-size: 2.5rem;
-  color: #004b8d;
-  margin-bottom: 10px;
-}
-
-.ah-contact-section p {
-  font-size: 1.1rem;
-  color: #333;
-  margin-bottom: 40px;
-}
-
-.ah-contact-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-}
-
-.ah-contact-form {
-  flex: 1 1 300px;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.ah-contact-form input,
-.ah-contact-form textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-.ah-contact-form button {
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background-color: #004b8d;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.ah-contact-form button:hover {
-  background-color: #6ec1ff;
-}
-
-.ah-contact-info {
-  flex: 1 1 250px;
-  max-width: 350px;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  text-align: left;
-}
-
-.ah-contact-info h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-}
-
-.ah-contact-info p {
-  margin-bottom: 10px;
-  color: #333;
-  font-size: 1rem;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .ah-contact-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .ah-contact-info {
-    text-align: center;
-  }
-}
+/* =========================================================
+   LOCATION SECTION
+========================================================= */
+.ah-location-section { padding:60px 20px; background:var(--ah-bg); font-family:'Segoe UI', sans-serif; }
+.ah-location-container { max-width:1000px; margin:0 auto; display:grid; grid-template-columns:1.2fr 0.8fr; gap:40px; align-items:center; }
+.ah-hours-box { padding:20px; }
+.ah-hours-title { font-size:26px; color:var(--ah-primary); margin-bottom:15px; }
+.ah-hours-text { color:#666; margin-bottom:25px; line-height:1.6; }
+.ah-hours-list { list-style:none; padding:0; }
+.ah-hours-list li { display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid #eee; color:#333; font-weight:500; }
+.ah-closed { color:#e74c3c; font-weight:bold; }
+.ah-emergency-call { margin-top:30px; background:#fdf5e6; padding:15px; border-radius:10px; text-align:center; }
+.ah-phone-link { display:block; font-size:20px; font-weight:bold; color:var(--ah-secondary); text-decoration:none; margin-top:5px; }
 
 /* ==================== FOOTER ==================== */
 .ah-footer {
-  background: var(--ah-primary-color);
+  background: #004b8d;
   color: var(--ah-white);
-  padding: 70px 40px 20px;
-}
-
-.ah-footer-content {
-  max-width: 1200px;
-  margin: 0 auto 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-}
-
-.ah-footer h3,
-.ah-footer h4 {
-  font-family: var(--ah-title-font);
-  margin-bottom: 15px;
-}
-
-.ah-footer p {
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.ah-footer-links ul {
-  list-style: none;
-}
-
-.ah-footer-links li {
-  margin-bottom: 10px;
+  padding: 80px 0 30px;
+  position: relative;
+  z-index: 1;
 }
 
 .ah-footer-links a {
-  color: var(--ah-white);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  transition: color 0.3s;
+  transition: 0.3s;
 }
 
 .ah-footer-links a:hover {
   color: var(--ah-secondary-color);
+  padding-left: 5px;
 }
 
 .ah-footer-bottom {
   text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.3);
-  font-size: 14px;
+  padding-top: 30px;
+  margin-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+@media (max-width:1199px) {.ah-contact-container { grid-template-columns:1fr 1.3fr; } .ah-location-container { grid-template-columns:1fr 1fr; gap:30px; } .ah-info-title { font-size:26px; } .ah-hours-title { font-size:24px; } }
+@media (max-width:767px) {.ah-contact-container { grid-template-columns:1fr; } .ah-contact-wrapper { padding-top:100px; padding-bottom:40px; } .ah-form-container { padding:30px 20px; } .ah-contact-info { padding:30px 20px; text-align:center; } .ah-location-container { grid-template-columns:1fr; gap:20px; } .ah-map-box { order:2; } .ah-hours-box { order:1; text-align:center; } .ah-info-title { font-size:24px; } .ah-hours-title { font-size:22px; } #send-btn { font-size:15px; padding:12px 20px; } }
+@media (max-width:480px) {.ah-info-title { font-size:22px; } .ah-info-text { font-size:14px; } .ah-hours-title { font-size:20px; } .ah-hours-text { font-size:14px; } #send-btn { font-size:14px; padding:10px 15px; } .ah-phone-link { font-size:18px; } }

@@ -1,16 +1,18 @@
 /* ==================== VARIABLAT DHE CONFIG ==================== */
+/* Variabla globale për ngjyra, fonte dhe tranzicione */
 :root {
-  --ah-primary-color: #004b8d;
-  --ah-secondary-color: #6ec1ff;
-  --ah-light-bg: #f4f6f8;
-  --ah-dark-text: #333;
-  --ah-white: #ffffff;
-  --ah-title-font: 'Poppins', sans-serif;
-  --ah-text-font: 'Poppins', sans-serif;
-  --ah-transition: all 0.3s ease;
+  --ah-primary-color: #004b8d;          /* Ngjyra kryesore e markës/temës */
+  --ah-secondary-color: #6ec1ff;        /* Ngjyra dytësore për hover dhe aksente */
+  --ah-light-bg: #f4f6f8;               /* Ngjyra sfondi e lehtë për seksione */
+  --ah-dark-text: #333;                  /* Ngjyra standarde për tekstin */
+  --ah-white: #ffffff;                   /* Ngjyra e bardhë për tekst dhe elementë të veçantë */
+  --ah-title-font: 'Poppins', sans-serif; /* Fonti i titujve */
+  --ah-text-font: 'Poppins', sans-serif;  /* Fonti i teksteve të zakonshme */
+  --ah-transition: all 0.3s ease;        /* Tranzicione të qeta për hover dhe animacione */
 }
 
-/* ==================== RESET ==================== */
+/* ==================== RESET BAZIK ==================== */
+/* Heq marginat dhe padding-un e default-it, vendos box-sizing */
 * {
   margin: 0;
   padding: 0;
@@ -18,30 +20,33 @@
 }
 
 /* ==================== BODY ==================== */
+/* Stil bazik për body me fontin dhe ngjyrën kryesore */
 #ah {
   font-family: var(--ah-text-font);
-  overflow-x: hidden;
+  overflow-x: hidden;           /* Parandalon scroll horizontal të panevojshëm */
   color: var(--ah-dark-text);
-  scroll-behavior: smooth; /* Lëvizje e lëmuar për butonat brenda faqes */
+  scroll-behavior: smooth;      /* Lëvizje e qetë kur klikohen linke brenda faqes */
 }
 
 /* ==================== BACKGROUND VIDEO ==================== */
+/* Video në sfond me efekt dimming */
 .ah-bg-video {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;            /* Mbush plotësisht seksionin pa deformuar */
   z-index: -1;
-  filter: brightness(0.5);
+  filter: brightness(0.5);      /* Errësim për të nxjerrë tekstin në pah */
 }
 
 /* ==================== NAVBAR ==================== */
+/* Navbar fikse në krye, e qartë dhe elegante */
 .ah-navbar {
   background: rgba(0, 0, 0, 0.4) !important;
   backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
   padding: 15px 0;
   transition: var(--ah-transition);
   position: fixed;
@@ -50,6 +55,7 @@
   z-index: 1000;
 }
 
+/* Logo navbar */
 .ah-logo {
   color: var(--ah-white) !important;
   font-size: 24px;
@@ -57,6 +63,7 @@
   letter-spacing: 1px;
 }
 
+/* Linket e navbar */
 .ah-nav-links .nav-link {
   color: var(--ah-white) !important;
   font-size: 18px;
@@ -93,9 +100,9 @@
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-/* ==================== INTRO ==================== */
+/* ==================== INTRO SECTION ==================== */
 .rg-intro {
-  margin-top: 150px;
+  margin-top: 150px;             /* Hapësirë mbi hero/navbar */
   margin-bottom: 80px;
   padding: 60px 40px;
   background: rgba(255, 255, 255, 0.95);
@@ -123,7 +130,7 @@
 /* ==================== MASONRY GRID ==================== */
 .rg-masonry {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* Dy kolona në desktop */
   grid-auto-rows: 150px;
   gap: 15px;
 }
@@ -136,7 +143,7 @@
   transition: var(--ah-transition);
 }
 
-/* imazhi i parë më i madh */
+/* Imazhi i parë më i madh në grid */
 .rg-masonry img:first-child {
   grid-row: span 2;
 }
@@ -170,28 +177,27 @@
 
 /* ==================== RESPONSIVE ==================== */
 
-/* ===== TABLET + MOBILE (< 992px) ===== */
+/* ===== TABLET (992px > width >= 768px) ===== */
 @media (max-width: 991.98px) {
   .rg-section {
-    padding: 35px 30px;
+    padding: 35px 30px;            /* Pak më kompakt për tablet */
   }
 
   .rg-text {
-    text-align: center;
+    text-align: center;            /* Qendërsohet teksti në tablet */
     margin-bottom: 25px;
   }
 
   .flex-lg-row-reverse {
-    flex-direction: column !important;
+    flex-direction: column !important; /* Stacked për tablet */
   }
 }
 
-/* ===== MOBILE (< 768px) ===== */
+/* ===== MOBILE (width < 768px) ===== */
 @media (max-width: 767.98px) {
-  /* Korrigjuar: shtuar pika te .ah-bg-video */
   .ah-bg-video {
     display: block !important;
-    position: fixed; /* Fixed është më mirë se absolute për background */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -201,7 +207,7 @@
   }
 
   #ah {
-    background: var(--ah-primary-color);
+    background: var(--ah-primary-color); /* Sfondo alternativ për mobile */
   }
 
   .rg-masonry {
@@ -209,25 +215,25 @@
   }
 
   .ah-navbar {
-    padding: 10px 0;
+    padding: 10px 0;               /* Navbar më i kompakt për mobile */
   }
 }
 
-/* ===== MOBILE I VOGËL (< 576px - Përfshirë 438px) ===== */
+/* ===== MOBILE I VOGËL (< 576px) ===== */
 @media (max-width: 575.98px) {
   .rg-masonry {
-    grid-template-columns: 1fr; /* 1 kolonë parandalon ngjeshjen anësore */
-    grid-auto-rows: auto;      /* Lartësia auto parandalon zoom-in e padëshiruar */
+    grid-template-columns: 1fr;     /* Një kolonë për imazhe */
+    grid-auto-rows: auto;           /* Lartësi auto për të shmangur deformimin */
     gap: 20px;
   }
 
   .rg-masonry img {
-    height: 250px; /* Lartësi fikse por e bollshme për mobile */
+    height: 250px;                  /* Lartësi e përshtatshme për mobile */
     object-fit: cover;
   }
 
   .rg-masonry img:first-child {
-    grid-row: span 1; /* Kthehet në normale në mobile */
+    grid-row: span 1;               /* Rivendos lartësinë normale */
   }
 
   .rg-intro {

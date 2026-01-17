@@ -263,22 +263,32 @@ body {
     transform: translateX(5px);
 }
 
-/* FOOTER */
+/* ==================== FOOTER ==================== */
 .ah-footer {
   background: var(--ah-primary-color);
   color: var(--ah-white);
   padding: 80px 0 30px;
   position: relative;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  box-sizing: border-box;
-  text-align: center;
+  z-index: 1;
 }
 
-.ah-footer-links a { color: rgba(255,255,255,0.8); text-decoration: none; transition: 0.3s; }
-.ah-footer-links a:hover { color: var(--ah-secondary-color); padding-left: 5px; }
-.ah-footer-bottom { text-align: center; padding-top: 30px; margin-top: 50px; border-top: 1px solid rgba(255,255,255,0.1); }
-.ah-footer-links ul { list-style: none; padding: 0; margin: 0; }
+.ah-footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.ah-footer-links a:hover {
+  color: var(--ah-secondary-color);
+  padding-left: 5px;
+}
+
+.ah-footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  margin-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
 
 /* =========================================================
    RESPONSIVE

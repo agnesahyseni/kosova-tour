@@ -18,7 +18,7 @@
 body {
   font-family: var(--ah-text-font);
   overflow-x: hidden;
-  background-color: #000; /* Siguron që s'ka hapësira të bardha */
+  background-color: #000;
 }
 
 /* ==================== BACKGROUND VIDEO ==================== */
@@ -35,7 +35,7 @@ body {
 
 /* ==================== NAVBAR ==================== */
 .ah-navbar {
-  position: fixed; /* E mban navbar-in fiks lart */
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -148,7 +148,7 @@ body {
   background: var(--ah-light-bg);
   padding: 100px 0;
   position: relative;
-  z-index: 1; /* Që të rrijë mbi videon kur bëhet scroll */
+  z-index: 1;
 }
 
 .ah-why-title {
@@ -239,17 +239,15 @@ body {
     margin-top: 15px;
     border-radius: 10px;
   }
-  
+
   .ah-nav-links .nav-link {
     padding: 12px 15px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 }
 
-/* Mobile Fixes */
+/* Mobile */
 @media (max-width: 767.98px) {
-  /* KETU U HOQ PADDING-TOP QE TE SHKAKTONTE PROBLEM */
-  
   .ah-hero h1 {
     font-size: 2.2rem;
   }
@@ -260,45 +258,40 @@ body {
   }
 
   .ah-why-card:hover {
-    transform: none; /* Hiqet hoveri në touch për performancë */
+    transform: none;
   }
-  /* ===== MOBILE I VOGËL (Specifikisht për ~538px dhe poshtë) ===== */
+}
+
+/* Extra Small Devices */
 @media (max-width: 575.98px) {
-  /* Zvogëlojmë titullin që të mos zërë shumë rreshta */
   .ah-hero h1 {
-    font-size: 1.8rem !important;
+    font-size: 1.8rem;
     line-height: 1.2;
   }
 
-  /* Përshtatim paragrafin për ekrane të vegjël */
   .ah-hero p {
     font-size: 0.95rem;
     margin-bottom: 25px;
     padding: 0 5px;
   }
 
-  /* Butoni bëhet pak më i plotë për t'u klikuar me gisht (Touch) */
   .ah-btn {
     width: 100%;
     padding: 14px;
     font-size: 15px;
   }
 
-  /* Hero card merr më pak hapësirë anësore */
   .ah-hero {
     padding: 30px 15px;
     margin: 0 10px;
   }
 
-  /* Seksioni "Why Visit" - titulli pak më i vogël */
   .ah-why-title {
     font-size: 28px;
     margin-bottom: 40px;
   }
-  
-  /* Rregullimi i Navbar në ekrane shumë të vegjël */
+
   .ah-logo {
     font-size: 20px;
   }
-}
 }
