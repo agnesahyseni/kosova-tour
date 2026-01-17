@@ -1,112 +1,76 @@
 /* =========================================================
-   VARIABLAT GLOBALE & KONFIGURIMI BAZË
-   Përdoren për konsistencë vizuale dhe mirëmbajtje të lehtë
-========================================================= */
-:root {
-  /* Ngjyra kryesore e projektit */
-  --ah-primary-color: #004b8d;
-
-  /* Ngjyra sekondare për hover dhe theksime */
-  --ah-secondary-color: #6ec1ff;
-
-  /* Background i lehtë për seksione */
-  --ah-light-bg: #f4f6f8;
-
-  /* Ngjyrë standarde për tekst */
-  --ah-dark-text: #333;
-
-  /* Ngjyrë e bardhë universale */
-  --ah-white: #ffffff;
-
-  /* Fonti për tituj */
-  --ah-title-font: 'Poppins', sans-serif;
-
-  /* Fonti për tekst normal */
-  --ah-text-font: 'Poppins', sans-serif;
-}
-
-/* =========================================================
-   RESET GLOBAL
-   Eliminon diferencat mes shfletuesve
+    RESET GLOBAL
+    Eliminon diferencat mes shfletuesve
 ========================================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 /* =========================================================
-   BODY STYLES
-   Vendos fontin bazë dhe parandalon scroll horizontal
+    BODY STYLES
+    Vendos fontin bazë dhe parandalon scroll horizontal
 ========================================================= */
 body {
-  font-family: var(--ah-text-font);
+  font-family:'Poppins', sans-serif;
   overflow-x: hidden;
-  background-color: white; /* Siguron që s’ka hapësira të bardha anësore */
+  background-color: white; 
 }
-
 /* =========================================================
-   NAVBAR
-   Navbar fikse, transparente me blur efekt
+    NAVBAR
+    Navbar fikse, transparente me blur efekt
 ========================================================= */
 .ah-navbar {
-  position: fixed;              /* Mban navbar-in gjithmonë në krye */
+  position: fixed;              
   top: 0;
   width: 100%;
-  z-index: 1000;                /* Siguron që qëndron mbi përmbajtje */
+  z-index: 1000;                
   background: rgba(0, 0, 0, 0.4) !important;
-  backdrop-filter: blur(15px);  /* Efekt blur modern */
+  backdrop-filter: blur(15px);  
   -webkit-backdrop-filter: blur(15px);
   padding: 15px 0;
   transition: all 0.3s ease;
 }
-
 /* Logo / emri i faqes */
 .ah-logo {
-  color: var(--ah-white) !important;
+  color: #ffffff !important;
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 1px;
   text-decoration: none;
 }
-
 /* Linket e navigimit */
 .ah-nav-links .nav-link {
-  color: var(--ah-white) !important;
+  color: #ffffff !important;
   font-size: 18px;
   margin: 0 10px;
   transition: 0.3s;
 }
-
 /* Hover efekt për linket */
 .ah-nav-links .nav-link:hover {
-  color: var(--ah-secondary-color) !important;
+  color: #6ec1ff !important;
 }
-
 /* =========================================================
-   DROPDOWN MENU
-   Stilizim i personalizuar mbi Bootstrap
+    DROPDOWN MENU
+    Stilizim i personalizuar mbi Bootstrap
 ========================================================= */
 .ah-dropdown-menu {
   background: rgba(0, 0, 0, 0.9) !important;
   backdrop-filter: blur(10px);
   border: none;
 }
-
 /* Elementet brenda dropdown */
 .ah-dropdown-menu .dropdown-item {
   color: white !important;
   padding: 10px 20px;
 }
-
 /* Hover për dropdown items */
 .ah-dropdown-menu .dropdown-item:hover {
-  background: var(--ah-primary-color);
+  background: #004b8d;
 }
-
 /* =========================================================
-   HAMBURGER TOGGLER
-   Ikona custom për mobile
+    HAMBURGER TOGGLER
+    Ikona custom për mobile
 ========================================================= */
 .custom-toggler.navbar-toggler { 
   border-color: rgba(255,255,255,0.5); 
@@ -117,14 +81,14 @@ body {
 }
 
 /* =========================================================
-   OFFSET I PËRMBAJTJES NGA NAVBAR FIXED
+    OFFSET I PËRMBAJTJES NGA NAVBAR FIXED
 ========================================================= */
 .container.my-5 {
   margin-top: 120px !important; 
 }
 
 /* =========================================================
-   TITULLI KRYESOR DHE NËNTITULLI
+    TITULLI KRYESOR DHE NËNTITULLI
 ========================================================= */
 .ah-titulli-kryesor {
   font-weight: 900;
@@ -139,8 +103,8 @@ body {
 }
 
 /* =========================================================
-   SESIONET KRYESORE
-   Kartela të bardha me shadow
+    SESIONET KRYESORE
+    Kartela të bardha me shadow
 ========================================================= */
 .ah-sesioni {
   background: white;
@@ -148,22 +112,19 @@ body {
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
-
 /* Header i çdo sesioni */
 .ah-header-sesioni {
   margin-bottom: 30px;
   border-left: 5px solid #f39c12;
   padding-left: 15px;
 }
-
 /* Titulli i sesionit */
 .ah-titulli-sesionit {
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--ah-primary-color);
+  color: #004b8d;
   margin: 0;
 }
-
 /* Vijë dekorative nën titull */
 .ah-vija-dekorative {
   width: 50px;
@@ -171,10 +132,9 @@ body {
   background-color: #f39c12;
   margin-top: 8px;
 }
-
 /* =========================================================
-   GALERIA
-   Kartela me hover, zoom dhe overlay
+    GALERIA
+    Kartela me hover, zoom dhe overlay
 ========================================================= */
 .ah-galeria-item {
   position: relative;
@@ -185,13 +145,11 @@ body {
   box-shadow: 0 8px 15px rgba(0,0,0,0.1);
   transition: all 0.4s ease;
 }
-
 /* Hover efekt për kartelë */
 .ah-galeria-item:hover {
   transform: scale(1.03);
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
-
 /* Imazhi i galerisë */
 .ah-img {
   width: 100%;
@@ -199,13 +157,11 @@ body {
   object-fit: cover;
   transition: transform 0.6s ease;
 }
-
 /* Zoom i imazhit në hover */
 .ah-galeria-item:hover .ah-img {
   transform: scale(1.15);
   opacity: 1;
 }
-
 /* Overlay tekst mbi foto */
 .ah-overlay {
   position: absolute;
@@ -216,7 +172,6 @@ body {
   padding: 10px 15px;
   opacity: 1;
 }
-
 /* Teksti brenda overlay */
 .ah-overlay span {
   font-size: 1rem;
@@ -224,11 +179,10 @@ body {
   color: #fff;
   letter-spacing: 1px;
 }
-
 /* ==================== FOOTER ==================== */
 .ah-footer {
   background: #004b8d;
-  color: var(--ah-white);
+  color:#ffffff;
   padding: 80px 0 30px;
   position: relative;
   z-index: 1;
@@ -241,7 +195,7 @@ body {
 }
 
 .ah-footer-links a:hover {
-  color: var(--ah-secondary-color);
+  color:#6ec1ff;
   padding-left: 5px;
 }
 
@@ -253,7 +207,7 @@ body {
 }
 
 /* =========================================================
-   RESPONSIVE – TABLET (≤ 992px)
+    RESPONSIVE – TABLET (≤ 992px)
 ========================================================= */
 @media (max-width: 992px) {
   .ah-nav-links .nav-link {
@@ -275,7 +229,7 @@ body {
 }
 
 /* =========================================================
-   RESPONSIVE – MOBILE (≤ 768px)
+    RESPONSIVE – MOBILE (≤ 768px)
 ========================================================= */
 @media (max-width: 768px) {
   .ah-navbar {
@@ -294,7 +248,7 @@ body {
 
   .ah-dropdown-menu {
     text-align: left;
-    background: var(--ah-primary-color);
+    background:#004b8d;
   }
 
   .container.my-5 {
@@ -323,7 +277,7 @@ body {
 }
 
 /* =========================================================
-   RESPONSIVE – SMALL MOBILE (≤ 480px)
+    RESPONSIVE – SMALL MOBILE (≤ 480px)
 ========================================================= */
 @media (max-width: 480px) {
   .ah-titulli-kryesor {

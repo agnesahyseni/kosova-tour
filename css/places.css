@@ -1,29 +1,24 @@
-/* ==================== VARIABLAT DHE CONFIG ==================== */
-/* Variabla CSS për ngjyra dhe fonte, lehtësojnë mirëmbajtjen dhe ndryshimet globale */
-:root {
-  --ah-primary-color: #004b8d;          /* Ngjyra kryesore e markës / temës */
-  --ah-secondary-color: #6ec1ff;        /* Ngjyra dytësore (hover, aksente) */
-  --ah-light-bg: #f4f6f8;               /* Ngjyra e sfondit të lehtë për seksione */
-  --ah-dark-text: #333;                  /* Ngjyra tekst standarde */
-  --ah-white: #ffffff;                   /* Ngjyra e bardhë për tekst dhe butona */
-  --ah-title-font: 'Poppins', sans-serif; /* Fonti i titujve */
-  --ah-text-font: 'Poppins', sans-serif;  /* Fonti i paragrafëve */
-}
-
-/* Reset bazik i marginave, padding dhe box-sizing për të gjithë elementët */
+/* =========================================================
+    RESET GLOBAL
+    Heq margin/padding default dhe standardizon box model
+========================================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/* Stil bazik për body */
+/* =========================================================
+    BODY
+    Font bazë dhe parandalim i scroll horizontal
+========================================================= */
 body {
-  font-family: var(--ah-text-font);
-  overflow-x: hidden; /* Parandalon scroll horizontal të panevojshëm */
+  font-family:'Poppins', sans-serif ;
+  overflow-x: hidden; 
 }
-
-/* ==================== BACKGROUND VIDEO ==================== */
+/* =========================================================
+    BACKGROUND VIDEO
+    Video fikse që mbulon gjithë ekranin
+========================================================= */
 .ah-bg-video {
   position: fixed;
   top: 0;
@@ -34,33 +29,35 @@ body {
   z-index: -1;
   filter: brightness(0.5);
 }
-
-/* ==================== NAVBAR (BOOTSTRAP COMPATIBLE) ==================== */
+/* =========================================================
+    NAVBAR
+    Navbar transparente me blur efekt (Bootstrap compatible)
+========================================================= */
 .ah-navbar {
-  background: rgba(0, 0, 0, 0.4) !important; /* Navbar transparent me blur */
+  background: rgba(0, 0, 0, 0.4) !important; 
   backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px); /* Mbështetje Safari */
+  -webkit-backdrop-filter: blur(15px); 
   padding: 15px 0;
-  transition: all 0.3s ease; /* Efekte të qeta gjatë scroll apo hover */
+  transition: all 0.3s ease; 
 }
-
+/* Logo / emri i faqes */
 .ah-logo {
-  color: var(--ah-white) !important;
+  color: #ffffff !important;
   font-size: 24px;
   font-weight: 600;
-  letter-spacing: 1px; /* Hapsirë mes shkronjave */
+  letter-spacing: 1px; 
 }
 
 /* Linket e navbar */
 .ah-nav-links .nav-link {
-  color: var(--ah-white) !important;
+  color:#ffffff !important;
   font-size: 18px;
   margin: 0 10px;
   transition: 0.3s;
 }
 
 .ah-nav-links .nav-link:hover {
-  color: var(--ah-secondary-color) !important; /* Ngjyra hover */
+  color:#6ec1ff !important; 
 }
 
 /* Dropdown hover për desktop */
@@ -74,7 +71,7 @@ body {
   background: rgba(0, 0, 0, 0.85) !important;
   backdrop-filter: blur(10px);
   border: none;
-  display: none; /* Fshihet default */
+  display: none; 
 }
 
 .ah-dropdown-menu .dropdown-item {
@@ -83,10 +80,13 @@ body {
 }
 
 .ah-dropdown-menu .dropdown-item:hover {
-  background: var(--ah-primary-color); /* Ngjyra hover e dropdown */
+  background: #004b8d; 
 }
 
-/* Hamburger custom */
+/* =========================================================
+    HAMBURGER TOGGLER
+    Ikonë custom për menu mobile
+========================================================= */
 .custom-toggler.navbar-toggler { 
   border-color: white; 
 }
@@ -95,7 +95,10 @@ body {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
 }
 
-/* ==================== HERO SECTION ==================== */
+/* =========================================================
+    HERO SECTION
+    Seksioni hyrës i faqes
+========================================================= */
 .ah-hero-wrapper {
   padding: 200px 0 100px;
 }
@@ -115,10 +118,12 @@ body {
   font-weight: 600;
   margin-bottom: 20px;
 }
-
-/* ==================== PLACES SECTION ==================== */
+/* =========================================================
+    PLACES SECTION
+    Kartela për vende turistike
+========================================================= */
 .ah-places-section {
-  background: var(--ah-light-bg);
+  background: #f4f6f8;
   padding: 80px 0;
 }
 
@@ -128,7 +133,7 @@ body {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: 0.4s ease;
-  height: 100%; /* Siguron që të gjitha kartat të kenë lartësi të barabartë */
+  height: 100%; 
   display: flex;
   flex-direction: column;
 }
@@ -152,7 +157,7 @@ body {
 }
 
 .ah-place-content h3 {
-  color: var(--ah-primary-color);
+  color: #004b8d;
   font-weight: 600;
   margin-bottom: 15px;
 }
@@ -166,7 +171,7 @@ body {
 
 /* Button style */
 .ah-btn-more {
-  background: var(--ah-primary-color);
+  background: #004b8d;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -177,11 +182,14 @@ body {
 }
 
 .ah-btn-more:hover {
-  background: var(--ah-secondary-color);
+  background: #6ec1ff;
   transform: scale(1.05);
 }
 
-/* ==================== MODAL STYLING ==================== */
+/* =========================================================
+    MODAL
+    Stilizim i modalit Bootstrap
+========================================================= */
 .ah-modal-style {
   border-radius: 25px !important;
   border: none !important;
@@ -189,7 +197,7 @@ body {
 }
 
 .ah-modal-style .modal-header {
-  background: var(--ah-primary-color);
+  background: #004b8d;
   color: white;
   border-bottom: none;
 }
@@ -216,13 +224,14 @@ body {
   content: '📍';
   position: absolute;
   left: 0;
-  color: var(--ah-primary-color);
+  color: #004b8d;
 }
-
-/* ==================== FOOTER ==================== */
+/* =========================================================
+    FOOTER
+========================================================= */
 .ah-footer {
-  background: var(--ah-primary-color);
-  color: var(--ah-white);
+  background: #004b8d;
+  color: #ffffff;
   padding: 80px 0 30px;
 }
 
@@ -242,7 +251,7 @@ body {
 }
 
 .ah-footer-links a:hover {
-  color: var(--ah-secondary-color);
+  color: #6ec1ff;
   padding-left: 5px;
 }
 
@@ -265,7 +274,7 @@ body {
 @media (min-width: 992px) {
   /* Hero Section */
   .ah-places-hero {
-    padding: 80px 60px; /* Hero më i madh në desktop */
+    padding: 80px 60px;
   }
 
   /* Dropdown / Navbar: hapet me hover vetëm në desktop */
@@ -283,11 +292,11 @@ body {
 
   /* Navbar për touch devices */
   .dropdown:hover .ah-dropdown-menu {
-    display: none; /* hiq hover në tablet/mobile */
+    display: none; 
   }
 
   .dropdown.show .ah-dropdown-menu {
-    display: block; /* hapet me click */
+    display: block; 
   }
 
   /* Navbar collapse styling */
@@ -369,4 +378,3 @@ body {
     height: 180px;
   }
 }
-

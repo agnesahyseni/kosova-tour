@@ -1,20 +1,19 @@
 /* =========================================================
-   VARIABLAT GLOBALE & KONFIGURIMI BAZË
-   Përdoren për konsistencë vizuale dhe mirëmbajtje të lehtë
+    VARIABLAT GLOBALE & KONFIGURIMI BAZË
+    Përdoren për konsistencë vizuale dhe mirëmbajtje të lehtë
 ========================================================= */
 :root {
-  --ah-primary-color: #004b8d;      /* Ngjyra kryesore e projektit */
-  --ah-secondary-color: #6ec1ff;    /* Ngjyra sekondare / hover */
-  --ah-light-bg: #f4f6f8;           /* Background i lehtë për seksione */
-  --ah-dark-text: #333;             /* Ngjyrë standarde për tekst */
-  --ah-white: #ffffff;              /* Ngjyrë e bardhë universale */
-  --ah-title-font: 'Poppins', sans-serif;
+  --ah-primary-color: #004b8d;      
+  --ah-secondary-color: #6ec1ff;    
+  --ah-light-bg: #f4f6f8;           
+  --ah-dark-text: #333;             
+  --ah-white: #ffffff;              
   --ah-text-font: 'Poppins', sans-serif;
 }
 
 /* =========================================================
-   RESET GLOBAL
-   Heq margjina dhe padding default për të gjithë elementet
+    RESET GLOBAL
+    Heq margjina dhe padding default për të gjithë elementet
 ========================================================= */
 * {
   margin: 0;
@@ -23,7 +22,7 @@
 }
 
 /* =========================================================
-   BODY STYLES
+    BODY STYLES
 ========================================================= */
 body {
   font-family: var(--ah-text-font);
@@ -32,8 +31,8 @@ body {
 }
 
 /* =========================================================
-   NAVBAR – FIXED
-   Navbar fikse, transparente me blur efekt
+    NAVBAR – FIXED
+    Navbar fikse, transparente me blur efekt
 ========================================================= */
 .ah-navbar {
   position: fixed;
@@ -91,11 +90,11 @@ body {
 }
 
 /* =========================================================
-   TRADITIONS SECTION
-   Offset për navbar fixed dhe stilizim titujsh / imazhesh
+    TRADITIONS SECTION
+    Offset për navbar fixed dhe stilizim titujsh / imazhesh
 ========================================================= */
 .ah-traditions-wrapper {
-  padding-top: 100px; /* Vendos hapësirë që section të mos hyjë nën navbar */
+  padding-top: 100px; 
   padding-bottom: 60px;
   background-color: var(--ah-light-bg);
   margin-top: 60px;
@@ -179,7 +178,7 @@ body {
 }
 
 /* =========================================================
-   FOOTER
+    FOOTER
 ========================================================= */
 .ah-footer {
   background: var(--ah-primary-color);
@@ -216,30 +215,58 @@ body {
 }
 
 /* =========================================================
-   RESPONSIVE MEDIA QUERIES
+    RESPONSIVE MEDIA QUERIES
 ========================================================= */
 
 /* Tablet / Laptop ≤ 991px */
 @media (max-width: 991px) {
-  .ah-section-title { font-size: 2rem; margin-bottom: 40px; }
-  .ah-feature-heading { font-size: 1.5rem; margin-top: 15px; }
-  .ah-feature-heading::before { left: -10px; }
-  .ah-custom-img { height: 300px; }
+  .ah-section-title { 
+    font-size: 2rem; 
+    margin-bottom: 40px; 
+  }
+  .ah-feature-heading { 
+    font-size: 1.5rem; 
+    margin-top: 15px; 
+  }
+  .ah-feature-heading::before { 
+    left: -10px; 
+  }
+  .ah-custom-img { 
+    height: 300px; 
+  }
 }
 
 /* Mobile ≤ 768px */
 @media (max-width: 768px) {
-  .ah-traditions-wrapper { padding-top: 120px; }
-  .ah-section-title { font-size: 1.8rem; }
-  .ah-feature-heading { font-size: 1.3rem; }
-  .ah-feature-info { font-size: 1rem; }
-  .ah-custom-img { height: 250px; }
+  .ah-traditions-wrapper { 
+    padding-top: 120px; 
+  }
+  .ah-section-title { 
+    font-size: 1.8rem; 
+  }
+  .ah-feature-heading { 
+    font-size: 1.3rem; 
+  }
+  .ah-feature-info { 
+    font-size: 1rem; 
+  }
+  .ah-custom-img { 
+    height: 250px; 
+  }
 }
 
 /* Small Mobile ≤ 480px */
 @media (max-width: 480px) {
-  .ah-section-title { font-size: 1.5rem; }
-  .ah-feature-heading { font-size: 1.1rem; }
-  .ah-feature-info { font-size: 0.95rem; }
-  .ah-custom-img { height: 200px; }
+  .ah-section-title { 
+    font-size: 1.5rem; 
+  }
+  .ah-feature-heading { 
+    font-size: 1.1rem; 
+  }
+  .ah-feature-info { 
+    font-size: 0.95rem; 
+  }
+  .ah-custom-img { 
+    height: 200px; 
+  }
 }

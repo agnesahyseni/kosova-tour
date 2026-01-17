@@ -1,6 +1,6 @@
 /* =========================================================
-   VARIABLAT GLOBALE & KONFIGURIMI BAZË
-   Përdoren për konsistencë vizuale dhe mirëmbajtje të lehtë
+    VARIABLAT GLOBALE & KONFIGURIMI BAZË
+    Përdoren për konsistencë vizuale dhe mirëmbajtje të lehtë
 ========================================================= */
 :root {
   /* Ngjyra kryesore e projektit */
@@ -26,8 +26,8 @@
 }
 
 /* =========================================================
-   RESET GLOBAL
-   Eliminon diferencat mes shfletuesve
+    RESET GLOBAL
+    Eliminon diferencat mes shfletuesve
 ========================================================= */
 * {
   margin: 0;
@@ -36,26 +36,26 @@
 }
 
 /* =========================================================
-   BODY STYLES
-   Vendos fontin bazë dhe parandalon scroll horizontal
+    BODY STYLES
+    Vendos fontin bazë dhe parandalon scroll horizontal
 ========================================================= */
 body {
   font-family: var(--ah-text-font);
   overflow-x: hidden;
-  background-color: white; /* Siguron që s’ka hapësira të bardha anësore */
+  background-color: white; 
 }
 
 /* =========================================================
-   NAVBAR
-   Navbar fikse, transparente me blur efekt
+    NAVBAR
+    Navbar fikse, transparente me blur efekt
 ========================================================= */
 .ah-navbar {
-  position: fixed;              /* Mban navbar-in gjithmonë në krye */
+  position: fixed;              
   top: 0;
   width: 100%;
-  z-index: 1000;                /* Siguron që qëndron mbi përmbajtje */
+  z-index: 1000;                
   background: rgba(0, 0, 0, 0.4) !important;
-  backdrop-filter: blur(15px);  /* Efekt blur modern */
+  backdrop-filter: blur(15px);  
   -webkit-backdrop-filter: blur(15px);
   padding: 15px 0;
   transition: all 0.3s ease;
@@ -84,8 +84,8 @@ body {
 }
 
 /* =========================================================
-   DROPDOWN MENU
-   Stilizim i personalizuar mbi Bootstrap
+    DROPDOWN MENU
+    Stilizim i personalizuar mbi Bootstrap
 ========================================================= */
 .ah-dropdown-menu {
   background: rgba(0, 0, 0, 0.9) !important;
@@ -105,8 +105,8 @@ body {
 }
 
 /* =========================================================
-   HAMBURGER TOGGLER
-   Ikona custom për mobile
+    HAMBURGER TOGGLER
+    Ikona custom për mobile
 ========================================================= */
 .custom-toggler.navbar-toggler { 
   border-color: rgba(255,255,255,0.5); 
@@ -117,7 +117,7 @@ body {
 }
 
 /* =========================================================
-   OFFSET I PËRMBAJTJES NGA NAVBAR FIXED
+    OFFSET I PËRMBAJTJES NGA NAVBAR FIXED
 ========================================================= */
 .container.my-5 {
   margin-top: 120px !important; 
@@ -234,10 +234,10 @@ body {
     transform: scale(1.02);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-/* Ikona (duhet FontAwesome në projektin tënd) */
+
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 /* =========================================================
-   FOOTER
+    FOOTER
 ========================================================= */
 .ah-footer {
   background: var(--ah-primary-color);
@@ -279,9 +279,9 @@ body {
 }
 
 /* =========================================================
-   RESPONSIVE – DESKTOP, TABLET & MOBILE
-   Ky seksion rregullon madhësitë e tekstit dhe imazheve
-   pa ndryshu kodin ekzistues.
+    RESPONSIVE – DESKTOP, TABLET & MOBILE
+    Ky seksion rregullon madhësitë e tekstit dhe imazheve
+    pa ndryshu kodin ekzistues.
 ========================================================= */
 
 /* ----------------- DESKTOP ≥ 992px ----------------- */

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- =========================================================
-       META & KONFIGURIMI BAZË I FAQES
-       Ky seksion përfshin charset, viewport dhe titullin e faqes
+<!-- =========================================================
+    META & KONFIGURIMI BAZË I FAQES
+    Ky seksion përfshin charset, viewport dhe titullin e faqes
   ========================================================= -->
 
   <!-- Charset për mbështetje të plotë të karaktereve -->
@@ -16,18 +16,18 @@
   <title>Kosova Tour - Eksploro</title>
 
   <!-- =========================================================
-       IMPORTIMI I STILEVE TË JASHTME
-       1. Bootstrap 5 për grid system, navbar dhe utilities
-       2. CSS i personalizuar për seksionin Statistic
+    IMPORTIMI I STILEVE TË JASHTME
+    1. Bootstrap 5 për grid system, navbar dhe utilities
+    2. CSS i personalizuar për seksionin Statistic
   ========================================================= -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/statistic.css">
 </head>
 
-<body class="ah">
+<body id="ah">
 <!-- =========================================================
-     NAVBAR – MENU KRYESORE
-     Navbar fikse, responsive dhe me dropdown
+    NAVBAR – MENU KRYESORE
+    Navbar fikse, responsive dhe me dropdown
 ========================================================= -->
 <nav class="navbar navbar-expand-lg ah-navbar">
   <div class="container-fluid px-lg-5">
@@ -57,8 +57,8 @@
         <!-- Dropdown për faqe shtesë -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#"
-             id="ahDrop" role="button"
-             data-bs-toggle="dropdown">
+            id="ahDrop" role="button"
+            data-bs-toggle="dropdown">
             More
           </a>
 
@@ -77,8 +77,8 @@
 </nav>
 
 <!-- =========================================================
-     SECTION 1 – MAIN STATISTICS
-     Përmban titullin, cards dhe tabela kryesore
+    SECTION 1 – MAIN STATISTICS
+    Përmban titullin, cards dhe tabela kryesore
 ========================================================= -->
 <section class="ah-stats-section py-5 bg-light">
     <div class="container">
@@ -183,8 +183,8 @@
 </section>
 
 <!-- =========================================================
-     SECTION 2 – TOURISM & CULTURAL GROWTH
-     Përmban progress bars, listë dhe informacion të detajuar
+    SECTION 2 – TOURISM & CULTURAL GROWTH
+    Përmban progress bars, listë dhe informacion të detajuar
 ========================================================= -->
 <section class="ah-detailed-stats py-5">
     <div class="container">
@@ -231,7 +231,7 @@
                                 <span class="badge bg-primary rounded-pill">42%</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                🇦l Albania
+                                🇦🇱 Albania
                                 <span class="badge bg-primary rounded-pill">18%</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
@@ -277,8 +277,8 @@
 </section>
 
 <!-- =========================================================
-     SECTION 3 – REGIONAL DEVELOPMENT
-     Përmban imazh, floating card dhe mini stats
+    SECTION 3 – REGIONAL DEVELOPMENT
+    Përmban imazh, floating card dhe mini stats
 ========================================================= -->
 <section class="ah-regional-stats py-5 border-top border-bottom">
     <div class="container py-lg-4">
@@ -288,7 +288,7 @@
             <div class="col-lg-6">
                 <div class="ah-image-stack position-relative">
                     <div class="ah-main-img shadow-lg rounded-4 overflow-hidden">
-                        <img src="img/infrastructure.webp" class="img-fluid w-100" alt="Infrastructure Progress">
+                        <img src="../img/infrastructure.webp" class="img-fluid w-100" alt="Infrastructure Progress">
                     </div>
                     <div class="ah-floating-card bg-primary text-white p-4 rounded-4 shadow position-absolute bottom-0 end-0 translate-middle-y d-none d-md-block" style="width: 200px;">
                         <h2 class="fw-bold mb-0">800+</h2>
@@ -341,7 +341,7 @@
 </section>
 
 <!-- =========================================================
-     FOOTER – Informacion, linke dhe kredite e projektit
+    FOOTER – Informacion, linke dhe kredite e projektit
 ========================================================= -->
 <footer class="ah-footer">
   <div class="container">
@@ -397,12 +397,12 @@
 </footer>
 
 <!-- =========================================================
-     JAVASCRIPT
-     1. Bootstrap JS për navbar, collapse, dropdown
-     2. Script i personalizuar
+    JAVASCRIPT
+    1. Bootstrap JS për navbar, collapse, dropdown
+    2. Script i personalizuar
 ========================================================= -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/script.js"></script>
+<script src="../js/script.js"></script>
 
 </body>
 </html>

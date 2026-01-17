@@ -1,27 +1,19 @@
-/* ==================== VARIABLAT DHE CONFIG ==================== */
-:root {
-  --ah-primary-color: #004b8d;
-  --ah-secondary-color: #6ec1ff;
-  --ah-light-bg: #f4f6f8;
-  --ah-dark-text: #333;
-  --ah-white: #ffffff;
-  --ah-title-font: 'Poppins', sans-serif;
-  --ah-text-font: 'Poppins', sans-serif;
-}
-
+/*==================== RESET STILE ==================== */
+/* Margin dhe padding 0 për të gjithë elementët, box-sizing border-box për konsistencë */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+/* ==================== BODY ==================== */
+/* Font standard, heq scroll horizontal të panevojshëm, background i zi */
 body {
-  font-family: var(--ah-text-font);
+  font-family:'Poppins', sans-serif;
   overflow-x: hidden;
   background-color: #000;
 }
-
 /* ==================== BACKGROUND VIDEO ==================== */
+/* Video në sfond, mbulon tërë ekranin dhe është në layer poshtë (z-index -1) */
 .ah-bg-video {
   position: fixed;
   top: 0;
@@ -32,8 +24,8 @@ body {
   z-index: -1;
   filter: brightness(0.5);
 }
-
 /* ==================== NAVBAR ==================== */
+/* Navbar e fikse në krye, transparente me blur, responsive */
 .ah-navbar {
   position: fixed;
   top: 0;
@@ -45,9 +37,9 @@ body {
   padding: 15px 0;
   transition: all 0.3s ease;
 }
-
+/* Logo dhe linke navbar */
 .ah-logo {
-  color: var(--ah-white) !important;
+  color:#ffffff !important;
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -55,17 +47,16 @@ body {
 }
 
 .ah-nav-links .nav-link {
-  color: var(--ah-white) !important;
+  color: #ffffff !important;
   font-size: 18px;
   margin: 0 10px;
   transition: 0.3s;
 }
 
 .ah-nav-links .nav-link:hover {
-  color: var(--ah-secondary-color) !important;
+  color: #6ec1ff !important;
 }
-
-/* Dropdown Styles */
+/* Dropdown menu për linke shtesë */
 .ah-dropdown-menu {
   background: rgba(0, 0, 0, 0.9) !important;
   backdrop-filter: blur(10px);
@@ -78,10 +69,9 @@ body {
 }
 
 .ah-dropdown-menu .dropdown-item:hover {
-  background: var(--ah-primary-color);
+  background: #004b8d;
 }
-
-/* Hamburger Toggler */
+/* Hamburger Toggler për mobile */
 .custom-toggler.navbar-toggler { 
   border-color: rgba(255,255,255,0.5); 
 }
@@ -89,8 +79,8 @@ body {
 .custom-toggler .navbar-toggler-icon { 
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
 }
-
 /* ==================== HERO SECTION ==================== */
+/* Seksioni kryesor në qendër, me padding dhe background semi-transparent */
 .ah-hero-wrapper {
   min-height: 100vh;
   display: flex;
@@ -107,7 +97,7 @@ body {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
-  color: var(--ah-white);
+  color:#ffffff;
   box-shadow: 0 25px 50px rgba(0,0,0,0.3);
 }
 
@@ -123,29 +113,29 @@ body {
   margin: 0 auto 35px;
   line-height: 1.8;
 }
-
 /* ==================== BUTTON ==================== */
+/* Stil i butonit kryesor, efekt hover */
 .ah-btn {
   padding: 12px 40px;
   font-size: 16px;
   font-weight: 600;
   border: none;
   border-radius: 50px;
-  background: var(--ah-white);
-  color: var(--ah-primary-color);
+  background: #ffffff;
+  color: #004b8d;
   cursor: pointer;
   transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .ah-btn:hover {
   transform: scale(1.05);
-  background: var(--ah-primary-color);
-  color: var(--ah-white);
+  background: #004b8d;
+  color:#ffffff;
 }
-
 /* ==================== WHY VISIT SECTION ==================== */
+/* Seksion kartelash, me hover efekt për desktop dhe responsive layout */
 .ah-why-section {
-  background: var(--ah-light-bg);
+  background: #f4f6f8;
   padding: 100px 0;
   position: relative;
   z-index: 1;
@@ -156,11 +146,11 @@ body {
   font-weight: 600;
   margin-bottom: 60px;
   text-align: center;
-  color: var(--ah-primary-color);
+  color: #004b8d;
 }
 
 .ah-why-card {
-  background: var(--ah-white);
+  background: #ffffff;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -174,7 +164,7 @@ body {
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-.ah-why-card img {
+  .ah-why-card img {
   width: 100%;
   height: 230px;
   object-fit: cover;
@@ -183,7 +173,7 @@ body {
 .ah-why-card h3 {
   font-size: 22px;
   padding: 20px 20px 10px;
-  color: var(--ah-primary-color);
+  color:#004b8d;
   font-weight: 600;
 }
 
@@ -193,11 +183,11 @@ body {
   font-size: 15px;
   line-height: 1.6;
 }
-
 /* ==================== FOOTER ==================== */
+/* Footer me ngjyrë kryesore, linke hover dhe informacion student */
 .ah-footer {
-  background: var(--ah-primary-color);
-  color: var(--ah-white);
+  background: #004b8d;
+  color: #ffffff;
   padding: 80px 0 30px;
   position: relative;
   z-index: 1;
@@ -210,7 +200,7 @@ body {
 }
 
 .ah-footer-links a:hover {
-  color: var(--ah-secondary-color);
+  color: #6ec1ff;
   padding-left: 5px;
 }
 
@@ -220,18 +210,15 @@ body {
   margin-top: 50px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-/* ==================== RESPONSIVE ==================== */
-
-/* Desktop Hover */
+/*==================== RESPONSIVE MEDIA QUERIES ==================== */
+/* Desktop Hover për dropdown */
 @media (min-width: 992px) {
   .dropdown:hover .ah-dropdown-menu {
     display: block;
     margin-top: 0;
   }
 }
-
-/* Tablet & Mobile */
+/* Tablet & Mobile: navbar collapse dhe padding për linke */
 @media (max-width: 991.98px) {
   .navbar-collapse {
     background: rgba(0, 0, 0, 0.95);
@@ -245,8 +232,7 @@ body {
     border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 }
-
-/* Mobile */
+/* Mobile: font-size dhe padding i hero section, hover efekt i kartelave hiqet */
 @media (max-width: 767.98px) {
   .ah-hero h1 {
     font-size: 2.2rem;
@@ -261,8 +247,7 @@ body {
     transform: none;
   }
 }
-
-/* Extra Small Devices */
+/* Extra Small Devices: font-size dhe padding më të vogël, hero dhe butona të përshtatura */
 @media (max-width: 575.98px) {
   .ah-hero h1 {
     font-size: 1.8rem;

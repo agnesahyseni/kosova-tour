@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- =========================================================
-       META & KONFIGURIMI BAZË I FAQES
-       Këtu definohen cilësimet kryesore të dokumentit HTML
-  ========================================================= -->
-
-  <!-- Charset UTF-8 për mbështetje të plotë të karaktereve -->
+<!-- =========================================================
+META & KONFIGURIMI BAZË I FAQES
+Këtu definohen cilësimet kryesore të dokumentit HTML
+Charset UTF-8 për mbështetje të plotë të karaktereve 
+Responsive viewport për mobile, tablet dhe desktop
+Titulli i faqes që shfaqet në browser
+========================================================= -->
   <meta charset="UTF-8">
-
-  <!-- Responsive viewport për mobile, tablet dhe desktop -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Titulli i faqes që shfaqet në browser -->
   <title>Kosova Tour - Eksploro</title>
 
-  <!-- Bootstrap 5 CSS
-       Përdoret për grid system, navbar, utilities responsive -->
+<!-- =========================================================
+BOOTSTRAP 5 CSS
+Përdoret për grid system, navbar, utilities responsive
+========================================================= -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- CSS i personalizuar për Events page -->
+<!-- =========================================================
+CSS I PERSONALIZUAR
+Stilet për Events page, përfshin card, grid dhe responsive
+========================================================= -->
   <link rel="stylesheet" href="../css/events.css">
 </head>
 
-<body class="ah">
+<body id="ah">
 <!-- class="ah" përdoret për stilizim specifik të faqes -->
 
 <!-- =========================================================
-     NAVBAR – MENU KRYESORE
-     Navbar fikse, responsive, me dropdown dhe hamburger
+NAVBAR – MENU KRYESORE
+Navbar fikse, responsive, me dropdown dhe hamburger
 ========================================================= -->
 <nav class="navbar navbar-expand-lg ah-navbar">
   <div class="container-fluid px-lg-5">
-    <!-- container-fluid lejon shtrirje të plotë të navbar-it -->
 
     <!-- Logo / Emri i projektit -->
     <a class="navbar-brand ah-logo" href="index.html">
@@ -54,43 +55,18 @@
       <ul class="navbar-nav ms-auto ah-nav-links">
 
         <!-- Linket kryesore të navigimit -->
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="places.html">Places</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="regions.html">Regions</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="gallery.html">Gallery</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="events.html">Events</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="places.html">Places</a></li>
+        <li class="nav-item"><a class="nav-link" href="regions.html">Regions</a></li> 
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 
         <!-- Dropdown menu për faqe shtesë -->
         <li class="nav-item dropdown">
-
           <!-- Butoni i dropdown -->
-          <a class="nav-link dropdown-toggle"
-             href="#"
-             id="ahDrop"
-             role="button"
-             data-bs-toggle="dropdown">
-            More
-          </a>
-
-          <!-- Lista e dropdown -->
+          <a class="nav-link dropdown-toggle" href="#" id="ahDrop" role="button" data-bs-toggle="dropdown">More</a>
+          <!-- Lista e dropdown me linke shtesë -->
           <ul class="dropdown-menu ah-dropdown-menu">
             <li><a class="dropdown-item" href="statistic.html">Statistic</a></li>
             <li><a class="dropdown-item" href="traditions.html">Traditions</a></li>
@@ -105,8 +81,8 @@
 </nav>
 
 <!-- =========================================================
-     EVENTS SECTION
-     Përmbajtja kryesore e faqes
+EVENTS SECTION
+Përmbajtja kryesore e faqes
 ========================================================= -->
 <div class="container my-5">
 
@@ -121,16 +97,18 @@
   <!-- Grid i eventeve -->
   <div class="row g-4">
 
-    <!-- Event 1 -->
+<!-- =====================================================
+EVENT 1 – Sunny Hill Festival
+Përfshin imazh, datë, lokacion dhe përshkrim
+===================================================== -->
     <div class="col-12 col-md-6 col-lg-4">
       <div class="ah-event-card">
 
         <!-- Foto + data -->
         <div class="ah-event-img">
-          <img src="img/sunnyevents.jpg" alt="Sunny Hill Festival">
+          <img src="../img/sunnyevents.jpg" alt="Sunny Hill Festival">
           <div class="ah-event-date">Aug 04</div>
         </div>
-
         <!-- Përmbajtja e eventit -->
         <div class="ah-event-body">
           <h5 class="ah-event-title">Sunny Hill Festival</h5>
@@ -142,14 +120,17 @@
       </div>
     </div>
 
-    <!-- Event 2 -->
+<!-- =====================================================
+EVENT 2 – DokuFest
+===================================================== -->
     <div class="col-12 col-md-6 col-lg-4">
       <div class="ah-event-card">
+        <!-- Foto + data -->
         <div class="ah-event-img">
-          <img src="img/dokuevents.jpg" alt="DokuFest">
+          <img src="../img/dokuevents.jpg" alt="DokuFest">
           <div class="ah-event-date">Aug 12</div>
         </div>
-
+        <!-- Përmbajtja e eventit -->
         <div class="ah-event-body">
           <h5 class="ah-event-title">DokuFest</h5>
           <p class="ah-event-location">📍 Historic Center, Prizren</p>
@@ -159,15 +140,17 @@
         </div>
       </div>
     </div>
-
-    <!-- Event 3 -->
+<!-- =====================================================
+EVENT 3 – BeerFest Prishtina
+===================================================== -->
     <div class="col-12 col-md-6 col-lg-4">
       <div class="ah-event-card">
+        <!-- Foto + data -->
         <div class="ah-event-img">
-          <img src="img/beerevents.jpg" alt="BeerFest Prishtina">
+          <img src="../img/beerevents.jpg" alt="BeerFest Prishtina">
           <div class="ah-event-date">July 25</div>
         </div>
-
+        <!-- Përmbajtja e eventit -->
         <div class="ah-event-body">
           <h5 class="ah-event-title">BeerFest Prishtina</h5>
           <p class="ah-event-location">📍 Zahir Pajaziti Square, Prishtina</p>
@@ -182,8 +165,8 @@
 </div>
 
 <!-- =========================================================
-     FOOTER
-     Informacione shtesë dhe linke
+FOOTER
+Përmban përshkrim, linke navigimi dhe info projekti
 ========================================================= -->
 <footer class="ah-footer">
   <div class="container">
@@ -239,14 +222,12 @@
 </footer>
 
 <!-- =========================================================
-     JAVASCRIPT
+JAVASCRIPT
 ========================================================= -->
-
 <!-- Bootstrap JS (dropdown, navbar, collapse) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 <!-- JavaScript i personalizuar -->
-<script src="js/script.js"></script>
+<script src="../js/script.js"></script>
 
 </body>
 </html>

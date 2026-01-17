@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- =========================================================
-       META & KONFIGURIMI BAZË I FAQES
-  ========================================================= -->
-
-  <!-- Charset për mbështetje të plotë të karaktereve -->
-  <meta charset="UTF-8">
-
-  <!-- Responsive design për mobile, tablet dhe desktop -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Titulli i faqes që shfaqet në browser -->
-  <title>Kosova Tour - Eksploro</title>
-
-  <!-- Bootstrap 5 CSS (grid, navbar, responsive utilities) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-  <!-- CSS i personalizuar për gallery -->
-  <link rel="stylesheet" href="../css/about.css">
-</head>
-
-<body class="ah">
+<!-- =========================================================
+META & KONFIGURIMI BAZË I FAQES
+- Charset UTF-8 për mbështetje të plotë të karaktereve
+- Meta viewport për responsive design
+- Titulli i faqes për shfaqje në tab browser
+========================================================= -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kosova Tour - Eksploro</title>
 
 <!-- =========================================================
-     NAVBAR – MENU KRYESORE
-     Navbar fikse, responsive dhe me dropdown
+LIBRARI DHE CSS E JASHTME
+- Bootstrap 5 për grid, navbar dhe responsive utilities
+- Font Awesome për ikonat e përdorura te kartelat
+- CSS personal për About Us section
+========================================================= -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="../css/about.css">
+</head>
+
+<body id="ah">
+
+<!-- =========================================================
+NAVBAR – MENU KRYESORE
+- Navbar fikse në krye
+- Responsive: shfaq hamburger për ekrane të vogla
+- Dropdown menu për linke shtesë
 ========================================================= -->
 <nav class="navbar navbar-expand-lg ah-navbar">
   <div class="container-fluid px-lg-5">
@@ -56,12 +58,12 @@
         <!-- Dropdown për faqe shtesë -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#"
-             id="ahDrop" role="button"
-             data-bs-toggle="dropdown">
+            id="ahDrop" role="button"
+            data-bs-toggle="dropdown">
             More
           </a>
 
-          <!-- Përmbajtja e dropdown -->
+          <!-- Përmbajtja e dropdown me linke të brendshme -->
           <ul class="dropdown-menu ah-dropdown-menu">
             <li><a class="dropdown-item" href="statistic.html">Statistic</a></li>
             <li><a class="dropdown-item" href="traditions.html">Traditions</a></li>
@@ -74,19 +76,25 @@
     </div>
   </div>
 </nav>
-<!-- ================= About Us Section ================= -->
+<!-- =========================================================
+ABOUT US SECTION
+- Seksioni kryesor për prezantimin e ekipit dhe projektit
+- Përdor Bootstrap grid për layout responsive (imazh + tekst)
+========================================================= -->
 <section id="about" class="ah-about py-5">
   <div class="container">
+    <!-- Titulli i seksionit -->
     <div class="row mb-4">
       <div class="col text-center">
         <h2 class="ah-section-title">About Us</h2>
         <p class="ah-section-subtitle">Learn who we are, our mission, and why we created Kosovo Tour.</p>
       </div>
     </div>
-
+    <!-- Rreshti me imazh dhe tekst -->
     <div class="row align-items-center mb-5">
+      <!-- Kolona me imazh -->
       <div class="col-md-6">
-        <img src="img/team.jpg" alt="Our Team" class="ah-about-img img-fluid rounded">
+        <img src="../img/team.jpg" alt="Our Team" class="ah-about-img img-fluid rounded">
       </div>
       <div class="col-md-6">
         <h3 class="ah-about-heading">Who We Are</h3>
@@ -105,16 +113,22 @@
     </div>
   </div>
 </section>
+<!-- =========================================================
+ABOUT PROJECT GRID SECTION
+- Kartela me qellimin, teknologjinë dhe vizionin e projektit
+- Përdor Bootstrap grid për layout responsive (3 kolona)
+========================================================= -->
 <section class="ah-about-clean py-5 mt-5" id="about">
     <div class="container ah-about-container text-center">
-        
+        <!-- Titulli i seksionit -->
         <div class="ah-title-box mb-5">
             <h2 class="ah-about-heading display-4 fw-bold">About This <span class="ah-text-red">Project</span></h2>
             <div class="ah-underline-center"></div>
         </div>
-
+        
+        <!-- Grid i kartelave -->
         <div class="row ah-about-grid">
-            
+            <!-- Kartela 1: Qëllimi -->
             <div class="col-md-4 mb-4">
                 <div class="ah-about-item p-4 shadow-sm border rounded h-100">
                     <div class="ah-about-icon-box mb-3">
@@ -124,7 +138,7 @@
                     <p class="text-muted">The main objective of this project is to promote Kosovo's tourism and cultural heritage through a modern web interface.</p>
                 </div>
             </div>
-
+            <!-- Kartela 2: Teknologjia -->
             <div class="col-md-4 mb-4">
                 <div class="ah-about-item p-4 shadow-sm border rounded h-100">
                     <div class="ah-about-icon-box mb-3">
@@ -134,7 +148,7 @@
                     <p class="text-muted">Built using HTML5, CSS3, and Bootstrap 5 to ensure a fully responsive experience across all devices.</p>
                 </div>
             </div>
-
+            <!-- Kartela 3: Vizioni -->
             <div class="col-md-4 mb-4">
                 <div class="ah-about-item p-4 shadow-sm border rounded h-100">
                     <div class="ah-about-icon-box mb-3">
@@ -144,14 +158,12 @@
                     <p class="text-muted">To provide a simple yet powerful information hub for anyone interested in exploring the history and beauty of Kosovo.</p>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
-
-
 <!-- =========================================================
-     FOOTER
+FOOTER
+- Informacion mbi projektin, linke të shpejta dhe metadata student
 ========================================================= -->
 <footer class="ah-footer">
   <div class="container">
@@ -194,7 +206,6 @@
           <li><strong>Design:</strong> Multipage & Responsive</li>
         </ul>
       </div>
-
     </div>
 
     <!-- Fundi i footer-it -->
@@ -207,14 +218,11 @@
 </footer>
 
 <!-- =========================================================
-     JAVASCRIPT
+JAVASCRIPT
+Bootstrap JS Bundle + Custom JS
 ========================================================= -->
-
-<!-- Bootstrap JS (navbar, dropdown, collapse) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- JavaScript i personalizuar -->
-<script src="js/script.js"></script>
+<script src="../js/script.js"></script>
 
 </body>
 </html>

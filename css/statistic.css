@@ -1,19 +1,19 @@
 /* =========================================================
-   VARIABLAT GLOBALE & KONFIGURIMI BAZË
-   Variabla root për ngjyra, fonte dhe mirëmbajtje të lehtë
+    VARIABLAT GLOBALE & KONFIGURIMI BAZË
+    Variabla root për ngjyra, fonte dhe mirëmbajtje të lehtë
 ========================================================= */
 :root {
-  --ah-primary-color: #004b8d;        /* Ngjyra kryesore */
-  --ah-secondary-color: #6ec1ff;      /* Ngjyra sekondare / hover */
-  --ah-light-bg: #f4f6f8;             /* Background i lehtë për seksione */
-  --ah-dark-text: #333;               /* Ngjyrë teksti */
-  --ah-white: #ffffff;                /* Ngjyrë e bardhë */
+  --ah-primary-color: #004b8d;        
+  --ah-secondary-color: #6ec1ff;      
+  --ah-light-bg: #f4f6f8;             
+  --ah-dark-text: #333;               
+  --ah-white: #ffffff;                
   --ah-title-font: 'Poppins', sans-serif;
   --ah-text-font: 'Poppins', sans-serif;
 }
 
 /* =========================================================
-   RESET GLOBAL
+    RESET GLOBAL
 ========================================================= */
 * {
   margin: 0;
@@ -22,17 +22,18 @@
 }
 
 /* =========================================================
-   BODY
+    BODY
 ========================================================= */
 body {
   font-family: var(--ah-text-font);
   overflow-x: hidden;
   background-color: var(--ah-white);
   padding-top: 60px; /* Për navbar fikse */
+  max-width: 100%;
 }
 
 /* =========================================================
-   NAVBAR
+    NAVBAR
 ========================================================= */
 .ah-navbar {
   position: fixed;
@@ -70,6 +71,8 @@ body {
   background: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(10px);
   border: none;
+  max-width: 100vh;
+  box-sizing: border-box;
 }
 
 .ah-dropdown-menu .dropdown-item {
@@ -91,7 +94,7 @@ body {
 }
 
 /* =========================================================
-   STATISTICS SECTION
+    STATISTICS SECTION
 ========================================================= */
 .ah-stats-section {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -218,10 +221,10 @@ body {
     display: inline-block;
 }
 
-/* REGIONAL STATISTICS */
 .ah-regional-stats {
     background: var(--ah-white);
     padding: 5rem 0;
+    overflow: hidden; /* Ky bllokon shiritin e bardhë */
 }
 
 .ah-section-title {
@@ -231,31 +234,46 @@ body {
     margin-bottom: 2rem;
 }
 
-.ah-image-stack { position: relative; }
-.ah-main-img { border-radius: 20px; overflow: hidden; transition: transform 0.5s ease; }
-.ah-image-stack:hover .ah-main-img { transform: scale(1.02); }
+.ah-image-stack { 
+    position: relative; 
+}
 
+.ah-main-img { 
+    border-radius: 20px; 
+    overflow: hidden; 
+    transition: transform 0.5s ease; 
+}
+
+.ah-image-stack:hover .ah-main-img { 
+    transform: scale(1.02); 
+}
+
+/* KORRIGJIMI KRYESOR: Hoqëm translateX(20px) */
 .ah-floating-card {
     position: absolute;
-    bottom: 0;
-    right: -20px;
+    bottom: 20px;
+    right: 10px; /* E mbajmë brenda kufijve */
     background: var(--ah-primary-color);
     color: var(--ah-white);
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
+    z-index: 5;
 }
 
-.ah-floating-card:hover { transform: translateY(-5px); }
+.ah-floating-card:hover { 
+    transform: translateY(-5px); 
+}
 
 .ah-mini-stat {
     background: var(--ah-white);
     padding: 1rem;
     border-radius: 8px;
-    margin-bottom: 1rem;
+    height: 100%; /* Siguron lartësi të barabartë */
     border-left: 4px solid #0d6efd;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .ah-mini-stat:hover {
@@ -291,24 +309,98 @@ body {
 }
 
 /* =========================================================
-   RESPONSIVE
+    RESPONSIVE
 ========================================================= */
+/* =========================================================
+    RESPONSIVE DESIGN - FINAL FIXED VERSION
+========================================================= */
+
+/* 1. Rregullime për Tableta dhe ekrane mesatare (Desktop i vogël) */
 @media (max-width: 992px) {
-    .ah-section-title { font-size: 2rem; }
-    .ah-image-stack { margin-bottom: 30px; }
-    .ah-floating-card { position: relative !important; right: 0 !important; transform: none !important; margin-top: 15px; width: 100% !important; }
+    .ah-section-title { 
+        font-size: 2rem; 
+    }
+    
+    .ah-image-stack { 
+        margin-bottom: 40px; 
+    }
+
+    /* Kthejmë floating card në element normal që të mos dalë jashtë */
+    .ah-floating-card { 
+        position: relative !important; 
+        right: 0 !important; 
+        bottom: 0 !important; 
+        transform: none !important; 
+        margin-top: 15px; 
+        width: 100% !important; 
+        box-shadow: none;
+    }
+
+    .ah-stats-section .ah-main-title {
+        font-size: 2rem;
+    }
 }
 
+/* 2. Rregullime për Telefona (Landscape & Large Phones) */
 @media (max-width: 768px) {
-    body { padding-top: 140px; }
-    .ah-main-title { font-size: 1.8rem; }
-    .ah-stat-number { font-size: 1.5rem; }
-    .ah-subtitle { font-size: 0.9rem; }
-    .ah-sidebar-card { margin-top: 20px; }
+
+    .ah-main-title { 
+        font-size: 1.8rem; 
+    }
+
+    .ah-stat-number { 
+        font-size: 1.5rem;
+    }
+
+    .ah-sidebar-card { 
+        margin-top: 30px; 
+        padding: 1.5rem;
+    }
+
+    /* Rregullimi kritik për shiritin e bardhë: hiqen margjinat negative të rreshtave */
+    .row {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    /* Sigurohemi që tabelat nuk e shtyjnë ekranin */
+    .ah-table-container {
+        padding: 1rem;
+        margin-top: 30px;
+    }
 }
 
+/* 3. Rregullime për Telefona të vegjël (Portrait - iPhone SE, etj.) */
 @media (max-width: 480px) {
-    .ah-main-title { font-size: 1.5rem; }
-    .ah-subtitle { font-size: 0.85rem; }
-    .ah-stat-number { font-size: 1.3rem; }
+    .ah-main-title { 
+        font-size: 1.4rem; 
+    }
+
+    .ah-subtitle { 
+        font-size: 0.85rem; 
+    }
+
+    .ah-stat-number { 
+        font-size: 1.3rem; 
+    }
+
+    /* Zvogëlojmë ikonat që të zënë më pak vend */
+    .ah-icon-box {
+        font-size: 2.2rem;
+    }
+
+    /* Card-et e statistikave i bëjmë pak më kompakte */
+    .ah-stat-card {
+        padding: 1.5rem 0.5rem;
+    }
+
+    /* Rregullojmë padding-un e Footer-it */
+    .ah-footer {
+        padding: 50px 0 20px;
+        text-align: left;
+    }
+
+    .ah-footer-links {
+        margin-bottom: 30px;
+    }
 }

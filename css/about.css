@@ -1,134 +1,105 @@
 /* =========================================================
-   VARIABLAT GLOBALE & KONFIGURIMI BAZË
-   Përdoren për konsistencë vizuale dhe mirëmbajtje të lehtë
-========================================================= */
-:root {
-  /* Ngjyra kryesore e projektit */
-  --ah-primary-color: #004b8d;
-
-  /* Ngjyra sekondare për hover dhe theksime */
-  --ah-secondary-color: #6ec1ff;
-
-  /* Background i lehtë për seksione */
-  --ah-light-bg: #f4f6f8;
-
-  /* Ngjyrë standarde për tekst */
-  --ah-dark-text: #333;
-
-  /* Ngjyrë e bardhë universale */
-  --ah-white: #ffffff;
-
-  /* Fonti për tituj */
-  --ah-title-font: 'Poppins', sans-serif;
-
-  /* Fonti për tekst normal */
-  --ah-text-font: 'Poppins', sans-serif;
-}
-
-/* =========================================================
-   RESET GLOBAL
-   Eliminon diferencat mes shfletuesve
+RESET GLOBAL
+- Heq margjinat dhe padding e parazgjedhur të shfletuesve
+- Box-sizing: border-box për lehtësi në dimensionim
 ========================================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 /* =========================================================
-   BODY STYLES
-   Vendos fontin bazë dhe parandalon scroll horizontal
+BODY STYLES
+- Fonti bazë për të gjithë faqen
+- Parandalon scroll horizontal të panevojshëm
 ========================================================= */
 body {
-  font-family: var(--ah-text-font);
+  font-family:'Poppins', sans-serif;
   overflow-x: hidden;
-  background-color: white; /* Siguron që s’ka hapësira të bardha anësore */
+  background-color: white;
 }
-
 /* =========================================================
-   NAVBAR
-   Navbar fikse, transparente me blur efekt
+NAVBAR
+- Navbar fikse, transparente me blur efekt
+- Përshtatet për të gjithë madhësitë e ekranit
 ========================================================= */
 .ah-navbar {
-  position: fixed;              /* Mban navbar-in gjithmonë në krye */
+  position: fixed;              
   top: 0;
   width: 100%;
-  z-index: 1000;                /* Siguron që qëndron mbi përmbajtje */
+  z-index: 1000;                
   background: rgba(0, 0, 0, 0.4) !important;
-  backdrop-filter: blur(15px);  /* Efekt blur modern */
+  backdrop-filter: blur(15px);  
   -webkit-backdrop-filter: blur(15px);
   padding: 15px 0;
   transition: all 0.3s ease;
 }
-
 /* Logo / emri i faqes */
 .ah-logo {
-  color: var(--ah-white) !important;
+  color: #ffffff!important;
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 1px;
   text-decoration: none;
 }
-
 /* Linket e navigimit */
 .ah-nav-links .nav-link {
-  color: var(--ah-white) !important;
+  color: #ffffff!important;
   font-size: 18px;
   margin: 0 10px;
   transition: 0.3s;
 }
-
 /* Hover efekt për linket */
 .ah-nav-links .nav-link:hover {
-  color: var(--ah-secondary-color) !important;
+  color: #6ec1ff !important;
 }
-
 /* =========================================================
-   DROPDOWN MENU
-   Stilizim i personalizuar mbi Bootstrap
+DROPDOWN MENU
+- Stilizim i personalizuar mbi Bootstrap
 ========================================================= */
 .ah-dropdown-menu {
   background: rgba(0, 0, 0, 0.9) !important;
   backdrop-filter: blur(10px);
   border: none;
 }
-
 /* Elementet brenda dropdown */
 .ah-dropdown-menu .dropdown-item {
   color: white !important;
   padding: 10px 20px;
 }
-
 /* Hover për dropdown items */
 .ah-dropdown-menu .dropdown-item:hover {
-  background: var(--ah-primary-color);
+  background: #004b8d;
 }
-
 /* =========================================================
-   HAMBURGER TOGGLER
-   Ikona custom për mobile
+HAMBURGER TOGGLER
+Ikona custom për mobile
 ========================================================= */
 .custom-toggler.navbar-toggler { 
   border-color: rgba(255,255,255,0.5); 
 }
 
 .custom-toggler .navbar-toggler-icon { 
+  /* SVG i personalizuar për hamburger */
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
 }
-
 /* =========================================================
-   OFFSET I PËRMBAJTJES NGA NAVBAR FIXED
+OFFSET I PËRMBAJTJES NGA NAVBAR FIXED
+- Për të shmangur mbivendosjen e navbar mbi përmbajtje
 ========================================================= */
 .container.my-5 {
   margin-top: 120px !important; 
 }
-/* ================== About Us Section ================== */
+/* =========================================================
+ABOUT US SECTION
+- Stil bazë për About Us: font, background, ngjyra
+========================================================= */
 .ah-about {
     font-family: 'Poppins', sans-serif;
     background-color: #f8f9fa;
     color: #333;
 }
-
+/* Tituj seksioni */
 .ah-section-title {
     font-size: 2.5rem;
     font-weight: 600;
@@ -141,7 +112,7 @@ body {
     font-size: 1.125rem;
     color: #555;
 }
-
+/* Imazhe About Us */
 .ah-about-img {
     width: 100%;
     border-radius: 12px;
@@ -153,7 +124,7 @@ body {
     transform: scale(1.05);
     box-shadow: 0 12px 30px rgba(0,0,0,0.2);
 }
-
+/* Tituj nën seksion */
 .ah-about-heading {
     font-size: 1.75rem;
     font-weight: 600;
@@ -161,31 +132,16 @@ body {
     margin-bottom: 0.5rem;
     margin-top: 1.5rem;
 }
-
+/* Tekst normal */
 .ah-about-text {
     font-size: 1rem;
     line-height: 1.7;
     color: #555;
 }
-
-/* Responsive tweaks */
-@media (max-width: 767px) {
-    .ah-about-heading {
-        font-size: 1.5rem;
-        text-align: center;
-        margin-top: 1rem;
-    }
-
-    .ah-about-text {
-        text-align: center;
-    }
-
-    .ah-about-img {
-        margin-bottom: 1.5rem;
-    }
-}
-/* --- ABOUT PROJECT STYLING --- */
-
+/* =========================================================
+ABOUT PROJECT SECTION
+- Kartat e projektit: Goal, Technology, Vision
+========================================================= */
 .ah-about-tag {
     color:  #004b8d;
     letter-spacing: 2px;
@@ -205,7 +161,7 @@ body {
     border-radius: 2px;
 }
 
-/* Kartat (Items) */
+/* Kartat e projektit */
 .ah-about-item {
     background: #ffffff;
     transition: all 0.3s ease;
@@ -217,11 +173,11 @@ body {
     border-color:  #004b8d !important;
 }
 
-/* Rrethi i Ikonave */
+/* Rrethi i ikonave brenda kartave */
 .ah-about-icon-box {
     width: 70px;
     height: 70px;
-    background: #212529; /* E zezë për kontrast */
+    background: #212529; 
     color: #fff;
     display: flex;
     align-items: center;
@@ -233,15 +189,15 @@ body {
 }
 
 .ah-about-item:hover .ah-about-icon-box {
-    background:  #004b8d; /* Kthehet në të kuqe kur kalon miun */
+    background:  #004b8d; 
     transform: rotateY(180deg);
 }
 /* =========================================================
-   FOOTER
+FOOTER
 ========================================================= */
 .ah-footer {
-  background: var(--ah-primary-color);
-  color: var(--ah-white);
+  background:#004b8d;
+  color: #ffffff;
   padding: 80px 0 30px;
   position: relative;
   z-index: 1;
@@ -259,7 +215,7 @@ body {
 
 /* Hover efekt footer links */
 .ah-footer-links a:hover {
-  color: var(--ah-secondary-color);
+  color: #6ec1ff;
   padding-left: 5px;
 }
 
@@ -277,15 +233,12 @@ body {
   padding: 0;
   margin: 0;
 }
-
 /* =========================================================
-   RESPONSIVE – DESKTOP, TABLET & MOBILE
-   Ky seksion rregullon madhësitë e titujve, cards dhe imazheve
+RESPONSIVE STYLING
+- Desktop, tablet dhe mobile tweaks për tituj, tekst, kartela dhe imazhe
 ========================================================= */
-
 /* ----------------- DESKTOP ≥ 992px ----------------- */
 @media (min-width: 992px) {
-  /* Titujt kryesorë për About */
   .ah-section-title {
     font-size: 2.5rem;
   }
@@ -294,18 +247,15 @@ body {
     font-size: 1.75rem;
   }
 
-  /* Teksti normal */
   .ah-about-text {
     font-size: 1rem;
   }
 
-  /* Imazhet */
   .ah-about-img {
     width: 100%;
     max-height: 400px;
   }
 
-  /* Cards */
   .ah-about-item {
     padding: 30px;
   }
@@ -333,7 +283,6 @@ body {
     padding: 25px;
   }
 }
-
 /* ----------------- MOBILE ≤ 767px ----------------- */
 @media (max-width: 767px) {
   .ah-section-title {
@@ -359,9 +308,8 @@ body {
 
   .ah-about-item {
     padding: 20px;
-  }
+  }   
 }
-
 /* ----------------- SMALL MOBILE ≤ 480px ----------------- */
 @media (max-width: 480px) {
   .ah-section-title {
@@ -383,8 +331,6 @@ body {
   .ah-about-item {
     padding: 15px;
   }
-
-  /* Rreshtimi i ikonave brenda cards */
   .ah-about-icon-box {
     width: 60px;
     height: 60px;
