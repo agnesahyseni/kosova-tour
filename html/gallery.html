@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =========================================================
+       META & KONFIGURIMI BAZË I FAQES
+  ========================================================= -->
+
+  <!-- Charset për mbështetje të plotë të karaktereve -->
+  <meta charset="UTF-8">
+
+  <!-- Responsive design për mobile, tablet dhe desktop -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Titulli i faqes që shfaqet në browser -->
+  <title>Kosova Tour - Eksploro</title>
+
+  <!-- Bootstrap 5 CSS (grid, navbar, responsive utilities) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS i personalizuar për gallery -->
+  <link rel="stylesheet" href="css/gallery.css">
+</head>
+
+<body class="ah">
+
+<!-- =========================================================
+     NAVBAR – MENU KRYESORE
+     Navbar fikse, responsive dhe me dropdown
+========================================================= -->
+<nav class="navbar navbar-expand-lg ah-navbar">
+  <div class="container-fluid px-lg-5">
+
+    <!-- Logo / Emri i projektit -->
+    <a class="navbar-brand ah-logo" href="index.html">Kosovo Tour</a>
+
+    <!-- Butoni hamburger për mobile -->
+    <button class="navbar-toggler custom-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#ahNavbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Linket e navigimit -->
+    <div class="collapse navbar-collapse" id="ahNavbarNav">
+      <ul class="navbar-nav ms-auto ah-nav-links">
+
+        <!-- Linke kryesore -->
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="places.html">Places</a></li>
+        <li class="nav-item"><a class="nav-link" href="regions.html">Regions</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+        <!-- Dropdown për faqe shtesë -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#"
+             id="ahDrop" role="button"
+             data-bs-toggle="dropdown">
+            More
+          </a>
+
+          <!-- Përmbajtja e dropdown -->
+          <ul class="dropdown-menu ah-dropdown-menu">
+            <li><a class="dropdown-item" href="statistic.html">Statistic</a></li>
+            <li><a class="dropdown-item" href="traditions.html">Traditions</a></li>
+            <li><a class="dropdown-item" href="traveltips.html">Travel Tips</a></li>
+            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- =========================================================
+     PËRMBAJTJA KRYESORE
+========================================================= -->
+<div class="container my-5">
+
+  <!-- Titulli kryesor i faqes -->
+  <div class="text-center mb-5">
+    <h1 class="ah-titulli-kryesor">Discover Kosovo</h1>
+    <p class="ah-nen-titulli">
+      Experience the perfect blend of ancient history,
+      vibrant culture, and breathtaking landscapes.
+    </p>
+  </div>
+
+  <!-- ==================== CITIES ==================== -->
+  <section class="ah-sesioni mb-5">
+    <div class="ah-header-sesioni">
+      <h2 class="ah-titulli-sesionit">Cities</h2>
+      <div class="ah-vija-dekorative"></div>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Kartelë galerie -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/gjakovagallery.jpg" class="ah-img">
+          <div class="ah-overlay"><span>Gjakova</span></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/ferizajigallery.jpg" class="ah-img">
+          <div class="ah-overlay"><span>Ferizaji</span></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/prishtinagallery.jpg" class="ah-img">
+          <div class="ah-overlay"><span>Prishtina</span></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/mitrovicplace.jpg" class="ah-img">
+          <div class="ah-overlay"><span>Mitrovica</span></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/prizrenigallery.jpg" class="ah-img">
+          <div class="ah-overlay"><span>Prizreni</span></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/podujevagallery.webp" class="ah-img">
+          <div class="ah-overlay"><span>Podujeva</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== HISTORIC LANDMARKS ==================== -->
+  <section class="ah-sesioni mb-5">
+    <div class="ah-header-sesioni">
+      <h2 class="ah-titulli-sesionit">Historic Landmarks</h2>
+      <div class="ah-vija-dekorative"></div>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/kalajagallery.webp" class="ah-img">
+          <div class="ah-overlay"><span>Kalaja e Prizrenit</span></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/ulpianagallery.jpg" class="ah-img">
+          <div class="ah-overlay"><span>Ulpiana</span></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/lidhjagallery.jpg" class="ah-img">
+          <div class="ah-overlay"><span>Lidhja e Prizrenit</span></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/kullagallery.jpg" class="ah-img">
+          <div class="ah-overlay"><span>Kulla e Isa Boletinit</span></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/vushtrrigallery.jpg" class="ah-img">
+          <div class="ah-overlay"><span>Ura e Gurit</span></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/prekazigallery.jpg" class="ah-img">
+          <div class="ah-overlay"><span>Prekazi</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== ADVENTURES ==================== -->
+  <section class="ah-sesioni mb-5">
+    <div class="ah-header-sesioni">
+      <h2 class="ah-titulli-sesionit">Adventures</h2>
+      <div class="ah-vija-dekorative"></div>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/hikinggallery.jpg" class="ah-img">
+          <div class="ah-overlay"><span>Hiking</span></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/skiinggallery.jpg" class="ah-img">
+          <div class="ah-overlay"><span>Skiing</span></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/campinggallery.jpg" class="ah-img">
+          <div class="ah-overlay"><span>Camping</span></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/paraglidinggallery.jpg" class="ah-img">
+          <div class="ah-overlay"><span>Paragliding</span></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/ziplinegallery.webp" class="ah-img">
+          <div class="ah-overlay"><span>ZIP Line</span></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="ah-galeria-item">
+          <img src="img/viaferratagallery.jpg" class="ah-img">
+          <div class="ah-overlay"><span>Via Ferrata</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="ah-footer">
+  <div class="container">
+    <div class="row gy-5">
+
+      <!-- Përshkrimi i projektit -->
+      <div class="col-12 col-md-4">
+        <h3>Kosovo Tour</h3>
+        <p>
+          Embark on a journey through the heart of the Balkans.
+          Our mission is to showcase Kosovo's authentic culture,
+          breathtaking nature, and legendary hospitality.
+        </p>
+      </div>
+
+      <!-- Linke të shpejta -->
+      <div class="col-12 col-md-4 ah-footer-links">
+        <h4>Quick Links</h4>
+        <ul class="list-unstyled p-0">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="places.html">Places</a></li>
+          <li><a href="regions.html">Regions</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="statistic.html">Statistic</a></li>
+          <li><a href="traditions.html">Traditions</a></li>
+          <li><a href="traveltips.html">Travel Tips</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Informacion projekti -->
+      <div class="col-12 col-md-4">
+        <h4 class="ah-footer-title">Project Info</h4>
+        <ul class="list-unstyled ah-info-list">
+          <li><strong>Student:</strong> Agnesa Hyseni</li>
+          <li><strong>ID:</strong> AH-2025</li>
+          <li><strong>Tools:</strong> HTML5, CSS3, JS, Bootstrap 5</li>
+          <li><strong>Design:</strong> Multipage & Responsive</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Fundi i footer-it -->
+    <div class="row">
+      <div class="col-12 ah-footer-bottom mt-5">
+        © 2025 Kosovo Tour | Agnesa Hyseni Project
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<!-- Bootstrap JS (navbar, dropdown, collapse) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript i personalizuar -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

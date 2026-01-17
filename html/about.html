@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =========================================================
+       META & KONFIGURIMI BAZË I FAQES
+  ========================================================= -->
+
+  <!-- Charset për mbështetje të plotë të karaktereve -->
+  <meta charset="UTF-8">
+
+  <!-- Responsive design për mobile, tablet dhe desktop -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Titulli i faqes që shfaqet në browser -->
+  <title>Kosova Tour - Eksploro</title>
+
+  <!-- Bootstrap 5 CSS (grid, navbar, responsive utilities) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- CSS i personalizuar për gallery -->
+  <link rel="stylesheet" href="css/about.css">
+</head>
+
+<body class="ah">
+
+<!-- =========================================================
+     NAVBAR – MENU KRYESORE
+     Navbar fikse, responsive dhe me dropdown
+========================================================= -->
+<nav class="navbar navbar-expand-lg ah-navbar">
+  <div class="container-fluid px-lg-5">
+
+    <!-- Logo / Emri i projektit -->
+    <a class="navbar-brand ah-logo" href="index.html">Kosovo Tour</a>
+
+    <!-- Butoni hamburger për mobile -->
+    <button class="navbar-toggler custom-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#ahNavbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Linket e navigimit -->
+    <div class="collapse navbar-collapse" id="ahNavbarNav">
+      <ul class="navbar-nav ms-auto ah-nav-links">
+
+        <!-- Linke kryesore -->
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="places.html">Places</a></li>
+        <li class="nav-item"><a class="nav-link" href="regions.html">Regions</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+        <!-- Dropdown për faqe shtesë -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#"
+             id="ahDrop" role="button"
+             data-bs-toggle="dropdown">
+            More
+          </a>
+
+          <!-- Përmbajtja e dropdown -->
+          <ul class="dropdown-menu ah-dropdown-menu">
+            <li><a class="dropdown-item" href="statistic.html">Statistic</a></li>
+            <li><a class="dropdown-item" href="traditions.html">Traditions</a></li>
+            <li><a class="dropdown-item" href="traveltips.html">Travel Tips</a></li>
+            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ================= About Us Section ================= -->
+<section id="about" class="ah-about py-5">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col text-center">
+        <h2 class="ah-section-title">About Us</h2>
+        <p class="ah-section-subtitle">Learn who we are, our mission, and why we created Kosovo Tour.</p>
+      </div>
+    </div>
+
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="img/team.jpg" alt="Our Team" class="ah-about-img img-fluid rounded">
+      </div>
+      <div class="col-md-6">
+        <h3 class="ah-about-heading">Who We Are</h3>
+        <p class="ah-about-text">
+          We are a team of passionate students and young developers from Computer Science, dedicated to showcasing the beauty, culture, and traditions of Kosovo. Through this website, we aim to provide travelers with authentic insights, practical tips, and unforgettable experiences.
+        </p>
+        <h3 class="ah-about-heading">Our Mission</h3>
+        <p class="ah-about-text">
+          Our mission is to create a modern, informative, and user-friendly platform where visitors can explore Kosovo’s heritage, from its landscapes and cuisine to music, festivals, and architecture. We want to connect people with the country’s rich culture and history.
+        </p>
+        <h3 class="ah-about-heading">Why We Built This Website</h3>
+        <p class="ah-about-text">
+          As Computer Science students, we wanted to combine our skills with our love for Kosovo. This project allowed us to apply web development techniques, work with modern frameworks, and create a platform that is both educational and visually appealing. It’s our way of sharing Kosovo with the world!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="ah-about-clean py-5 mt-5" id="about">
+    <div class="container ah-about-container text-center">
+        
+        <div class="ah-title-box mb-5">
+            <h2 class="ah-about-heading display-4 fw-bold">About This <span class="ah-text-red">Project</span></h2>
+            <div class="ah-underline-center"></div>
+        </div>
+
+        <div class="row ah-about-grid">
+            
+            <div class="col-md-4 mb-4">
+                <div class="ah-about-item p-4 shadow-sm border rounded h-100">
+                    <div class="ah-about-icon-box mb-3">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h4 class="fw-bold">The Goal</h4>
+                    <p class="text-muted">The main objective of this project is to promote Kosovo's tourism and cultural heritage through a modern web interface.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="ah-about-item p-4 shadow-sm border rounded h-100">
+                    <div class="ah-about-icon-box mb-3">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4 class="fw-bold">Technology</h4>
+                    <p class="text-muted">Built using HTML5, CSS3, and Bootstrap 5 to ensure a fully responsive experience across all devices.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="ah-about-item p-4 shadow-sm border rounded h-100">
+                    <div class="ah-about-icon-box mb-3">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4 class="fw-bold">The Vision</h4>
+                    <p class="text-muted">To provide a simple yet powerful information hub for anyone interested in exploring the history and beauty of Kosovo.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="ah-footer">
+  <div class="container">
+    <div class="row gy-5">
+
+      <!-- Përshkrimi i projektit -->
+      <div class="col-12 col-md-4">
+        <h3>Kosovo Tour</h3>
+        <p>
+          Embark on a journey through the heart of the Balkans.
+          Our mission is to showcase Kosovo's authentic culture,
+          breathtaking nature, and legendary hospitality.
+        </p>
+      </div>
+
+      <!-- Linke të shpejta -->
+      <div class="col-12 col-md-4 ah-footer-links">
+        <h4>Quick Links</h4>
+        <ul class="list-unstyled p-0">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="places.html">Places</a></li>
+          <li><a href="regions.html">Regions</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="statistic.html">Statistic</a></li>
+          <li><a href="traditions.html">Traditions</a></li>
+          <li><a href="traveltips.html">Travel Tips</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Informacion projekti -->
+      <div class="col-12 col-md-4">
+        <h4 class="ah-footer-title">Project Info</h4>
+        <ul class="list-unstyled ah-info-list">
+          <li><strong>Student:</strong> Agnesa Hyseni</li>
+          <li><strong>ID:</strong> AH-2025</li>
+          <li><strong>Tools:</strong> HTML5, CSS3, JS, Bootstrap 5</li>
+          <li><strong>Design:</strong> Multipage & Responsive</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Fundi i footer-it -->
+    <div class="row">
+      <div class="col-12 ah-footer-bottom mt-5">
+        © 2025 Kosovo Tour | Agnesa Hyseni Project
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<!-- Bootstrap JS (navbar, dropdown, collapse) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript i personalizuar -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

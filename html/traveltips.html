@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =========================================================
+       META & KONFIGURIMI BAZË I FAQES
+  ========================================================= -->
+
+  <!-- Charset për mbështetje të plotë të karaktereve -->
+  <meta charset="UTF-8">
+
+  <!-- Responsive design për mobile, tablet dhe desktop -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Titulli i faqes që shfaqet në browser -->
+  <title>Kosova Tour - Eksploro</title>
+
+  <!-- Bootstrap 5 CSS (grid, navbar, responsive utilities) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- CSS i personalizuar për gallery -->
+  <link rel="stylesheet" href="css/traveltips.css">
+</head>
+
+<body class="ah">
+
+<!-- =========================================================
+     NAVBAR – MENU KRYESORE
+     Navbar fikse, responsive dhe me dropdown
+========================================================= -->
+<nav class="navbar navbar-expand-lg ah-navbar">
+  <div class="container-fluid px-lg-5">
+
+    <!-- Logo / Emri i projektit -->
+    <a class="navbar-brand ah-logo" href="index.html">Kosovo Tour</a>
+
+    <!-- Butoni hamburger për mobile -->
+    <button class="navbar-toggler custom-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#ahNavbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Linket e navigimit -->
+    <div class="collapse navbar-collapse" id="ahNavbarNav">
+      <ul class="navbar-nav ms-auto ah-nav-links">
+
+        <!-- Linke kryesore -->
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="places.html">Places</a></li>
+        <li class="nav-item"><a class="nav-link" href="regions.html">Regions</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+        <!-- Dropdown për faqe shtesë -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#"
+             id="ahDrop" role="button"
+             data-bs-toggle="dropdown">
+            More
+          </a>
+
+          <!-- Përmbajtja e dropdown -->
+          <ul class="dropdown-menu ah-dropdown-menu">
+            <li><a class="dropdown-item" href="statistic.html">Statistic</a></li>
+            <li><a class="dropdown-item" href="traditions.html">Traditions</a></li>
+            <li><a class="dropdown-item" href="traveltips.html">Travel Tips</a></li>
+            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="ah-travel-tips py-5 bg-light">
+    <div class="container ah-tips-container">
+        
+        <div class="ah-header-box text-center mb-5">
+            <h2 class="ah-section-title display-5">Travel Tips</h2>
+            <p class="ah-section-subtitle text-muted">Everything you need to know for an unforgettable experience in Kosovo.
+
+</p>
+        </div>
+
+        <div class="row ah-tips-grid">
+            
+            <div class="col-md-6 col-lg-3 ah-tip-col mb-4">
+                <div class="ah-tip-card text-center p-4">
+                    <div class="ah-icon-circle mb-3">
+                        <i class="fas fa-euro-sign"></i>
+                    </div>
+                    <h4 class="ah-tip-title">Currency</h4>
+                    <p class="ah-tip-text">Kosovo uses the Euro (€). While cards are widely accepted in cities, it’s recommended to carry cash for small shops and rural areas.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 ah-tip-col mb-4">
+                <div class="ah-tip-card text-center p-4">
+                    <div class="ah-icon-circle mb-3">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 class="ah-tip-title">Safety</h4>
+                    <p class="ah-tip-text">Kosovo is one of the friendliest countries in Europe. People are very helpful and many speak English and German well.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 ah-tip-col mb-4">
+                <div class="ah-tip-card text-center p-4">
+                    <div class="ah-icon-circle mb-3">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h4 class="ah-tip-title">Transport</h4>
+                    <p class="ah-tip-text">Buses are the main mode of transport. They are affordable and connect all major cities. In cities like Prishtina, taxis or local ride-hailing apps are convenient.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 ah-tip-col mb-4">
+                <div class="ah-tip-card text-center p-4">
+                    <div class="ah-icon-circle mb-3">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h4 class="ah-tip-title">Best Time to Visit</h4>
+                    <p class="ah-tip-text">April to October is ideal. The mountains are perfect for hiking in summer, while Brezovica and Bogaj are popular for skiing in winter.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row mt-5 justify-content-center">
+    <div class="col-lg-10">
+        <div class="ah-pro-tip-box position-relative overflow-hidden p-5 shadow-lg text-white">
+            <i class="fas fa-lightbulb ah-bg-icon"></i>
+            
+            <div class="row align-items-center ah-content-z-index">
+                <div class="col-md-2 text-center mb-3 mb-md-0">
+                    <div class="ah-badge-pulse">
+                        <i class="fas fa-star fa-2x"></i>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <h4 class="ah-tip-heading-extra text-uppercase fw-bold mb-2"> Pro Tip</h4>
+                    <p class="ah-tip-text-extra fs-5 mb-0">
+                        Don't just stop at the tourist spots! Go to an "Oxhak" or old coffee shop in Prizren or Peja and ask for a macchiato. Kosovo is known for its coffee culture that rivals Italy - it's where all the social life happens!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+</section>
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="ah-footer">
+  <div class="container">
+    <div class="row gy-5">
+
+      <!-- Përshkrimi i projektit -->
+      <div class="col-12 col-md-4">
+        <h3>Kosovo Tour</h3>
+        <p>
+          Embark on a journey through the heart of the Balkans.
+          Our mission is to showcase Kosovo's authentic culture,
+          breathtaking nature, and legendary hospitality.
+        </p>
+      </div>
+
+      <!-- Linke të shpejta -->
+      <div class="col-12 col-md-4 ah-footer-links">
+        <h4>Quick Links</h4>
+        <ul class="list-unstyled p-0">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="places.html">Places</a></li>
+          <li><a href="regions.html">Regions</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="statistic.html">Statistic</a></li>
+          <li><a href="traditions.html">Traditions</a></li>
+          <li><a href="traveltips.html">Travel Tips</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Informacion projekti -->
+      <div class="col-12 col-md-4">
+        <h4 class="ah-footer-title">Project Info</h4>
+        <ul class="list-unstyled ah-info-list">
+          <li><strong>Student:</strong> Agnesa Hyseni</li>
+          <li><strong>ID:</strong> AH-2025</li>
+          <li><strong>Tools:</strong> HTML5, CSS3, JS, Bootstrap 5</li>
+          <li><strong>Design:</strong> Multipage & Responsive</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Fundi i footer-it -->
+    <div class="row">
+      <div class="col-12 ah-footer-bottom mt-5">
+        © 2025 Kosovo Tour | Agnesa Hyseni Project
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<!-- Bootstrap JS (navbar, dropdown, collapse) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript i personalizuar -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
